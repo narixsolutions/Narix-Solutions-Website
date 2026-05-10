@@ -62,7 +62,7 @@ export function Header() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-11 h-11 bg-gradient-to-br from-accent to-blue-500 rounded-lg flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:shadow-accent/30 transition-all duration-300 transform group-hover:scale-105">
+          <div className="w-11 h-11 bg-gradient-to-br from-accent to-emerald-700 rounded-lg flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:shadow-accent/30 transition-all duration-300 transform group-hover:scale-105">
             <span className="text-white font-bold text-xl">N</span>
           </div>
           <span className="hidden sm:block font-bold text-lg bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">NarixSolutions</span>
@@ -84,7 +84,7 @@ export function Header() {
               >
                 {item.label}
                 {active && (
-                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-accent via-blue-500 to-purple-500 rounded-full"></span>
+                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-accent via-teal-500 to-emerald-700 rounded-full"></span>
                 )}
               </Link>
             );
@@ -104,7 +104,7 @@ export function Header() {
           )}
           <Link
             href="/contact"
-            className="bg-gradient-to-r from-accent to-[#7c3aed] text-white px-6 py-2.5 rounded-lg text-sm font-semibold hover:shadow-lg hover:shadow-accent/40 transition-all duration-300 hover:-translate-y-0.5"
+            className="bg-gradient-to-r from-accent to-emerald-800 text-accent-foreground px-6 py-2.5 rounded-lg text-sm font-semibold hover:shadow-lg hover:shadow-accent/40 transition-all duration-300 hover:-translate-y-0.5"
           >
             Get Consultation
           </Link>
@@ -155,7 +155,7 @@ export function Header() {
             )}
             <Link
               href="/contact"
-              className="block bg-gradient-to-r from-accent to-[#7c3aed] text-white px-4 py-2.5 rounded-lg text-center font-semibold hover:shadow-lg hover:shadow-accent/40 transition-all duration-300 mt-4"
+              className="block bg-gradient-to-r from-accent to-emerald-800 text-accent-foreground px-4 py-2.5 rounded-lg text-center font-semibold hover:shadow-lg hover:shadow-accent/40 transition-all duration-300 mt-4"
               onClick={() => toggleMobileMenu()}
             >
               Get Consultation

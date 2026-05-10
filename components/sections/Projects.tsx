@@ -24,7 +24,7 @@ export function Projects() {
     <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background via-background to-secondary/30 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
       </div>
 
@@ -36,7 +36,7 @@ export function Projects() {
             <span className="text-sm text-foreground/80 font-medium">Our Portfolio</span>
           </div>
           <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-6 text-balance">
-            Featured <span className="bg-gradient-to-r from-accent to-purple-500 bg-clip-text text-transparent">Projects</span>
+            Featured <span className="bg-gradient-to-r from-accent to-emerald-700 bg-clip-text text-transparent">Projects</span>
           </h2>
           <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
             Showcase of our most impactful work across diverse industries and technologies.
@@ -51,7 +51,7 @@ export function Projects() {
               onClick={() => setSelectedCategory(category)}
               className={`px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
                 selectedCategory === category
-                  ? 'bg-gradient-to-r from-accent to-blue-500 text-white shadow-lg shadow-accent/30'
+                  ? 'bg-gradient-to-r from-accent to-emerald-800 text-accent-foreground shadow-lg shadow-accent/30'
                   : 'bg-background border border-border text-foreground/70 hover:border-accent/60 hover:text-foreground'
               }`}
             >
@@ -69,7 +69,7 @@ export function Projects() {
               className="group relative bg-card border border-border rounded-xl overflow-hidden hover:border-accent cursor-pointer transition-all duration-500 hover:shadow-xl hover:shadow-accent/10"
             >
               {/* Image Placeholder with gradient */}
-              <div className="w-full h-48 bg-gradient-to-br from-accent/30 via-blue-500/20 to-purple-500/10 flex items-center justify-center relative overflow-hidden group-hover:scale-105 transition-transform duration-500">
+              <div className="w-full h-48 bg-gradient-to-br from-accent/30 via-emerald-600/20 to-teal-500/10 flex items-center justify-center relative overflow-hidden group-hover:scale-105 transition-transform duration-500">
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30 group-hover:to-black/50 transition-colors duration-500"></div>
                 <div className="relative text-center z-10">
                   <div className="text-6xl font-bold text-white/30 group-hover:text-white/60 transition-colors duration-500">
@@ -89,7 +89,7 @@ export function Projects() {
                 <div className="grid grid-cols-2 gap-3 mb-4 py-4 border-t border-border/50">
                   {project.stats.slice(0, 2).map((stat, idx) => (
                     <div key={idx} className="text-center">
-                      <div className="text-sm font-bold bg-gradient-to-r from-accent to-blue-500 bg-clip-text text-transparent">{stat.value}</div>
+                      <div className="text-sm font-bold bg-gradient-to-r from-accent to-teal-600 bg-clip-text text-transparent">{stat.value}</div>
                       <div className="text-xs text-foreground/60 mt-1">{stat.label}</div>
                     </div>
                   ))}

@@ -39,7 +39,7 @@ export default function AboutPage() {
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-6xl md:text-7xl font-bold text-foreground mb-6 text-balance">
-            Building the <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">Future</span>
+            Building the <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Future</span>
           </h1>
           <p className="text-xl text-foreground/70">
             NarixSolutions is a premium digital transformation agency dedicated to helping businesses thrive in the digital age.
@@ -55,7 +55,7 @@ export default function AboutPage() {
               const IconComponent = stat.icon;
               return (
                 <div key={index} className="text-center">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 text-white flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-600 to-teal-600 text-white flex items-center justify-center mx-auto mb-4">
                     <IconComponent size={32} />
                   </div>
                   <div className="text-4xl font-bold text-foreground mb-2">{stat.value}</div>
@@ -117,7 +117,7 @@ export default function AboutPage() {
               { name: 'Amit Patel', role: 'VP Design', bio: 'Award-winning designer focused on user excellence' },
             ].map((member, index) => (
               <div key={index} className="p-8 bg-card rounded-xl border border-border hover:border-accent transition-all duration-300">
-                <div className="w-24 h-24 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 mx-auto mb-4"></div>
+                <div className="w-24 h-24 rounded-full bg-gradient-to-br from-emerald-600 to-teal-600 mx-auto mb-4"></div>
                 <h3 className="text-xl font-bold text-foreground mb-2">{member.name}</h3>
                 <p className="text-accent font-semibold mb-3">{member.role}</p>
                 <p className="text-foreground/70">{member.bio}</p>
@@ -147,7 +147,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      {/* <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-500 to-purple-500">
+      {/* <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-emerald-600 to-teal-600">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
             Ready to Partner with Us?

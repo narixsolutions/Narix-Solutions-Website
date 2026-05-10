@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUp, MessageCircle } from 'lucide-react';
+import { getWhatsAppHref } from '@/lib/whatsapp';
 
 export function FloatingButtons() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -41,7 +42,7 @@ export function FloatingButtons() {
 
       {/* WhatsApp Button */}
       <motion.a
-        href="https://wa.me/15551234567?text=Hi%20NarixSolutions%2C%20I%27m%20interested%20in%20discussing%20a%20project"
+        href={getWhatsAppHref()}
         target="_blank"
         rel="noopener noreferrer"
         whileHover={{ scale: 1.1 }}

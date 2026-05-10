@@ -27,7 +27,7 @@ export function Hero() {
 
           {/* Main Heading with gradient */}
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight tracking-tight">
-            Transform Your <span className="bg-gradient-to-r from-accent via-blue-500 to-purple-500 bg-clip-text text-transparent">Digital Presence</span>
+            Transform Your <span className="bg-gradient-to-r from-accent via-emerald-600 to-teal-600 bg-clip-text text-transparent">Digital Presence</span>
           </h1>
 
           {/* Subheading */}
@@ -39,7 +39,7 @@ export function Hero() {
           <div className="flex flex-col sm:flex-row items-start gap-4 pt-4">
             <Link
               href="#contact"
-              className="flex items-center justify-center gap-2 bg-gradient-to-r from-accent to-blue-500 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-xl hover:shadow-accent/30 transition-all duration-300 hover:-translate-y-0.5 group w-full sm:w-auto"
+              className="flex items-center justify-center gap-2 bg-gradient-to-r from-accent to-emerald-800 text-accent-foreground px-8 py-4 rounded-lg font-semibold hover:shadow-xl hover:shadow-accent/30 transition-all duration-300 hover:-translate-y-0.5 group w-full sm:w-auto"
             >
               Start Your Project
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -58,7 +58,7 @@ export function Hero() {
               { number: '50+', label: 'Countries' },
             ].map((stat, index) => (
               <div key={index} className="group">
-                <div className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-accent to-purple-500 bg-clip-text text-transparent group-hover:from-accent group-hover:to-blue-500 transition-all">
+                <div className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-accent to-teal-600 bg-clip-text text-transparent group-hover:from-accent group-hover:to-emerald-700 transition-all">
                   {stat.number}
                 </div>
                 <div className="text-sm text-foreground/60 mt-1">{stat.label}</div>

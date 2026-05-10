@@ -16,7 +16,7 @@ export function About() {
     <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background via-secondary/30 to-background relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -bottom-20 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-20 left-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -28,7 +28,7 @@ export function About() {
               <span className="text-sm text-foreground/80 font-medium">About Us</span>
             </div>
             <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-6 text-balance">
-              Transforming <span className="bg-gradient-to-r from-accent to-purple-500 bg-clip-text text-transparent">Businesses</span> Globally
+              Transforming <span className="bg-gradient-to-r from-accent to-emerald-700 bg-clip-text text-transparent">Businesses</span> Globally
             </h2>
             <p className="text-lg text-foreground/70 mb-6 leading-relaxed">
               With over a decade of experience, we&apos;ve partnered with industry leaders to create transformative digital experiences. Our expertise spans web development, design, and digital strategy.
@@ -68,7 +68,7 @@ export function About() {
               
               <div className="relative z-10">
                 <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center mb-4 group-hover:shadow-lg group-hover:shadow-accent/30 transition-all duration-300 transform group-hover:scale-110">
-                  <span className="text-xl font-bold bg-gradient-to-r from-accent to-blue-500 bg-clip-text text-transparent">{idx + 1}</span>
+                  <span className="text-xl font-bold bg-gradient-to-r from-accent to-teal-600 bg-clip-text text-transparent">{idx + 1}</span>
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-accent transition-colors duration-300">{feature.title}</h3>
                 <p className="text-foreground/70">{feature.description}</p>

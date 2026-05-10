@@ -1,72 +1,30 @@
+import Image from 'next/image';
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowLeft, CheckCircle } from 'lucide-react';
 import { notFound } from 'next/navigation';
+import { ArrowLeft, ArrowRight, Building2, CheckCircle, Layers } from 'lucide-react';
 
-const serviceDetails: Record<string, any> = {
-  'web-development': {
-    title: 'Custom Web Development',
-    description: 'Enterprise-grade web applications built with cutting-edge technologies',
-    hero: 'We specialize in building high-performance web applications that scale with your business.',
-    features: [
-      'Full-stack development',
-      'Responsive design',
-      'API integration',
-      'Database design',
-      'Cloud deployment',
-      'Performance optimization',
-    ],
-    process: [
-      { step: 'Discovery', description: 'Understanding your business goals and requirements' },
-      { step: 'Design', description: 'Creating intuitive user interfaces and architecture' },
-      { step: 'Development', description: 'Building scalable, maintainable code' },
-      { step: 'Testing', description: 'Comprehensive testing and quality assurance' },
-      { step: 'Deployment', description: 'Smooth launch and ongoing support' },
-    ],
-    technologies: ['React', 'Next.js', 'Node.js', 'TypeScript', 'PostgreSQL', 'AWS'],
-    industries: ['Finance', 'E-commerce', 'Healthcare', 'SaaS', 'Marketplace'],
-  },
-  'react-development': {
-    title: 'React.js Development',
-    description: 'Modern, responsive web applications using React',
-    hero: 'Build fast, interactive user interfaces with React and modern JavaScript.',
-    features: [
-      'Component-based architecture',
-      'Server-side rendering',
-      'State management',
-      'Performance optimization',
-      'Testing & debugging',
-      'SEO optimization',
-    ],
-    process: [
-      { step: 'Planning', description: 'Component architecture and state management strategy' },
-      { step: 'Development', description: 'Building reusable, maintainable components' },
-      { step: 'Integration', description: 'Connecting with APIs and services' },
-      { step: 'Optimization', description: 'Performance and bundle size optimization' },
-      { step: 'Deployment', description: 'Production-ready deployment' },
-    ],
-    technologies: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Zustand', 'SWR'],
-    industries: ['SaaS', 'Startups', 'Media', 'EdTech', 'Fintech'],
-  },
-  // Add more service details as needed
-};
+import { getAllServicePageSlugs, getServicePage } from '@/data/service-pages';
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const service = serviceDetails[params.slug];
-  if (!service) return { title: 'Service Not Found' };
-  
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const service = getServicePage(slug);
+  if (!service) {
+    return { title: 'Service — NarixSolutions' };
+  }
   return {
-    title: `${service.title} - NarixSolutions`,
+    title: `${service.title} — NarixSolutions`,
     description: service.description,
   };
 }
 
 export function generateStaticParams() {
-  return Object.keys(serviceDetails).map((slug) => ({ slug }));
+  return getAllServicePageSlugs().map((slug) => ({ slug }));
 }
 
-export default function ServiceDetailPage({ params }: { params: { slug: string } }) {
-  const service = serviceDetails[params.slug];
+export default async function ServiceDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const service = getServicePage(slug);
 
   if (!service) {
     notFound();
@@ -74,123 +32,173 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
 
   return (
     <main className="min-h-screen bg-background">
-      {/* Breadcrumb & Back Button */}
-      <section className="pt-24 pb-12 px-4 sm:px-6 lg:px-8 border-b border-border">
-        <div className="max-w-4xl mx-auto">
+      <section className="pt-24 pb-10 px-4 sm:px-6 lg:px-8 border-b border-border bg-card/40">
+        <div className="max-w-6xl mx-auto">
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors mb-6 text-sm font-medium"
+            className="inline-flex items-center gap-2 text-sm font-medium text-foreground/70 hover:text-accent transition-colors mb-8"
           >
             <ArrowLeft size={18} />
-            Back to Services
+            All services
           </Link>
+
+          <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14 items-start">
+            <div>
+              <p className="text-sm font-semibold text-accent uppercase tracking-widest mb-3">Capability</p>
+              <h1 className="text-4xl md:text-5xl font-bold text-foreground text-balance leading-tight mb-5">
+                {service.title}
+              </h1>
+              <p className="text-lg md:text-xl text-foreground/75 mb-6">{service.description}</p>
+              <p className="text-foreground/65 leading-relaxed mb-8">{service.heroLead}</p>
+
+              <div className="grid sm:grid-cols-3 gap-3 mb-8">
+                {service.stats.map((s) => (
+                  <div key={s.label} className="rounded-xl border border-border bg-background/80 backdrop-blur px-4 py-3">
+                    <p className="text-xs uppercase tracking-wide text-foreground/45 mb-1">{s.label}</p>
+                    <p className="text-sm font-semibold text-foreground">{s.value}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Link
+                  href="/contact"
+                  className="inline-flex justify-center items-center gap-2 rounded-xl bg-accent text-accent-foreground px-7 py-3.5 font-semibold shadow-md hover:opacity-95 transition-opacity"
+                >
+                  Discuss this scope
+                  <ArrowRight size={18} />
+                </Link>
+                <Link
+                  href="/case-studies"
+                  className="inline-flex justify-center items-center gap-2 rounded-xl border border-border px-7 py-3.5 font-semibold text-foreground hover:bg-secondary/80 transition-colors"
+                >
+                  See related work
+                </Link>
+              </div>
+            </div>
+
+            <div className="relative aspect-[4/3] sm:aspect-[16/11] rounded-2xl overflow-hidden border border-border bg-muted shadow-sm">
+              <Image
+                src={service.heroImage}
+                alt=""
+                fill
+                priority
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 45vw"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Hero */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 text-balance">
-            {service.title}
-          </h1>
-          <p className="text-xl text-foreground/70 mb-8">
-            {service.description}
-          </p>
-          <p className="text-lg text-foreground/60 leading-relaxed mb-8">
-            {service.hero}
+      {/* Gallery — replace URLs in data/service-pages.ts */}
+      <section className="py-10 px-4 sm:px-6 lg:px-8 border-b border-border/60">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex items-center gap-2 text-sm font-semibold text-foreground/60 mb-4">
+            <Layers className="size-4 text-accent" />
+            Program snapshots
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {service.gallery.map((src, i) => (
+              <div key={src} className="relative aspect-[4/3] rounded-xl overflow-hidden border border-border bg-muted/30">
+                <Image
+                  src={src}
+                  alt=""
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 640px) 100vw, 33vw"
+                />
+                <span className="absolute bottom-3 left-3 rounded-md bg-background/90 border border-border px-2 py-0.5 text-xs font-medium text-foreground/70">
+                  Reference {i + 1}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/40">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-10">What we deliver</h2>
+          <div className="grid md:grid-cols-2 gap-5">
+            {service.features.map((feature) => (
+              <div key={feature} className="flex gap-4 rounded-xl border border-border bg-card p-5 shadow-sm">
+                <CheckCircle className="text-accent flex-shrink-0 mt-0.5" size={22} />
+                <p className="text-foreground/85 leading-relaxed">{feature}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-10">How we work with you</h2>
+          <div className="relative space-y-0">
+            <div className="absolute left-[22px] top-3 bottom-3 w-px bg-border hidden sm:block" aria-hidden />
+            <ul className="space-y-8">
+              {service.process.map((item, index) => (
+                <li key={item.step} className="flex gap-5 sm:gap-6">
+                  <div className="flex-shrink-0 w-11 h-11 rounded-full bg-gradient-to-br from-accent to-emerald-800 text-accent-foreground flex items-center justify-center text-sm font-bold shadow-sm z-[1] border-2 border-background">
+                    {index + 1}
+                  </div>
+                  <div className="pt-1">
+                    <h3 className="text-lg font-bold text-foreground mb-2">{item.step}</h3>
+                    <p className="text-foreground/70 leading-relaxed max-w-2xl">{item.description}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/40 border-y border-border/60">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex items-center gap-2 text-sm font-semibold text-foreground/60 mb-8">
+            <Building2 className="size-4 text-accent" />
+            Stack & sectors
+          </div>
+          <div className="grid md:grid-cols-2 gap-10">
+            <div>
+              <h3 className="text-lg font-bold text-foreground mb-4">Technologies</h3>
+              <div className="flex flex-wrap gap-2">
+                {service.technologies.map((tech) => (
+                  <span key={tech} className="rounded-lg border border-border bg-card px-3 py-1.5 text-sm font-medium text-foreground/90">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-foreground mb-4">Industries</h3>
+              <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+                {service.industries.map((industry) => (
+                  <div
+                    key={industry}
+                    className="rounded-lg border border-border bg-card px-3 py-2.5 text-center text-sm font-medium text-foreground/85"
+                  >
+                    {industry}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto text-center rounded-2xl border border-border bg-card/60 p-10 md:p-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">Kick off with a focused workshop</h2>
+          <p className="text-foreground/70 mb-8">
+            Share goals, constraints, and timelines — we respond with an outline you can circulate internally before any heavy commitment.
           </p>
           <Link
             href="/contact"
-            className="inline-block bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+            className="inline-flex items-center justify-center gap-2 rounded-xl bg-accent text-accent-foreground px-8 py-3.5 font-semibold shadow-md hover:opacity-95 transition-opacity"
           >
-            Request a Quote
-          </Link>
-        </div>
-      </section>
-
-      {/* Features */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/50">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold text-foreground mb-12">Key Features</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {service.features.map((feature: string) => (
-              <div key={feature} className="flex items-start gap-4">
-                <CheckCircle className="text-accent flex-shrink-0 mt-1" size={24} />
-                <div>
-                  <p className="text-lg font-medium text-foreground">{feature}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Process */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold text-foreground mb-12">Our Process</h2>
-          <div className="space-y-6">
-            {service.process.map((item: any, index: number) => (
-              <div key={index} className="flex gap-6">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white flex items-center justify-center font-bold">
-                  {index + 1}
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-foreground mb-2">{item.step}</h3>
-                  <p className="text-foreground/70">{item.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Technologies */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/50">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold text-foreground mb-12">Technologies We Use</h2>
-          <div className="flex flex-wrap gap-3">
-            {service.technologies.map((tech: string) => (
-              <span
-                key={tech}
-                className="px-4 py-2 rounded-full bg-card border border-border text-foreground font-medium"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Industries */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold text-foreground mb-12">Industries We Serve</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {service.industries.map((industry: string) => (
-              <div
-                key={industry}
-                className="p-4 rounded-lg bg-card border border-border text-center font-medium text-foreground"
-              >
-                {industry}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-500 to-purple-500">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">Ready to Get Started?</h2>
-          <p className="text-xl text-white/90 mb-8">
-            Let&apos;s work together to bring your vision to life.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block bg-white text-foreground px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
-          >
-            Start Your Project
+            Book a session
+            <ArrowRight size={18} />
           </Link>
         </div>
       </section>

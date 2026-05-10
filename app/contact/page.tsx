@@ -64,13 +64,13 @@ export default function ContactPage() {
       {/* Hero Section - Premium */}
       <section className="pt-36 pb-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-40 right-1/3 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-40 left-1/3 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute -top-40 right-1/3 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-40 left-1/3 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl"></div>
         </div>
 
         <div className="relative z-10 max-w-6xl mx-auto text-center space-y-8">
           <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-foreground text-balance leading-tight tracking-tight">
-            Let&apos;s Talk About Your <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">Project</span>
+            Let&apos;s Talk About Your <span className="bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent">Project</span>
           </h1>
           <p className="text-xl md:text-2xl text-foreground/70 max-w-3xl mx-auto font-light leading-relaxed">
             Connect with our expert team to discuss your vision, explore solutions, and start your digital transformation journey
@@ -79,10 +79,10 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Methods - Premium */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background via-blue-500/3 to-background relative overflow-hidden">
+      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background via-emerald-500/3 to-background relative overflow-hidden">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/3 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-1/3 left-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/3 right-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/3 left-0 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
@@ -92,13 +92,13 @@ export default function ContactPage() {
               <a
                 key={index}
                 href={method.link}
-                className="group p-8 bg-white dark:bg-slate-900/50 rounded-2xl border border-gray-200/50 dark:border-slate-700/50 hover:border-blue-500/50 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 flex flex-col items-center text-center"
+                className="group p-8 bg-white dark:bg-slate-900/50 rounded-2xl border border-gray-200/50 dark:border-slate-700/50 hover:border-accent/50 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 flex flex-col items-center text-center"
               >
-                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-600 to-purple-600 p-4 text-white mb-5 group-hover:scale-110 transition-all duration-300 shadow-lg">
+                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-accent to-emerald-800 p-4 text-white mb-5 group-hover:scale-110 transition-all duration-300 shadow-lg">
                   <IconComponent size={28} />
                 </div>
                 <h3 className="text-lg font-bold text-foreground mb-2">{method.title}</h3>
-                <p className="text-foreground/70 group-hover:text-blue-600 transition-colors font-light">{method.value}</p>
+                <p className="text-foreground/70 group-hover:text-accent transition-colors font-light">{method.value}</p>
               </a>
             );
           })}
@@ -211,7 +211,7 @@ export default function ContactPage() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-gradient-to-r from-accent to-emerald-800 text-white py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>

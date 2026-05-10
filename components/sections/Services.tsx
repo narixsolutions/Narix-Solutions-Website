@@ -18,7 +18,7 @@ export function Services() {
       {/* Background decoration */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-20 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -29,7 +29,7 @@ export function Services() {
             <span className="text-sm text-foreground/80 font-medium">Our Expertise</span>
           </div>
           <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-6 text-balance">
-            Services We <span className="bg-gradient-to-r from-accent to-blue-500 bg-clip-text text-transparent">Deliver</span>
+            Services We <span className="bg-gradient-to-r from-accent to-emerald-700 bg-clip-text text-transparent">Deliver</span>
           </h2>
           <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
             Comprehensive digital solutions tailored to your business needs and industry challenges. Expertise meets innovation.

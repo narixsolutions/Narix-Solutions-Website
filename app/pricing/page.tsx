@@ -67,7 +67,7 @@ export default function PricingPage() {
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-6xl md:text-7xl font-bold text-foreground mb-6 text-balance">
-            Simple, Transparent <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">Pricing</span>
+            Simple, Transparent <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Pricing</span>
           </h1>
           <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
             Flexible plans that scale with your business. From startups to enterprises, we have a plan for you.
@@ -83,12 +83,12 @@ export default function PricingPage() {
               key={index}
               className={`rounded-2xl p-8 border transition-all duration-300 ${
                 plan.highlighted
-                  ? 'border-blue-500 bg-gradient-to-br from-blue-500/5 to-purple-500/5 ring-2 ring-blue-500/20 relative'
-                  : 'border-border bg-card hover:border-blue-500/50'
+                  ? 'border-emerald-500 bg-gradient-to-br from-emerald-500/8 to-teal-500/8 ring-2 ring-emerald-500/20 relative'
+                  : 'border-border bg-card hover:border-emerald-500/50'
               }`}
             >
               {plan.highlighted && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-blue-500 to-purple-500 text-white text-sm font-semibold rounded-full">
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-sm font-semibold rounded-full">
                   Most Popular
                 </div>
               )}
@@ -97,7 +97,7 @@ export default function PricingPage() {
               <p className="text-foreground/70 mb-6">{plan.description}</p>
 
               <div className="mb-6">
-                <div className="text-4xl font-bold text-transparent bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text">
+                <div className="text-4xl font-bold text-transparent bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text">
                   {plan.price}
                 </div>
                 <p className="text-foreground/60 text-sm">{plan.period}</p>
@@ -107,8 +107,8 @@ export default function PricingPage() {
                 href="/contact"
                 className={`block w-full py-3 px-4 rounded-lg font-semibold text-center mb-8 transition-all duration-300 ${
                   plan.highlighted
-                    ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white hover:shadow-lg hover:-translate-y-1'
-                    : 'bg-secondary text-foreground hover:bg-blue-500/10 hover:text-blue-500'
+                    ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white hover:shadow-lg hover:-translate-y-1'
+                    : 'bg-secondary text-foreground hover:bg-emerald-500/10 hover:text-emerald-700'
                 }`}
               >
                 {plan.cta}
@@ -117,7 +117,7 @@ export default function PricingPage() {
               <ul className="space-y-4">
                 {plan.features.map((feature, idx) => (
                   <li key={idx} className="flex items-start gap-3">
-                    <CheckCircle size={20} className="text-blue-500 flex-shrink-0 mt-0.5" />
+                    <CheckCircle size={20} className="text-emerald-600 flex-shrink-0 mt-0.5" />
                     <span className="text-foreground/80">{feature}</span>
                   </li>
                 ))}
@@ -142,7 +142,7 @@ export default function PricingPage() {
             ].map((addon, index) => (
               <div key={index} className="flex items-center justify-between p-6 bg-card rounded-lg border border-border">
                 <h3 className="font-semibold text-foreground">{addon.title}</h3>
-                <span className="text-blue-500 font-bold">{addon.price}</span>
+                <span className="text-emerald-600 font-bold">{addon.price}</span>
               </div>
             ))}
           </div>
@@ -182,7 +182,7 @@ export default function PricingPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-500 to-purple-500">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-emerald-600 to-teal-600">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
             Ready to Get Started?

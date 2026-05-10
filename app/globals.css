@@ -4,55 +4,50 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Professional Enterprise Dark Theme - NarixSolutions */
-  /* Primary colors - Dark Navy (default dark mode) */
-  --background: #0a0e27;
-  --foreground: #f0f4f8;
-  --card: #111827;
-  --card-foreground: #f0f4f8;
-  
-  /* Secondary colors */
-  --popover: #111827;
-  --popover-foreground: #f0f4f8;
-  --primary: #f0f4f8;
-  --primary-foreground: #0a0e27;
-  --secondary: #1f2937;
-  --secondary-foreground: #f0f4f8;
-  
-  /* Accent - Professional Blue */
-  --muted: #374151;
-  --muted-foreground: #9ca3af;
-  --accent: #3b82f6;
+  /* Light theme — used when `.dark` is not on <html> */
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
+  --primary: #0f172a;
+  --primary-foreground: #f8fafc;
+  --secondary: #f1f5f9;
+  --secondary-foreground: #0f172a;
+
+  --muted: #e2e8f0;
+  --muted-foreground: #64748b;
+  --accent: #059669;
   --accent-foreground: #ffffff;
-  --destructive: #ef4444;
+  --destructive: #dc2626;
   --destructive-foreground: #ffffff;
-  --border: #1f2937;
-  --input: #111827;
-  --ring: #3b82f6;
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #059669;
   
-  /* Chart colors */
-  --chart-1: #3b82f6;
-  --chart-2: #8b5cf6;
-  --chart-3: #06b6d4;
-  --chart-4: #10b981;
-  --chart-5: #f59e0b;
+  --chart-1: #059669;
+  --chart-2: #0d9488;
+  --chart-3: #14b8a6;
+  --chart-4: #65a30d;
+  --chart-5: #ca8a04;
   
   /* Spacing & Radius */
   --radius: 0.75rem;
   
-  /* Sidebar */
-  --sidebar: #111827;
-  --sidebar-foreground: #f0f4f8;
-  --sidebar-primary: #f0f4f8;
-  --sidebar-primary-foreground: #0a0e27;
-  --sidebar-accent: #3b82f6;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #0f172a;
+  --sidebar-primary: #0f172a;
+  --sidebar-primary-foreground: #f8fafc;
+  --sidebar-accent: #059669;
   --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #1f2937;
-  --sidebar-ring: #3b82f6;
+  --sidebar-border: #e2e8f0;
+  --sidebar-ring: #059669;
 }
 
 .dark {
-  /* Professional Dark Mode (same as root for dark-first approach) */
+  /* Dark theme */
   --background: #0a0e27;
   --foreground: #f0f4f8;
   --card: #111827;
@@ -65,26 +60,26 @@
   --secondary-foreground: #f0f4f8;
   --muted: #374151;
   --muted-foreground: #9ca3af;
-  --accent: #3b82f6;
+  --accent: #10b981;
   --accent-foreground: #ffffff;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
   --border: #1f2937;
   --input: #111827;
-  --ring: #3b82f6;
-  --chart-1: #3b82f6;
-  --chart-2: #8b5cf6;
-  --chart-3: #06b6d4;
-  --chart-4: #10b981;
-  --chart-5: #f59e0b;
+  --ring: #10b981;
+  --chart-1: #10b981;
+  --chart-2: #2dd4bf;
+  --chart-3: #14b8a6;
+  --chart-4: #84cc16;
+  --chart-5: #eab308;
   --sidebar: #111827;
   --sidebar-foreground: #f0f4f8;
   --sidebar-primary: #f0f4f8;
   --sidebar-primary-foreground: #0a0e27;
-  --sidebar-accent: #3b82f6;
+  --sidebar-accent: #10b981;
   --sidebar-accent-foreground: #ffffff;
   --sidebar-border: #1f2937;
-  --sidebar-ring: #3b82f6;
+  --sidebar-ring: #10b981;
 }
 
 @theme inline {
