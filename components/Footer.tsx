@@ -63,26 +63,26 @@ export function Footer() {
     <footer className="bg-gradient-to-b from-background to-card/50 border-t border-border/40 relative overflow-hidden">
       {/* Decorative background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl"></div>
       </div>
 
       {/* Top CTA Section - Premium (hidden on services, case studies, technologies) */}
       {showTopCta && (
-        <div className="relative z-10 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 shadow-xl">
+        <div className="relative z-10 border-b border-border/50 bg-card/70 backdrop-blur-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div className="space-y-4">
-                <h3 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+                <h3 className="text-4xl md:text-5xl font-bold text-foreground leading-tight">
                   Ready to Start Your Project?
                 </h3>
-                <p className="text-lg text-white/90 font-light leading-relaxed">
+                <p className="text-lg text-foreground/70 font-light leading-relaxed">
                   Get a free consultation and discover how we can transform your business through innovative digital solutions.
                 </p>
               </div>
               <Link
                 href="/contact"
-                className="group inline-flex items-center justify-center gap-3 bg-white text-blue-600 px-10 py-5 rounded-xl font-bold shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 text-lg"
+                className="group inline-flex items-center justify-center gap-3 bg-accent text-accent-foreground px-10 py-5 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-lg"
               >
                 <span>Get Started Today</span>
                 <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" />
@@ -98,7 +98,7 @@ export function Footer() {
           {/* Brand & Contact Info */}
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:col-span-2 space-y-8">
             <Link href="/" className="inline-flex items-center gap-3">
-              <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
+              <div className="w-14 h-14 bg-gradient-to-br from-accent to-emerald-800 rounded-xl flex items-center justify-center shadow-lg">
                 <span className="text-white font-bold text-2xl">N</span>
               </div>
               <span className="font-bold text-2xl text-foreground">NarixSolutions</span>
@@ -115,22 +115,22 @@ export function Footer() {
               <p className="text-sm font-semibold text-foreground/60 uppercase tracking-wide">Contact Us</p>
               <div className="space-y-4">
                 <div className="flex items-center gap-4 group">
-                  <div className="p-3 bg-blue-500/15 rounded-lg group-hover:bg-blue-500/25 transition-colors">
-                    <Mail size={20} className="text-blue-600" />
+                  <div className="p-3 bg-accent/15 rounded-lg group-hover:bg-accent/25 transition-colors">
+                    <Mail size={20} className="text-accent" />
                   </div>
-                  <a href="mailto:contact@narixsolutions.com" className="text-foreground/70 hover:text-blue-600 transition-colors font-light">
+                  <a href="mailto:contact@narixsolutions.com" className="text-foreground/70 hover:text-accent transition-colors font-light">
                     contact@narixsolutions.com
                   </a>
                 </div>
                 <div className="flex items-center gap-4 group">
-                  <div className="p-3 bg-blue-500/15 rounded-lg group-hover:bg-blue-500/25 transition-colors">
-                    <Phone size={20} className="text-blue-600" />
+                  <div className="p-3 bg-accent/15 rounded-lg group-hover:bg-accent/25 transition-colors">
+                    <Phone size={20} className="text-accent" />
                   </div>
                   <span className="text-foreground/70 font-light">+1 (555) 123-4567</span>
                 </div>
                 <div className="flex items-start gap-4 group">
-                  <div className="p-3 bg-blue-500/15 rounded-lg group-hover:bg-blue-500/25 transition-colors mt-1">
-                    <MapPin size={20} className="text-blue-600" />
+                  <div className="p-3 bg-accent/15 rounded-lg group-hover:bg-accent/25 transition-colors mt-1">
+                    <MapPin size={20} className="text-accent" />
                   </div>
                   <span className="text-foreground/70 font-light">San Francisco, CA, USA</span>
                 </div>
@@ -152,7 +152,7 @@ export function Footer() {
               <ul className="space-y-3.5">
                 {section.links.map((link) => (
                   <li key={link.href}>
-                    <Link href={link.href} className="text-foreground/70 hover:text-blue-600 transition-colors text-sm font-light hover:translate-x-1 inline-block">
+                    <Link href={link.href} className="text-foreground/70 hover:text-accent transition-colors text-sm font-light hover:translate-x-1 inline-block">
                       {link.label}
                     </Link>
                   </li>
@@ -181,7 +181,7 @@ export function Footer() {
                 target={social.label !== 'Email' ? '_blank' : undefined}
                 rel={social.label !== 'Email' ? 'noopener noreferrer' : undefined}
                 aria-label={social.label}
-                className="group p-3 rounded-lg border border-gray-200/50 dark:border-slate-700/50 text-foreground/60 hover:text-blue-600 hover:border-blue-500/50 bg-gray-50 dark:bg-slate-900/50 hover:bg-blue-500/10 transition-all duration-300 hover:scale-110"
+                className="group p-3 rounded-lg border border-border text-foreground/60 hover:text-accent hover:border-accent/50 bg-secondary/50 hover:bg-accent/10 transition-all duration-300 hover:scale-110"
               >
                 <social.icon size={20} />
               </a>

@@ -20,7 +20,7 @@ export default function ProjectsPage() {
         conversion: '+45%',
       },
       technologies: ['React', 'Node.js', 'PostgreSQL', 'Stripe'],
-      image: 'bg-gradient-to-br from-blue-500 to-blue-600',
+      image: 'bg-gradient-to-br from-emerald-600 to-teal-700',
     },
     {
       id: 'saas-platform',
@@ -33,7 +33,7 @@ export default function ProjectsPage() {
         performance: '+60%',
       },
       technologies: ['Next.js', 'Node.js', 'MongoDB', 'Redis'],
-      image: 'bg-gradient-to-br from-purple-500 to-pink-500',
+      image: 'bg-gradient-to-br from-teal-600 to-emerald-800',
     },
     {
       id: 'mobile-app',
@@ -72,7 +72,7 @@ export default function ProjectsPage() {
         transactions: '1M+',
       },
       technologies: ['Next.js', 'Node.js', 'PostgreSQL', 'Elasticsearch'],
-      image: 'bg-gradient-to-br from-cyan-500 to-blue-500',
+      image: 'bg-gradient-to-br from-emerald-500 to-teal-600',
     },
     {
       id: 'pos-system',
@@ -96,7 +96,7 @@ export default function ProjectsPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h1 className="text-6xl md:text-7xl font-bold text-foreground mb-6 text-balance">
-              Our <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">Case Studies</span>
+              Our <span className="bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-700 bg-clip-text text-transparent">Case Studies</span>
             </h1>
             <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
               Proven success stories of businesses transformed through our digital solutions
@@ -170,7 +170,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-700">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Let&apos;s Create Your Success Story

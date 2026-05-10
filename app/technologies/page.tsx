@@ -1,99 +1,75 @@
+import Image from 'next/image';
 import { Metadata } from 'next';
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
+
+import { getTechnologiesByCategory } from '@/data/technologies';
 
 export const metadata: Metadata = {
   title: 'Technologies - NarixSolutions',
-  description: 'The latest technologies and tools we use to build exceptional solutions.',
+  description: 'How we wield each capability — click through for security posture, delivery patterns, and PWA-ready execution notes.',
 };
 
 export default function TechnologiesPage() {
-  const technologies = [
-    {
-      category: 'Frontend',
-      items: [
-        { name: 'React.js', description: 'Modern UI library for building interactive applications', year: '2023' },
-        { name: 'Next.js', description: 'Full-stack React framework with server-side rendering', year: '2023' },
-        { name: 'TypeScript', description: 'Type-safe JavaScript for robust applications', year: '2023' },
-        { name: 'Tailwind CSS', description: 'Utility-first CSS framework for rapid development', year: '2023' },
-      ],
-    },
-    {
-      category: 'Backend',
-      items: [
-        { name: 'Node.js', description: 'JavaScript runtime for server-side development', year: '2023' },
-        { name: 'PostgreSQL', description: 'Reliable relational database for complex applications', year: '2023' },
-        { name: 'MongoDB', description: 'NoSQL database for flexible data modeling', year: '2023' },
-        { name: 'Redis', description: 'In-memory data store for caching and real-time features', year: '2023' },
-      ],
-    },
-    {
-      category: 'DevOps & Cloud',
-      items: [
-        { name: 'AWS', description: 'Comprehensive cloud infrastructure and services', year: '2023' },
-        { name: 'Docker', description: 'Containerization for consistent deployment', year: '2023' },
-        { name: 'CI/CD', description: 'Automated testing and deployment pipelines', year: '2023' },
-        { name: 'Kubernetes', description: 'Container orchestration for scalable applications', year: '2023' },
-      ],
-    },
-    {
-      category: 'Tools & Platforms',
-      items: [
-        { name: 'Git', description: 'Version control for collaborative development', year: '2023' },
-        { name: 'Stripe', description: 'Payment processing and billing platform', year: '2023' },
-        { name: 'Vercel', description: 'Deployment platform for Next.js applications', year: '2023' },
-        { name: 'Figma', description: 'Design and prototyping tool for UI/UX', year: '2023' },
-      ],
-    },
-  ];
+  const groups = getTechnologiesByCategory();
 
   return (
     <main className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-6xl md:text-7xl font-bold text-foreground mb-6 text-balance">
-            Our <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">Technology Stack</span>
-          </h1>
-          <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
-            We use the latest and most reliable technologies to build exceptional solutions
+      <section className="pt-32 pb-14 px-4 sm:px-6 lg:px-8 border-b border-border/60 bg-card/30">
+        <div className="max-w-6xl mx-auto text-center space-y-4">
+          <p className="text-sm font-semibold text-accent uppercase tracking-widest">Engineering stack</p>
+          <h1 className="text-4xl md:text-6xl font-bold text-foreground text-balance">Technologies</h1>
+          <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
+            Each tile links to an opinionated playbook — security posture, progressive web patterns, integrations, and what we guardrail in production.
           </p>
         </div>
       </section>
 
-      {/* Technologies Grid */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          {technologies.map((tech, idx) => (
-            <div key={idx} className="mb-20 last:mb-0">
-              <h2 className="text-4xl font-bold text-foreground mb-12">{tech.category}</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {tech.items.map((item) => (
-                  <div key={item.name} className="p-8 bg-card rounded-xl border border-border hover:border-blue-500/50 transition-all duration-300">
-                    <h3 className="text-2xl font-bold text-foreground mb-3">{item.name}</h3>
-                    <p className="text-foreground/70 mb-4">{item.description}</p>
-                    <span className="text-sm text-foreground/60">Actively used since {item.year}</span>
+      <section className="py-16 px-4 sm:px-6 lg:px-8 space-y-20">
+        {groups.map(({ category, items }) => (
+          <div key={category} className="max-w-7xl mx-auto">
+            <h2 className="text-3xl font-bold text-foreground mb-10">{category}</h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {items.map((item) => (
+                <Link key={item.slug} href={`/technologies/${item.slug}`} className="group block rounded-2xl border border-border bg-card overflow-hidden hover:border-accent/35 hover:shadow-md transition-all shadow-sm">
+                  <div className="relative h-28 sm:h-32 bg-muted border-b border-border">
+                    <Image
+                      src={item.heroImage}
+                      alt=""
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
                   </div>
-                ))}
-              </div>
+                  <div className="p-5 md:p-6 space-y-2">
+                    <div className="flex items-start justify-between gap-3">
+                      <div>
+                        <h3 className="text-xl font-bold text-foreground group-hover:text-accent transition-colors">{item.name}</h3>
+                        <p className="text-xs font-semibold text-foreground/45 mt-1 uppercase tracking-wide">Deep dive →</p>
+                      </div>
+                      <ArrowRight className="size-5 text-accent shrink-0 translate-y-1 group-hover:translate-x-0.5 transition-transform" />
+                    </div>
+                    <p className="text-sm text-foreground/70 line-clamp-3">{item.tagline}</p>
+                    <span className="inline-flex text-xs text-foreground/50">Since {item.year}</span>
+                  </div>
+                </Link>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </section>
 
-      {/* CTA */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-500 to-purple-500">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">
-            Want to Discuss Technology Options?
-          </h2>
-          <p className="text-lg text-white/90 mb-8">
-            Our experts can help you choose the right technology stack for your project.
-          </p>
-          <a
+      <section className="py-14 px-4 sm:px-6 lg:px-8 border-t border-border bg-card/40">
+        <div className="max-w-3xl mx-auto text-center space-y-5">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground">Need a layered stack recommendation?</h2>
+          <p className="text-foreground/70">We consolidate performance, resilience, compliance, and team skill fit into one pragmatic roadmap.</p>
+          <Link
             href="/contact"
-            className="inline-block bg-white text-foreground px-8 py-4 rounded-lg font-semibold hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+            className="inline-flex items-center gap-2 rounded-xl bg-accent text-accent-foreground px-8 py-3 font-semibold shadow-md hover:opacity-95 transition-opacity"
           >
-            Schedule a Consultation
-          </a>
+            Plan a discovery call
+            <ArrowRight size={18} />
+          </Link>
         </div>
       </section>
     </main>

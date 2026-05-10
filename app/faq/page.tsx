@@ -48,7 +48,7 @@ export default function FAQPage() {
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-6xl md:text-7xl font-bold text-foreground mb-6 text-balance">
-            Frequently Asked <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">Questions</span>
+            Frequently Asked <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Questions</span>
           </h1>
           <p className="text-xl text-foreground/70">
             Find answers to common questions about our services and process
@@ -95,7 +95,7 @@ export default function FAQPage() {
           </p>
           <a
             href="/contact"
-            className="inline-block bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+            className="inline-block bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
           >
             Contact Us
           </a>
