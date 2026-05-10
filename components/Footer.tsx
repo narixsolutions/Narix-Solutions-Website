@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Mail, Linkedin, Twitter, Github, ArrowRight, Phone, MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -46,7 +47,18 @@ const socialLinks = [
   { icon: Github, href: 'https://github.com/narixsolutions', label: 'GitHub' },
 ];
 
+function hideFooterTopCta(pathname: string | null) {
+  if (!pathname) return false;
+  if (pathname === '/technologies') return true;
+  if (pathname === '/services' || pathname.startsWith('/services/')) return true;
+  if (pathname === '/case-studies' || pathname.startsWith('/case-studies/')) return true;
+  return false;
+}
+
 export function Footer() {
+  const pathname = usePathname();
+  const showTopCta = !hideFooterTopCta(pathname);
+
   return (
     <footer className="bg-gradient-to-b from-background to-card/50 border-t border-border/40 relative overflow-hidden">
       {/* Decorative background */}
@@ -55,28 +67,30 @@ export function Footer() {
         <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
       </div>
 
-      {/* Top CTA Section - Premium */}
-      <div className="relative z-10 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 shadow-xl">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-4">
-              <h3 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-                Ready to Start Your Project?
-              </h3>
-              <p className="text-lg text-white/90 font-light leading-relaxed">
-                Get a free consultation and discover how we can transform your business through innovative digital solutions.
-              </p>
+      {/* Top CTA Section - Premium (hidden on services, case studies, technologies) */}
+      {showTopCta && (
+        <div className="relative z-10 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 shadow-xl">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <div className="space-y-4">
+                <h3 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+                  Ready to Start Your Project?
+                </h3>
+                <p className="text-lg text-white/90 font-light leading-relaxed">
+                  Get a free consultation and discover how we can transform your business through innovative digital solutions.
+                </p>
+              </div>
+              <Link
+                href="/contact"
+                className="group inline-flex items-center justify-center gap-3 bg-white text-blue-600 px-10 py-5 rounded-xl font-bold shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 text-lg"
+              >
+                <span>Get Started Today</span>
+                <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" />
+              </Link>
             </div>
-            <Link
-              href="/contact"
-              className="group inline-flex items-center justify-center gap-3 bg-white text-blue-600 px-10 py-5 rounded-xl font-bold shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 text-lg"
-            >
-              <span>Get Started Today</span>
-              <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" />
-            </Link>
           </div>
         </div>
-      </div>
+      )}
 
       {/* Main Footer Content - Premium */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
