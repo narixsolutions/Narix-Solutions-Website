@@ -109,7 +109,7 @@ export function Footer() {
             
             <div className="space-y-4">
               <p className="text-foreground/70 leading-relaxed font-light max-w-sm">
-                NarixSolutions helps businesses build modern digital experiences through custom development, scalable technology, and performance-focused solutions.
+                NarixSolutions designs and builds custom web applications, SaaS platforms, and eCommerce products for businesses that need reliable engineering — not template sites.
               </p>
             </div>
 
