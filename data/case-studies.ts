@@ -25,10 +25,10 @@ export type CaseStudy = {
 export const CASE_STUDIES: CaseStudy[] = [
   {
     slug: 'ecommerce-platform',
-    title: 'Premium E‑Commerce Platform for Fashion Retail',
-    category: 'E‑Commerce',
+    title: 'Fashion Store with Custom Shopping Experience',
+    category: 'E-Commerce',
     description:
-      'Global storefront with multi‑currency checkout, fulfilment integrations, and analytics built for conversion.',
+      'Custom fashion e-commerce storefront with streamlined checkout, product discovery, and conversion-focused UX.',
     heroImage:
       'https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&w=1600&q=80',
     gallery: [
@@ -37,13 +37,13 @@ export const CASE_STUDIES: CaseStudy[] = [
       'https://images.unsplash.com/photo-1607082349566-187342175e2f?auto=format&fit=crop&w=1200&q=80',
     ],
     highlights: {
-      Revenue: '+250%',
-      Traffic: '+180%',
-      Conversion: '+45%',
+      'Conversion Growth': '+180%',
+      Traffic: '+120%',
+      Revenue: '+95%',
     },
     technologies: ['React', 'Next.js', 'Node.js', 'PostgreSQL', 'Stripe', 'Redis', 'AWS'],
     overview:
-      'We delivered a flagship e‑commerce experience for a fashion retailer expanding internationally — modern PDPs, streamlined checkout, and operations tooling their merchandising team could run without developers.',
+      'We built a custom fashion e-commerce experience with modern product pages, optimized checkout, and admin tools the client team could manage without developer support.',
     challenge:
       'Legacy storefronts struggled with Core Web Vitals, mobile parity, multi‑currency taxation, and limited experimentation. Conversion data lived in spreadsheets instead of actionable dashboards.',
     solution:
@@ -59,10 +59,10 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
   {
     slug: 'saas-platform',
-    title: 'Enterprise SaaS for Distributed Project Teams',
-    category: 'SaaS',
+    title: 'Project Management Dashboard for Remote Teams',
+    category: 'SaaS Platform',
     description:
-      'Real‑time collaboration, granular permissions, and analytics for 50K+ active users.',
+      'Collaboration workspace with real-time updates, role-based access, and reporting for distributed teams.',
     heroImage:
       'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=80',
     gallery: [
@@ -71,13 +71,13 @@ export const CASE_STUDIES: CaseStudy[] = [
       'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80',
     ],
     highlights: {
-      Users: '50K+',
-      Uptime: '99.99%',
-      Performance: '+60%',
+      'Active Users': '50K+',
+      Uptime: '99.9%',
+      Performance: '+45%',
     },
     technologies: ['Next.js', 'Node.js', 'MongoDB', 'Redis', 'WebSockets', 'AWS', 'Docker'],
     overview:
-      'Mission‑critical project workspace with live boards, approvals, SSO, audit trails, and executive reporting baked in.',
+      'A project management dashboard built for remote teams with live boards, task workflows, permissions, and reporting tools leadership could rely on.',
     challenge:
       'Incumbents felt heavy on mobile, weak on realtime, and brittle for enterprises that require strict RBAC plus exportable histories.',
     solution:
@@ -93,10 +93,10 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
   {
     slug: 'mobile-app',
-    title: 'HIPAA‑Aligned Healthcare Mobile Experience',
+    title: 'Clinic Management & Appointment Platform',
     category: 'Healthcare',
     description:
-      'Encrypted telemedicine flows, schedules, secure messaging, and provider dashboards.',
+      'Appointment booking, patient scheduling, clinic workflows, and provider tools in one secure platform.',
     heroImage:
       'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1600&q=80',
     gallery: [
@@ -105,13 +105,13 @@ export const CASE_STUDIES: CaseStudy[] = [
       'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80',
     ],
     highlights: {
-      Adoption: '15K clinics',
+      'Monthly Bookings': '15K+',
       Rating: '4.8★',
-      Retention: '85%',
+      Retention: '82%',
     },
     technologies: ['React Native', 'Node.js', 'PostgreSQL', 'AWS KMS', 'WebRTC'],
     overview:
-      'Patient‑first mobile shell with clinician tools, PHI boundaries, tamper‑evident logs, and phased rollouts.',
+      'A clinic management and appointment platform helping healthcare teams manage schedules, bookings, and patient communication in one place.',
     challenge:
       'Strict compliance timelines, flaky rural connectivity, and complex device management across BYOD fleets.',
     solution:

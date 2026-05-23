@@ -27,10 +27,10 @@ export function ExpertWhatsAppSection() {
             <div>
               <p className="text-sm font-semibold text-accent uppercase tracking-widest mb-2">Talk to us</p>
               <h2 className="text-2xl md:text-3xl font-bold text-foreground text-balance leading-tight">
-                Prefer WhatsApp? Message our team directly.
+                Need a faster conversation?
               </h2>
               <p className="text-foreground/70 mt-3 leading-relaxed">
-                Skip the form — share context, links, or files in chat. We route you to the right delivery lead and reply as soon as we&apos;re online.
+                Share your project idea, references, or business requirements directly on WhatsApp. Our team responds quickly with technical guidance, timelines, and development recommendations.
               </p>
             </div>
 
@@ -42,7 +42,7 @@ export function ExpertWhatsAppSection() {
                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#25D366] text-white px-6 py-3.5 font-semibold shadow-md hover:brightness-110 transition-all"
               >
                 <MessageCircle className="size-5" aria-hidden />
-                Chat on WhatsApp
+                Chat With Our Team
               </Link>
             </div>
           </div>

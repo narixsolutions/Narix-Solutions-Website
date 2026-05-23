@@ -2,19 +2,19 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Mail, Linkedin, Twitter, Github, ArrowRight, Phone, MapPin } from 'lucide-react';
+import { Mail, Linkedin, Twitter, Github, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const footerSections = [
   {
     title: 'Services',
     links: [
-      { label: 'Web Development', href: '/services/web-development' },
-      { label: 'React.js Development', href: '/services/react-development' },
-      { label: 'Node.js Development', href: '/services/node-development' },
-      { label: 'CMS Development', href: '/services/cms-development' },
+      { label: 'Website Development', href: '/services/web-development' },
       { label: 'E-Commerce Solutions', href: '/services/ecommerce' },
-      { label: 'All Services', href: '/services' },
+      { label: 'CMS Development', href: '/services/cms-development' },
+      { label: 'SEO Services', href: '/services/seo-marketing' },
+      { label: 'Mobile Applications', href: '/services' },
+      { label: 'Digital Marketing', href: '/services/seo-marketing' },
     ],
   },
   {
@@ -106,7 +106,7 @@ export function Footer() {
             
             <div className="space-y-4">
               <p className="text-foreground/70 leading-relaxed font-light max-w-sm">
-                Premium digital transformation solutions for global enterprises. We deliver innovative technology and strategic design that drives real business impact.
+                NarixSolutions helps businesses build modern digital experiences through custom development, scalable technology, and performance-focused solutions.
               </p>
             </div>
 
@@ -121,18 +121,6 @@ export function Footer() {
                   <a href="mailto:contact@narixsolutions.com" className="text-foreground/70 hover:text-accent transition-colors font-light">
                     contact@narixsolutions.com
                   </a>
-                </div>
-                <div className="flex items-center gap-4 group">
-                  <div className="p-3 bg-accent/15 rounded-lg group-hover:bg-accent/25 transition-colors">
-                    <Phone size={20} className="text-accent" />
-                  </div>
-                  <span className="text-foreground/70 font-light">+1 (555) 123-4567</span>
-                </div>
-                <div className="flex items-start gap-4 group">
-                  <div className="p-3 bg-accent/15 rounded-lg group-hover:bg-accent/25 transition-colors mt-1">
-                    <MapPin size={20} className="text-accent" />
-                  </div>
-                  <span className="text-foreground/70 font-light">San Francisco, CA, USA</span>
                 </div>
               </div>
             </div>
@@ -196,7 +184,7 @@ export function Footer() {
             className="text-center pt-6 border-t border-border/50"
           >
             <p className="text-foreground/60 text-sm font-light">
-              © 2025 NarixSolutions. All rights reserved. | Designed & Developed with care in San Francisco
+              © 2025 NarixSolutions. All rights reserved.
             </p>
           </motion.div>
         </div>
