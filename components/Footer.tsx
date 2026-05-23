@@ -9,11 +9,11 @@ const footerSections = [
   {
     title: 'Services',
     links: [
-      { label: 'Website Development', href: '/services/web-development' },
+      { label: 'Business Websites', href: '/services/web-development' },
       { label: 'E-Commerce Solutions', href: '/services/ecommerce' },
       { label: 'CMS Development', href: '/services/cms-development' },
+      { label: 'Mobile Applications', href: '/contact' },
       { label: 'SEO Services', href: '/services/seo-marketing' },
-      { label: 'Mobile Applications', href: '/services' },
       { label: 'Digital Marketing', href: '/services/seo-marketing' },
     ],
   },
