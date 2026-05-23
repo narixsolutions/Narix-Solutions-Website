@@ -1,13 +1,14 @@
-import Image from 'next/image';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
+import { TechnologyImage } from '@/components/technology-image';
 import { getTechnologiesByCategory } from '@/data/technologies';
 
 export const metadata: Metadata = {
   title: 'Technologies - NarixSolutions',
-  description: 'How we wield each capability — click through for security posture, delivery patterns, and PWA-ready execution notes.',
+  description:
+    'Production-grade engineering stack across frontend, backend, cloud, and platform tooling — with implementation playbooks for scalable product delivery.',
 };
 
 export default function TechnologiesPage() {
@@ -20,7 +21,7 @@ export default function TechnologiesPage() {
           <p className="text-sm font-semibold text-accent uppercase tracking-widest">Engineering stack</p>
           <h1 className="text-4xl md:text-6xl font-bold text-foreground text-balance">Technologies</h1>
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-            Each tile links to an opinionated playbook — security posture, progressive web patterns, integrations, and what we guardrail in production.
+            Production-ready ecosystems engineered for scalability, security, and long-term maintainability. Select a capability to review our delivery focus, architecture standards, and enterprise implementation approach.
           </p>
         </div>
       </section>
@@ -32,12 +33,12 @@ export default function TechnologiesPage() {
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {items.map((item) => (
                 <Link key={item.slug} href={`/technologies/${item.slug}`} className="group block rounded-2xl border border-border bg-card overflow-hidden hover:border-accent/35 hover:shadow-md transition-all shadow-sm">
-                  <div className="relative h-28 sm:h-32 bg-muted border-b border-border">
-                    <Image
+                  <div className="relative h-28 sm:h-32 shrink-0 overflow-hidden border-b border-border bg-gradient-to-br from-muted via-muted/70 to-muted/40">
+                    <TechnologyImage
                       src={item.heroImage}
-                      alt=""
-                      fill
-                      className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                      alt={`${item.name} technology`}
+                      fit="cover"
+                      className="transition-transform duration-300 group-hover:scale-[1.03]"
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
                   </div>
@@ -61,13 +62,15 @@ export default function TechnologiesPage() {
 
       <section className="py-14 px-4 sm:px-6 lg:px-8 border-t border-border bg-card/40">
         <div className="max-w-3xl mx-auto text-center space-y-5">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground">Need a layered stack recommendation?</h2>
-          <p className="text-foreground/70">We consolidate performance, resilience, compliance, and team skill fit into one pragmatic roadmap.</p>
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground">Need a stack aligned to your product roadmap?</h2>
+          <p className="text-foreground/70">
+            We assess scale requirements, compliance constraints, integration needs, and delivery timelines — then recommend a pragmatic architecture your team can execute with confidence.
+          </p>
           <Link
             href="/contact"
             className="inline-flex items-center gap-2 rounded-xl bg-accent text-accent-foreground px-8 py-3 font-semibold shadow-md hover:opacity-95 transition-opacity"
           >
-            Plan a discovery call
+            Schedule a stack consultation
             <ArrowRight size={18} />
           </Link>
         </div>
