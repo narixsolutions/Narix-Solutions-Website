@@ -57,8 +57,7 @@ export default function ServicesPage() {
       gradient: 'from-teal-500 to-emerald-700',
     },
     {
-      id: 'mobile-apps',
-      href: '/contact',
+      id: 'mobile-app-development',
       icon: Smartphone,
       title: 'Mobile App Development',
       description:
@@ -76,17 +75,16 @@ export default function ServicesPage() {
       gradient: 'from-emerald-500 to-lime-600',
     },
     {
-      id: 'automation',
+      id: 'custom-web-applications',
       icon: Cog,
       title: 'Custom Web Applications',
       description:
         'Tailored web applications built to automate workflows, improve efficiency, and support business operations.',
-      benefits: ['Dashboard Systems', 'Business Automation', 'Scalable Backend'],
+      benefits: ['Dashboard Systems', 'Workflow Automation', 'Scalable Architecture'],
       gradient: 'from-teal-600 to-emerald-900',
     },
     {
-      id: 'maintenance',
-      href: '/contact',
+      id: 'website-maintenance',
       icon: Wrench,
       title: 'Website Maintenance & Support',
       description:

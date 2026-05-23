@@ -159,7 +159,7 @@ export default function Home() {
                 Icon: Smartphone,
                 title: 'Mobile App Development',
                 description: 'Cross-platform mobile applications designed for smooth user experiences and scalable growth.',
-                href: '/services',
+                href: '/services/mobile-app-development',
               },
               {
                 Icon: Megaphone,
