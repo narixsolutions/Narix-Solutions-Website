@@ -41,6 +41,20 @@ export function Header() {
     }
   }, [isDark]);
 
+  const scrollToContactForm = () => {
+    document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  const handleGetConsultationClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+  ) => {
+    if (pathname === '/contact') {
+      e.preventDefault();
+      scrollToContactForm();
+      if (mobileMenuOpen) toggleMobileMenu();
+    }
+  };
+
   const navItems = [
     { label: 'Home', href: '/' },
     { label: 'Services', href: '/services' },
@@ -103,7 +117,8 @@ export function Header() {
             </button>
           )}
           <Link
-            href="/contact"
+            href="/contact#contact-form"
+            onClick={handleGetConsultationClick}
             className="bg-gradient-to-r from-accent to-emerald-800 text-accent-foreground px-6 py-2.5 rounded-lg text-sm font-semibold hover:shadow-lg hover:shadow-accent/40 transition-all duration-300 hover:-translate-y-0.5"
           >
             Get Consultation
@@ -154,9 +169,12 @@ export function Header() {
               </button>
             )}
             <Link
-              href="/contact"
+              href="/contact#contact-form"
               className="block bg-gradient-to-r from-accent to-emerald-800 text-accent-foreground px-4 py-2.5 rounded-lg text-center font-semibold hover:shadow-lg hover:shadow-accent/40 transition-all duration-300 mt-4"
-              onClick={() => toggleMobileMenu()}
+              onClick={(e) => {
+                handleGetConsultationClick(e);
+                if (pathname !== '/contact') toggleMobileMenu();
+              }}
             >
               Get Consultation
             </Link>

@@ -55,6 +55,7 @@ function hideFooterTopCta(pathname: string | null) {
   if (pathname.startsWith('/technologies')) return true;
   if (pathname === '/services' || pathname.startsWith('/services/')) return true;
   if (pathname === '/case-studies' || pathname.startsWith('/case-studies/')) return true;
+  if (pathname === '/contact') return true;
   return false;
 }
 
@@ -70,7 +71,7 @@ export function Footer() {
         <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl"></div>
       </div>
 
-      {/* Top CTA — hidden on home, technologies (incl. detail), services, case studies */}
+      {/* Top CTA — hidden on home, contact, technologies (incl. detail), services, case studies */}
       {showTopCta && (
         <div className="relative z-10 border-b border-border/50 bg-card/70 backdrop-blur-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
