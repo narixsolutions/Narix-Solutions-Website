@@ -15,19 +15,19 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: '/icon-light-32x32.png',
+        url: '/images/narix-logo-trim.png',
         media: '(prefers-color-scheme: light)',
       },
       {
-        url: '/icon-dark-32x32.png',
+        url: '/images/narix-logo-trim.png',
         media: '(prefers-color-scheme: dark)',
       },
       {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
+        url: '/images/narix-logo-trim.png',
+        type: 'image/png',
       },
     ],
-    apple: '/apple-icon.png',
+    apple: '/images/narix-logo-trim.png',
   },
   openGraph: {
     title: 'NarixSolutions - Premium Digital Agency',

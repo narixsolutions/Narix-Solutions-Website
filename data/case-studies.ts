@@ -8,9 +8,22 @@ export type CaseStudy = {
   category: string;
   /** Card + meta description */
   description: string;
+  heroSubtitle?: string;
+  heroDescription?: string;
+  tags?: string[];
+  clientWebsite?: string;
+  location?: string;
+  projectType?: string;
   heroImage: string;
   /** Shown inline on detail page — swap with product screenshots later */
   gallery: string[];
+  sections?: {
+    title: string;
+    description: string;
+    features: string[];
+    techStack?: string[];
+    images: string[];
+  }[];
   technologies: string[];
   /** Highlights for listing cards */
   highlights: Record<string, string>;
@@ -20,212 +33,252 @@ export type CaseStudy = {
   metrics: { label: string; value: string }[];
   timeline: string;
   team: string;
+  cta?: {
+    heading: string;
+    description: string;
+    buttonText: string;
+  };
 };
 
 export const CASE_STUDIES: CaseStudy[] = [
   {
-    slug: 'ecommerce-platform',
-    title: 'Fashion Store with Custom Shopping Experience',
-    category: 'E-Commerce',
-    description:
-      'Custom fashion e-commerce storefront with streamlined checkout, product discovery, and conversion-focused UX.',
-    heroImage:
-      'https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&w=1600&q=80',
-    gallery: [
-      'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1607082349566-187342175e2f?auto=format&fit=crop&w=1200&q=80',
-    ],
-    highlights: {
-      'Conversion Growth': '+180%',
-      Traffic: '+120%',
-      Revenue: '+95%',
-    },
-    technologies: ['React', 'Next.js', 'Node.js', 'PostgreSQL', 'Stripe', 'Redis', 'AWS'],
-    overview:
-      'We built a custom fashion e-commerce experience with modern product pages, optimized checkout, and admin tools the client team could manage without developer support.',
-    challenge:
-      'Legacy storefronts struggled with Core Web Vitals, mobile parity, multi‑currency taxation, and limited experimentation. Conversion data lived in spreadsheets instead of actionable dashboards.',
-    solution:
-      'A Next.js storefront with edge‑cached catalog pages, Stripe Connect–ready payments, inventory sync, and personalization hooks. Postgres models orders and promotions; Redis powers sessions and rate limits; observability ties revenue to releases.',
-    metrics: [
-      { label: 'Revenue growth', value: '+250%' },
-      { label: 'Traffic increase', value: '+180%' },
-      { label: 'Conversion rate', value: '+45%' },
-      { label: 'LCP improvement', value: '−60%' },
-    ],
-    timeline: '6 months',
-    team: '8 engineers (full‑stack, design, QA)',
-  },
-  {
-    slug: 'saas-platform',
-    title: 'Project Management Dashboard for Remote Teams',
-    category: 'SaaS Platform',
-    description:
-      'Collaboration workspace with real-time updates, role-based access, and reporting for distributed teams.',
-    heroImage:
-      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=80',
-    gallery: [
-      'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80',
-    ],
-    highlights: {
-      'Active Users': '50K+',
-      Uptime: '99.9%',
-      Performance: '+45%',
-    },
-    technologies: ['Next.js', 'Node.js', 'MongoDB', 'Redis', 'WebSockets', 'AWS', 'Docker'],
-    overview:
-      'A project management dashboard built for remote teams with live boards, task workflows, permissions, and reporting tools leadership could rely on.',
-    challenge:
-      'Incumbents felt heavy on mobile, weak on realtime, and brittle for enterprises that require strict RBAC plus exportable histories.',
-    solution:
-      'Event‑sourced activity feeds on Redis streams, websocket fan‑out clusters, SOC2‑friendly tenancy boundaries, optimistic UI slices, and a public Graph for integrations.',
-    metrics: [
-      { label: 'Active users', value: '50K+' },
-      { label: 'Uptime SLA', value: '99.99%' },
-      { label: 'Perf lift', value: '+60%' },
-      { label: 'Satisfaction', value: '4.7★' },
-    ],
-    timeline: '9 months',
-    team: '12 engineers + design systems pod',
-  },
-  {
-    slug: 'mobile-app',
-    title: 'Clinic Management & Appointment Platform',
-    category: 'Healthcare',
-    description:
-      'Appointment booking, patient scheduling, clinic workflows, and provider tools in one secure platform.',
-    heroImage:
-      'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1600&q=80',
-    gallery: [
-      'https://images.unsplash.com/photo-1516549655169-ce43d010a5c9?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80',
-    ],
-    highlights: {
-      'Monthly Bookings': '15K+',
-      Rating: '4.8★',
-      Retention: '82%',
-    },
-    technologies: ['React Native', 'Node.js', 'PostgreSQL', 'AWS KMS', 'WebRTC'],
-    overview:
-      'A clinic management and appointment platform helping healthcare teams manage schedules, bookings, and patient communication in one place.',
-    challenge:
-      'Strict compliance timelines, flaky rural connectivity, and complex device management across BYOD fleets.',
-    solution:
-      'Offline‑first caches, certificate pinning, end‑to‑end encrypted channels, break‑glass escalation paths, and automated policy checks baked into CI.',
-    metrics: [
-      { label: 'Active adoption', value: '15K+' },
-      { label: 'App rating', value: '4.8★' },
-      { label: '90‑day retention', value: '85%' },
-      { label: 'Audit findings', value: '0 critical' },
-    ],
-    timeline: '8 months',
-    team: '10 mobile + backend engineers',
-  },
-  {
-    slug: 'dashboard-analytics',
-    title: 'Real‑Time Operational Analytics Cockpit',
-    category: 'Analytics',
-    description:
-      'Sub‑second slicing across billions of streamed events with guard‑railed self‑serve dashboards.',
-    heroImage:
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80',
-    gallery: [
-      'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1483478550801-ceba5fe50e8e?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1556155092-490a955ba734?auto=format&fit=crop&w=1200&q=80',
-    ],
-    highlights: {
-      Events: '100M+/day',
-      Latency: '<100ms',
-      Accuracy: '99.9%',
-    },
-    technologies: ['React', 'D3.js', 'Node.js', 'ClickHouse', 'Kafka', 'Redis', 'AWS'],
-    overview:
-      'Leadership‑grade KPIs stitched from storefront, logistics, CRM, and support signals with granular access layers.',
-    challenge:
-      'Burst traffic, heterogeneous schemas, noisy third‑party payloads, and the need for near‑linear cost scaling.',
-    solution:
-      'Stream ingestion with schema contracts, columnar storage + materialized rollups, query planner hints, and progressive disclosure UI that keeps novices safe.',
-    metrics: [
-      { label: 'Events / day', value: '100M+' },
-      { label: 'p95 query', value: '<100ms' },
-      { label: 'Model accuracy', value: '99.9%' },
-      { label: 'Platform uptime', value: '99.98%' },
-    ],
-    timeline: '7 months',
-    team: '9 data + product engineers',
-  },
-  {
-    slug: 'marketplace',
-    title: 'Multi‑Vendor Marketplace Operating System',
-    category: 'Marketplace',
-    description:
-      'Seller onboarding, payouts, moderation, discovery, and risk scoring for regulated categories.',
-    heroImage:
-      'https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1600&q=80',
-    gallery: [
-      'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1559136555-9303baea7485?auto=format&fit=crop&w=1200&q=80',
-    ],
-    highlights: {
-      GMV: '$10M+',
-      Sellers: '5K+',
-      Checkout: '<2s median',
-    },
-    technologies: ['Next.js', 'Node.js', 'PostgreSQL', 'Elasticsearch', 'Stripe Connect', 'AWS'],
-    overview:
-      'Unified buyer + seller console with escrow flows, SLA monitors, taxonomy governance, and mobile‑first checkout.',
-    challenge:
-      'Disputes, fraud rings, multilingual catalog quality, and the need for rapid vertical experiments.',
-    solution:
-      'Modular bounded contexts behind GraphQL gateways, deterministic risk scoring tiers, multilingual search synonyms, and feature flags powering vertical pilots.',
-    metrics: [
-      { label: 'GMV', value: '$10M+' },
-      { label: 'Active sellers', value: '5K+' },
-      { label: 'Monthly txns', value: '1M+' },
-      { label: 'Chargeback ratio', value: '−42%' },
-    ],
-    timeline: '10 months',
-    team: '15 engineers across platform squads',
-  },
-  {
     slug: 'pos-system',
-    title: 'Resilient POS Network for Omnichannel Retail',
-    category: 'Retail',
+    title: 'Coral Coast Admin POS & Operations Dashboard',
+    category: 'Operations Dashboard',
     description:
-      'Offline‑first terminals, realtime stock sync across 200+ doors, and supply telemetry.',
-    heroImage:
-      'https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=1600&q=80',
-    gallery: [
-      'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80',
+      'Custom billing, restaurant operations, and management dashboard built for a real food business in Western Australia.',
+    heroSubtitle: 'Coral Coast Kebabs & Fish Chips',
+    heroDescription:
+      'Designed and developed a dedicated admin platform for Coral Coast Kebabs & Fish Chips to manage billing, orders, menu updates, inventory, categories, and restaurant settings from one place. The system was built for practical day-to-day use inside a busy restaurant environment.',
+    tags: [
+      'Admin Dashboard',
+      'POS Billing',
+      'Order Management',
+      'Inventory System',
+      'Menu Management',
+      'Restaurant Settings',
+    ],
+    // clientWebsite: 'https://coralcoastkebabs.com/',
+    location: 'Carnarvon, Western Australia',
+    projectType: 'Restaurant Admin Management System + POS Billing',
+    heroImage: '/images/case-studies/coral-coast/admin/coral-coast-admin.png',
+    gallery: [],
+    sections: [
+      {
+        title: 'Restaurant Operations Dashboard',
+        description:
+          'Created a centralized admin panel that allows restaurant staff to manage operations from a single system. The dashboard provides quick access to billing, orders, inventory, categories, and restaurant settings.',
+        features: [
+          'Operational dashboard',
+          'Revenue overview',
+          'Order tracking',
+          'Billing system',
+          'Performance insights',
+          'Staff-friendly interface',
+        ],
+        techStack: ['React', 'Next.js', 'TypeScript', 'Node.js'],
+        images: ['/images/case-studies/coral-coast/admin/dashboard-overview.png'],
+      },
+      {
+        title: 'POS & Billing Workflow',
+        description:
+          'Implemented a billing interface optimized for fast in-store order processing. Staff can quickly select menu items, generate bills, manage payment methods, and streamline customer checkout.',
+        features: [
+          'Quick item selection',
+          'Dynamic billing',
+          'Cash & card support',
+          'Order summary panel',
+          'Category filtering',
+          'Fast workflow optimization',
+        ],
+        images: ['/images/case-studies/coral-coast/admin/billing-workflow.png'],
+      },
+      {
+        title: 'Menu & Product Management',
+        description:
+          'Built a flexible menu management system where restaurant staff can add, edit, organize, and manage menu items across categories.',
+        features: [
+          'Category-based menu structure',
+          'Item availability management',
+          'Real-time updates',
+          'Easy editing workflow',
+          'Restaurant-focused admin UX',
+        ],
+        images: ['/images/case-studies/coral-coast/admin/menu-management.png'],
+      },
+      {
+        title: 'Order Tracking System',
+        description:
+          'Developed an organized order management interface that helps staff monitor customer orders, payment methods, totals, and transaction history efficiently.',
+        features: [
+          'Order history',
+          'Payment tracking',
+          'PDF export support',
+          'Order details view',
+          'Transaction management',
+        ],
+        images: ['/images/case-studies/coral-coast/admin/orders-management.png'],
+      },
+      {
+        title: 'Inventory & Category Control',
+        description:
+          'Implemented inventory visibility and category management tools to simplify stock monitoring and menu organization for daily restaurant operations.',
+        features: [
+          'Inventory overview',
+          'Stock visibility',
+          'Category management',
+          'Operational tracking',
+          'Simple administrative controls',
+        ],
+        images: ['/images/case-studies/coral-coast/admin/inventory-categories.png'],
+      },
+      {
+        title: 'Restaurant Configuration Panel',
+        description:
+          'Created a simple settings module allowing administrators to manage restaurant information, operational preferences, and system configuration.',
+        features: ['Restaurant profile settings', 'Operational preferences', 'System configuration'],
+        images: ['/images/case-studies/coral-coast/admin/settings-panel.png'],
+      },
     ],
     highlights: {
-      Stores: '200+',
-      Txns: '5M+/mo',
-      Efficiency: '+75%',
+      Location: 'Carnarvon, WA',
+      Platform: 'Admin + POS',
+      Workflow: 'Staff-focused',
     },
-    technologies: ['React', 'Electron', 'Node.js', 'PostgreSQL', 'SQLite', 'gRPC'],
+    technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Neon DB', 'Vercel'],
     overview:
-      'Registers stay usable during WAN brownouts, sync intelligently, and feed a central merchandising brain.',
+      'This case study focuses on the internal operational system built for Coral Coast Kebabs & Fish Chips. The dashboard was designed for staff and admins to handle billing, tracking orders, maintaining menu items, and managing everyday back-office workflows.',
     challenge:
-      'Legacy registers, inconsistent barcodes, peak holiday loads, and staff training variance.',
+      'The restaurant needed a system that was fast enough for in-store use and simple enough for staff and admins to work with during peak hours. Billing, item management, order records, and stock visibility all needed to sit inside one reliable interface.',
     solution:
-      'Offline queues with conflict resolution, edge ML for shrink hints, hardware abstraction layer, and fleet observability with playbooks.',
+      'We built a dedicated admin dashboard with modules for billing, menu management, order tracking, inventory oversight, category control, and settings. The interface keeps core actions close at hand so staff and admins can move through routine restaurant tasks without friction.',
     metrics: [
-      { label: 'Stores live', value: '200+' },
-      { label: 'Monthly txns', value: '5M+' },
-      { label: 'Labor efficiency', value: '+75%' },
-      { label: 'Register uptime', value: '99.9%' },
+      { label: 'Billing workflow', value: 'Faster' },
+      { label: 'Menu updates', value: 'Simplified' },
+      { label: 'Order visibility', value: 'Centralized' },
+      { label: 'Operations', value: 'Staff-friendly' },
+      { label: 'Inventory', value: 'Real-time visibility' },
+      { label: 'Admin control', value: 'Single dashboard' },
     ],
-    timeline: '6 months',
-    team: '8 engineers + field ops',
+    timeline: 'Phased delivery',
+    team: 'NarixSolutions web and dashboard team',
+    cta: {
+      heading: 'Need a Custom Management System for Your Business?',
+      description:
+        'We build scalable web platforms, admin dashboards, and operational systems tailored for real businesses.',
+      buttonText: 'Start Your Project',
+    },
+  },
+  {
+    slug: 'coral-coast-ordering-website',
+    title: 'Coral Coast Customer Ordering Website',
+    category: 'Ordering Website',
+    description:
+      'Customer-facing restaurant website designed to help Coral Coast Kebabs & Fish Chips present its menu clearly and drive takeaway orders in Carnarvon.',
+    heroSubtitle: 'Coral Coast Kebabs & Fish Chips',
+    heroDescription:
+      'This case study focuses on the public website built for Coral Coast Kebabs & Fish Chips. The site gives customers a clear first impression of the business, highlights key menu categories, showcases popular items and reviews, and moves users toward takeaway ordering through prominent call and WhatsApp actions.',
+    tags: [
+      'Restaurant Website',
+      'WhatsApp Ordering',
+      'Menu Browsing',
+      'Responsive Design',
+      'Testimonials',
+      'Local Business Website',
+    ],
+    location: 'Carnarvon, Western Australia',
+    clientWebsite: 'https://coralcoastkebabs.com/',
+    projectType: 'Customer Ordering Website',
+    heroImage: '/images/case-studies/coral-coast/customer/hero.png',
+    gallery: [
+      '/images/case-studies/coral-coast/customer/hero.png',
+      '/images/case-studies/coral-coast/customer/home.png',
+      '/images/case-studies/coral-coast/customer/menu.png',
+    ],
+    sections: [
+      {
+        title: 'Homepage Ordering Experience',
+        description:
+          'The homepage was designed to immediately communicate what the restaurant offers and guide visitors toward action. It combines the business identity, Carnarvon location, menu access, and takeaway ordering buttons in a straightforward landing experience that works well across screen sizes.',
+        features: [
+          'Responsive design',
+          'Primary menu CTA',
+          'Takeaway order CTA',
+          'Business location visibility',
+          'Quick-highlight stats',
+          'Floating call action',
+          'Mobile-friendly hero layout',
+        ],
+        techStack: ['Next.js', 'TypeScript', 'Tailwind CSS'],
+        images: ['/images/case-studies/coral-coast/customer/home.png'],
+      },
+      {
+        title: 'Menu Browsing & Featured Items',
+        description:
+          'The website presents menu categories clearly and uses featured sections like popular items to help customers understand the offering quickly. From kebab rolls and fish and chips to burgers, gozleme, desserts, and shakes, the structure keeps menu discovery simple and visually approachable.',
+        features: [
+          'Category-driven browsing',
+          'Popular menu item highlights',
+          'Featured item visibility',
+          'Pricing cues from the menu',
+          'Fast decision-making flow',
+          'Visual menu hierarchy',
+        ],
+        images: ['/images/case-studies/coral-coast/customer/menu.png'],
+      },
+      {
+        title: 'About, Reviews & Business Trust Signals',
+        description:
+          'Beyond ordering, the website includes practical trust-building sections that make the business feel established and local. The About page, customer review section, address details, and repeat ordering prompts all help reinforce confidence before customers place an order or visit the shop.',
+        features: [
+          'Customer testimonials',
+          'About page content',
+          'Location and contact visibility',
+          'Repeat ordering prompts',
+          'Business credibility content',
+        ],
+        images: ['/images/case-studies/coral-coast/customer/about-review.png'],
+      },
+      {
+        title: 'WhatsApp-Led Ordering Flow',
+        description:
+          'The menu page is built around a lightweight ordering flow that encourages customers to browse items and then place their order through WhatsApp or direct call actions. This keeps the process simple for the business while still giving customers a fast digital path to order.',
+        features: [
+          'WhatsApp order button',
+          'Call-now fallback action',
+          'Menu page CTA structure',
+          'Gallery-supported menu browsing',
+          'Low-friction takeaway flow',
+        ],
+        images: ['/images/case-studies/coral-coast/customer/whatsapp.png'],
+      },
+    ],
+    highlights: {
+      Location: 'Carnarvon, WA',
+      Ordering: 'WhatsApp + Call',
+      Experience: 'Mobile-first',
+    },
+    technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
+    overview:
+      'This project was built as the public-facing website for Coral Coast Kebabs & Fish Chips in Carnarvon. The focus was on creating a clear and approachable customer experience where visitors can quickly understand the menu, see what makes the restaurant popular locally, and move toward a takeaway order without friction.',
+    challenge:
+      'The website needed to feel modern and trustworthy while still staying easy to use for a broad local audience. It had to present menu categories clearly, support fast mobile browsing, show enough business context to build confidence, and push customers toward simple order actions instead of a complicated checkout process.',
+    solution:
+      'We designed and developed a menu-first restaurant website with a strong homepage, clear category navigation, highlighted popular dishes, review sections, About content, and repeated CTA placement for WhatsApp and phone orders. The result is a customer journey that feels lightweight, direct, and practical for a real takeaway business.',
+    metrics: [
+      { label: 'Menu sections', value: '7+' },
+      { label: 'Ordering options', value: 'WhatsApp + Call' },
+      { label: 'Website UX', value: 'Responsive' },
+      { label: 'Customer journey', value: 'CTA-led' },
+    ],
+    timeline: 'Phased delivery',
+    team: 'NarixSolutions web and dashboard team',
+    cta: {
+      heading: 'Need a Customer-Facing Ordering Website for Your Business?',
+      description:
+        'We design and build modern websites that help real businesses present their menu, services, and brand clearly while guiding customers toward enquiries or orders.',
+      buttonText: 'Start Your Project',
+    },
   },
 ];
 

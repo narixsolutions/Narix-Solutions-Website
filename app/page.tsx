@@ -16,8 +16,7 @@ import {
 import { CASE_STUDIES } from '@/data/case-studies';
 import { ExpertWhatsAppSection } from '@/components/sections/ExpertWhatsApp';
 
-const HERO_IMG =
-  'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80';
+const HERO_IMG = '/images/hero.png';
 
 const techTiles = [
   'Next.js',

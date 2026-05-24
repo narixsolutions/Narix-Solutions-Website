@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Mail, Phone, MessageCircle, MapPin, ArrowRight } from 'lucide-react';
@@ -75,11 +76,15 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 mb-12">
           {/* Brand & Contact Info */}
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:col-span-5 space-y-7">
-            <Link href="/" className="inline-flex items-center gap-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-accent to-emerald-800 rounded-xl flex items-center justify-center shadow-lg shadow-accent/20">
-                <span className="text-white font-bold text-2xl">N</span>
-              </div>
-              <span className="font-bold text-2xl tracking-tight text-foreground">NarixSolutions</span>
+            <Link href="/" className="inline-flex items-center gap-2.5">
+              <Image
+                src="/images/narix-logo-trim.png"
+                alt="NarixSolutions logo"
+                width={523}
+                height={403}
+                className="h-12 w-auto object-contain"
+              />
+              <span className="font-bold text-2xl leading-none tracking-tight text-foreground">NarixSolutions</span>
             </Link>
 
             <p className="text-foreground/70 leading-relaxed font-light max-w-md">
