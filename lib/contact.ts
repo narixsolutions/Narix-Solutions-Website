@@ -1,4 +1,4 @@
-export const CONTACT_EMAIL = 'filmmail62@gmail.com';
+export const CONTACT_EMAIL = 'anishrawat53@gmail.com';
 export const CONTACT_PHONE_DISPLAY = '+91 9893471888';
 export const CONTACT_PHONE_TEL = '+919893471888';
 export const CONTACT_LOCATION = 'Indore, Madhya Pradesh, India';

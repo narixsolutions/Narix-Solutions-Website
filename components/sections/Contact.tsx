@@ -19,8 +19,8 @@ const contactInfo = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'hello@narixsolutions.com',
-    link: 'mailto:hello@narixsolutions.com',
+    value: 'anishrawat53@gmail.com',
+    link: 'mailto:anishrawat53@gmail.com',
   },
   {
     icon: Phone,

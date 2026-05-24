@@ -42,7 +42,7 @@ function getFromAddress(): string {
   return (
     process.env.SMTP_FROM?.trim() ||
     process.env.SMTP_USER?.trim() ||
-    'NarixSolutions <noreply@narixsolutions.com>'
+    'NarixSolutions <anishrawat53@gmail.com>'
   );
 }
 
