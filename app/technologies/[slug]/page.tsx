@@ -1,8 +1,8 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { Metadata } from 'next';
 import { ArrowLeft, ArrowRight, Cpu, Globe, Lock } from 'lucide-react';
 
+import { TechnologyDetailImage } from '@/components/technology-detail-image';
 import { getTechnology, getTechnologySlugs } from '@/data/technologies';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -63,21 +63,23 @@ export default async function TechnologyDetailPage({ params }: { params: Promise
           <p className="text-lg md:text-xl text-foreground/70 max-w-3xl">{tech.tagline}</p>
 
           <div className="mt-10 grid gap-6 lg:grid-cols-2 lg:items-start">
-            <div className="relative h-44 sm:h-52 rounded-2xl overflow-hidden border border-border bg-muted/30">
-              <Image
-                src={tech.heroImage}
-                alt=""
-                fill
-                className="object-cover"
-                priority
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-            </div>
+            <TechnologyDetailImage
+              src={tech.heroImage}
+              alt={`${tech.name} — engineering delivery and architecture`}
+              priority
+              rounded="2xl"
+              maxHeight={320}
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
             <div className="space-y-5">
               <p className="text-foreground/75 leading-relaxed">{tech.introduction}</p>
-              <div className="relative h-36 sm:h-40 rounded-xl overflow-hidden border border-border bg-muted/20">
-                <Image src={tech.detailImage} alt="" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
-              </div>
+              <TechnologyDetailImage
+                src={tech.detailImage}
+                alt={`${tech.name} — implementation and platform context`}
+                rounded="xl"
+                maxHeight={280}
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
             </div>
           </div>
         </div>
@@ -135,14 +137,14 @@ export default async function TechnologyDetailPage({ params }: { params: Promise
         <div className="max-w-3xl mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 text-center sm:text-left">
           <div>
             <p className="text-sm uppercase tracking-wide text-accent font-semibold mb-2">Next step</p>
-            <h2 className="text-2xl font-bold text-foreground">Stack review & threat modeling workshop</h2>
-            <p className="text-foreground/70 mt-2">We map your backlog to the safest implementation path.</p>
+            <h2 className="text-2xl font-bold text-foreground">{tech.cta.heading}</h2>
+            <p className="text-foreground/70 mt-2">{tech.cta.description}</p>
           </div>
           <Link
             href="/contact"
             className="inline-flex items-center justify-center gap-2 rounded-xl bg-accent text-accent-foreground px-8 py-3 font-semibold shadow-md hover:opacity-95 transition-opacity shrink-0"
           >
-            Book an architecture session
+            {tech.cta.buttonLabel}
             <ArrowRight className="size-4" />
           </Link>
         </div>

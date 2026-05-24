@@ -1,77 +1,96 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowRight, Code2, Database, Zap, ShoppingCart, Smartphone, TrendingUp, Cog, Layout } from 'lucide-react';
+import {
+  ArrowRight,
+  Cog,
+  Dumbbell,
+  Globe,
+  Layout,
+  ShoppingCart,
+  Smartphone,
+  TrendingUp,
+  Wrench,
+} from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Our Services - NarixSolutions',
-  description: 'Premium digital transformation services including web development, mobile apps, e-commerce, and more.',
+  description:
+    'Business websites, e-commerce, CMS, mobile apps, SEO, and custom web applications for startups and growing brands.',
 };
 
 export default function ServicesPage() {
   const services = [
     {
       id: 'web-development',
-      icon: Code2,
-      title: 'Custom Web Development',
-      description: 'Enterprise-grade web applications built with cutting-edge technologies and best practices.',
-      benefits: ['High Performance', 'Scalable Architecture', 'Security First'],
+      icon: Globe,
+      title: 'Business Website Development',
+      description:
+        'Professional websites designed to establish your online presence, generate leads, and build customer trust.',
+      benefits: ['Responsive Design', 'SEO Friendly Structure', 'Fast Performance'],
       gradient: 'from-emerald-600 to-teal-700',
-    },
-    {
-      id: 'react-development',
-      icon: Smartphone,
-      title: 'React.js Development',
-      description: 'Modern, responsive web applications using React with TypeScript and best patterns.',
-      benefits: ['Fast & Responsive', 'SEO Optimized', 'Modern UX'],
-      gradient: 'from-teal-500 to-emerald-700',
-    },
-    {
-      id: 'node-development',
-      icon: Database,
-      title: 'Node.js Development',
-      description: 'Robust backend services and APIs built with Node.js for scalable applications.',
-      benefits: ['High Concurrency', 'Real-time Capable', 'Microservices Ready'],
-      gradient: 'from-green-500 to-teal-500',
     },
     {
       id: 'ecommerce',
       icon: ShoppingCart,
       title: 'E-Commerce Development',
-      description: 'Complete e-commerce solutions with payment integration, inventory, and analytics.',
-      benefits: ['Payment Gateway Integration', 'Inventory Management', 'Analytics'],
+      description:
+        'Custom online stores with secure payments, product management, inventory systems, and optimized shopping experiences.',
+      benefits: ['Payment Gateway Integration', 'Inventory Management', 'Conversion Focused Design'],
       gradient: 'from-lime-600 to-emerald-800',
-    },
-    {
-      id: 'pos-billing',
-      icon: Zap,
-      title: 'POS Billing Software',
-      description: 'Custom point-of-sale systems designed for retail and restaurant operations.',
-      benefits: ['Real-time Reporting', 'Multi-outlet Support', 'Offline Capable'],
-      gradient: 'from-emerald-700 to-teal-800',
-    },
-    {
-      id: 'seo-marketing',
-      icon: TrendingUp,
-      title: 'SEO & Digital Marketing',
-      description: 'Comprehensive digital marketing services to grow your online presence.',
-      benefits: ['Ranking Improvement', 'Traffic Growth', 'Lead Generation'],
-      gradient: 'from-emerald-500 to-lime-600',
-    },
-    {
-      id: 'automation',
-      icon: Cog,
-      title: 'Business Automation',
-      description: 'Automate your business processes to increase efficiency and reduce costs.',
-      benefits: ['Process Optimization', 'Cost Reduction', 'Productivity Boost'],
-      gradient: 'from-teal-600 to-emerald-900',
     },
     {
       id: 'cms-development',
       icon: Layout,
       title: 'CMS Development',
-      description: 'WordPress, headless CMS, and custom content management solutions.',
-      benefits: ['Easy Content Management', 'SEO-Friendly', 'Multi-channel Publishing'],
+      description:
+        'Flexible CMS solutions that allow businesses to manage content, blogs, products, and pages with ease.',
+      benefits: ['Easy Content Management', 'Scalable Architecture', 'SEO Optimized'],
       gradient: 'from-cyan-600 to-emerald-700',
+    },
+    {
+      id: 'web-development',
+      icon: Dumbbell,
+      title: 'Gym & Fitness Websites',
+      description:
+        'Modern fitness websites for gyms, trainers, and wellness brands with memberships, schedules, and lead capture systems.',
+      benefits: ['Membership Systems', 'Trainer Profiles', 'Booking Integration'],
+      gradient: 'from-teal-500 to-emerald-700',
+    },
+    {
+      id: 'mobile-app-development',
+      icon: Smartphone,
+      title: 'Mobile App Development',
+      description:
+        'Cross-platform mobile applications focused on performance, usability, and long-term scalability.',
+      benefits: ['Android & iOS', 'Modern UI/UX', 'API Integration'],
+      gradient: 'from-green-500 to-teal-500',
+    },
+    {
+      id: 'seo-marketing',
+      icon: TrendingUp,
+      title: 'SEO & Digital Marketing',
+      description:
+        'Data-driven SEO and marketing strategies that help businesses increase visibility, traffic, and customer acquisition.',
+      benefits: ['Technical SEO', 'Google Optimization', 'Lead Generation'],
+      gradient: 'from-emerald-500 to-lime-600',
+    },
+    {
+      id: 'custom-web-applications',
+      icon: Cog,
+      title: 'Custom Web Applications',
+      description:
+        'Tailored web applications built to automate workflows, improve efficiency, and support business operations.',
+      benefits: ['Dashboard Systems', 'Workflow Automation', 'Scalable Architecture'],
+      gradient: 'from-teal-600 to-emerald-900',
+    },
+    {
+      id: 'website-maintenance',
+      icon: Wrench,
+      title: 'Website Maintenance & Support',
+      description:
+        'Reliable maintenance services to keep your website secure, updated, optimized, and running smoothly.',
+      benefits: ['Security Updates', 'Performance Monitoring', 'Technical Support'],
+      gradient: 'from-emerald-700 to-teal-800',
     },
   ];
 
@@ -86,11 +105,15 @@ export default function ServicesPage() {
 
         <div className="relative z-10 max-w-6xl mx-auto">
           <div className="text-center space-y-8 mb-20">
+            <p className="text-sm font-semibold text-accent uppercase tracking-widest">Digital Services</p>
             <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-foreground text-balance leading-tight tracking-tight">
-              Enterprise Digital <span className="bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent">Services</span>
+              Custom Digital Solutions for <span className="bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent">Modern Businesses</span>
             </h1>
             <p className="text-xl md:text-2xl text-foreground/70 max-w-3xl mx-auto font-light leading-relaxed">
-              Comprehensive solutions designed to transform your business, accelerate digital innovation, and drive measurable growth
+              We help startups, brands, and growing businesses build high-performance websites, scalable platforms, mobile apps, and digital experiences designed for real business growth.
+            </p>
+            <p className="text-base md:text-lg text-foreground/60 max-w-2xl mx-auto font-light leading-relaxed">
+              From business websites to e-commerce platforms and custom CMS solutions — we turn ideas into reliable digital products.
             </p>
           </div>
         </div>
@@ -108,7 +131,7 @@ export default function ServicesPage() {
             {services.map((service) => {
               const IconComponent = service.icon;
               return (
-                <Link key={service.id} href={`/services/${service.id}`}>
+                <Link key={service.title} href={service.href ?? `/services/${service.id}`}>
                   <div className="group relative h-full bg-card border border-border rounded-2xl p-8 hover:border-accent/40 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer overflow-hidden">
                     {/* Gradient overlay on hover */}
                     <div className={`absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-300 bg-gradient-to-br ${service.gradient}`}></div>
@@ -161,24 +184,24 @@ export default function ServicesPage() {
         <div className="relative z-10 max-w-4xl mx-auto">
           <div className="text-center space-y-8">
             <h2 className="text-5xl md:text-6xl font-bold text-white text-balance leading-tight">
-              Ready to Transform Your Business?
+              Need a Reliable Digital Partner?
             </h2>
             <p className="text-xl text-white/90 font-light max-w-2xl mx-auto leading-relaxed">
-              Let&apos;s discuss your project and find the perfect solution to accelerate your digital transformation journey.
+              Whether you&apos;re launching a new business, upgrading your online presence, or building a custom platform — our team is ready to help.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Link
                 href="/contact"
                 className="group inline-flex items-center justify-center gap-3 px-10 py-5 bg-background text-accent rounded-xl font-bold shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 text-lg"
               >
-                <span>Get Free Consultation</span>
+                <span>Start Your Project</span>
                 <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" />
               </Link>
               <Link
-                href="/case-studies"
+                href="/contact"
                 className="inline-flex items-center justify-center gap-3 px-10 py-5 border-2 border-white text-white rounded-xl font-bold hover:bg-white/10 transition-all duration-300 text-lg"
               >
-                View Case Studies
+                Schedule Consultation
               </Link>
             </div>
           </div>

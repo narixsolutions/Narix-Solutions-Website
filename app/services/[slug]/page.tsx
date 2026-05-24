@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, ArrowRight, Building2, CheckCircle, Layers } from 'lucide-react';
 
-import { getAllServicePageSlugs, getServicePage } from '@/data/service-pages';
+import { DEFAULT_SERVICE_CTA, getAllServicePageSlugs, getServicePage } from '@/data/service-pages';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
@@ -30,6 +30,10 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
     notFound();
   }
 
+  const cta = service.cta ?? DEFAULT_SERVICE_CTA;
+  const primaryCta = service.primaryCta ?? 'Discuss Your Project';
+  const secondaryCta = service.secondaryCta ?? 'View Related Work';
+
   return (
     <main className="min-h-screen bg-background">
       <section className="pt-24 pb-10 px-4 sm:px-6 lg:px-8 border-b border-border bg-card/40">
@@ -44,18 +48,22 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
 
           <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14 items-start">
             <div>
-              <p className="text-sm font-semibold text-accent uppercase tracking-widest mb-3">Capability</p>
+              <p className="text-sm font-semibold text-accent uppercase tracking-widest mb-3">{service.eyebrow}</p>
               <h1 className="text-4xl md:text-5xl font-bold text-foreground text-balance leading-tight mb-5">
                 {service.title}
               </h1>
               <p className="text-lg md:text-xl text-foreground/75 mb-6">{service.description}</p>
-              <p className="text-foreground/65 leading-relaxed mb-8">{service.heroLead}</p>
+              <p className="text-foreground/65 leading-relaxed mb-4">{service.heroLead}</p>
+              {service.heroSecondary ? (
+                <p className="text-foreground/65 leading-relaxed mb-8">{service.heroSecondary}</p>
+              ) : (
+                <div className="mb-8" />
+              )}
 
               <div className="grid sm:grid-cols-3 gap-3 mb-8">
-                {service.stats.map((s) => (
-                  <div key={s.label} className="rounded-xl border border-border bg-background/80 backdrop-blur px-4 py-3">
-                    <p className="text-xs uppercase tracking-wide text-foreground/45 mb-1">{s.label}</p>
-                    <p className="text-sm font-semibold text-foreground">{s.value}</p>
+                {service.featureTags.map((tag) => (
+                  <div key={tag} className="rounded-xl border border-border bg-background/80 backdrop-blur px-4 py-3 text-center sm:text-left">
+                    <p className="text-sm font-semibold text-foreground">{tag}</p>
                   </div>
                 ))}
               </div>
@@ -65,14 +73,14 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
                   href="/contact"
                   className="inline-flex justify-center items-center gap-2 rounded-xl bg-accent text-accent-foreground px-7 py-3.5 font-semibold shadow-md hover:opacity-95 transition-opacity"
                 >
-                  Discuss this scope
+                  {primaryCta}
                   <ArrowRight size={18} />
                 </Link>
                 <Link
                   href="/case-studies"
                   className="inline-flex justify-center items-center gap-2 rounded-xl border border-border px-7 py-3.5 font-semibold text-foreground hover:bg-secondary/80 transition-colors"
                 >
-                  See related work
+                  {secondaryCta}
                 </Link>
               </div>
             </div>
@@ -96,7 +104,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-2 text-sm font-semibold text-foreground/60 mb-4">
             <Layers className="size-4 text-accent" />
-            Program snapshots
+            Project highlights
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {service.gallery.map((src, i) => (
@@ -187,19 +195,57 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
         </div>
       </section>
 
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center rounded-2xl border border-border bg-card/60 p-10 md:p-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">Kick off with a focused workshop</h2>
-          <p className="text-foreground/70 mb-8">
-            Share goals, constraints, and timelines — we respond with an outline you can circulate internally before any heavy commitment.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center gap-2 rounded-xl bg-accent text-accent-foreground px-8 py-3.5 font-semibold shadow-md hover:opacity-95 transition-opacity"
-          >
-            Book a session
-            <ArrowRight size={18} />
-          </Link>
+      {service.pricing ? (
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-10">
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">{service.pricing.title}</h2>
+              {service.pricing.subtitle ? (
+                <p className="text-foreground/70 max-w-2xl mx-auto">{service.pricing.subtitle}</p>
+              ) : null}
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {service.pricing.tiers.map((tier) => (
+                <div key={tier.name} className="rounded-xl border border-border bg-card p-6 shadow-sm hover:border-accent/40 transition-colors">
+                  <h3 className="text-lg font-bold text-foreground mb-2">{tier.name}</h3>
+                  <p className="text-2xl font-bold text-accent mb-3">{tier.price}</p>
+                  <p className="text-foreground/70 text-sm leading-relaxed mb-4">{tier.description}</p>
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center gap-1 text-sm font-semibold text-accent hover:opacity-90"
+                  >
+                    Get a quote
+                    <ArrowRight size={14} />
+                  </Link>
+                </div>
+              ))}
+            </div>
+            {service.pricing.note ? (
+              <p className="text-center text-sm text-foreground/60 mt-8 max-w-2xl mx-auto">{service.pricing.note}</p>
+            ) : null}
+          </div>
+        </section>
+      ) : null}
+
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-emerald-700 via-teal-700 to-emerald-900">
+        <div className="max-w-3xl mx-auto text-center px-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">{cta.heading}</h2>
+          <p className="text-white/90 mb-8 leading-relaxed">{cta.description}</p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-background text-accent px-8 py-3.5 font-semibold shadow-md hover:opacity-95 transition-opacity"
+            >
+              {cta.primaryLabel}
+              <ArrowRight size={18} />
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-white/80 text-white px-8 py-3.5 font-semibold hover:bg-white/10 transition-colors"
+            >
+              {cta.secondaryLabel}
+            </Link>
+          </div>
         </div>
       </section>
     </main>

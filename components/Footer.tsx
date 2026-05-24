@@ -1,57 +1,36 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Mail, Linkedin, Twitter, Github, ArrowRight, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MessageCircle, MapPin, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-const footerSections = [
-  {
-    title: 'Services',
-    links: [
-      { label: 'Web Development', href: '/services/web-development' },
-      { label: 'React.js Development', href: '/services/react-development' },
-      { label: 'Node.js Development', href: '/services/node-development' },
-      { label: 'CMS Development', href: '/services/cms-development' },
-      { label: 'E-Commerce Solutions', href: '/services/ecommerce' },
-      { label: 'All Services', href: '/services' },
-    ],
-  },
-  {
-    title: 'Company',
-    links: [
-      { label: 'About Us', href: '/about' },
-      { label: 'Case Studies', href: '/case-studies' },
-      { label: 'Technologies', href: '/technologies' },
-      { label: 'Pricing', href: '/pricing' },
-      { label: 'FAQ', href: '/faq' },
-      { label: 'Contact', href: '/contact' },
-    ],
-  },
-  {
-    title: 'Resources',
-    links: [
-      { label: 'Blog', href: '/blog' },
-      { label: 'Documentation', href: '#' },
-      { label: 'Support', href: '/contact' },
-      { label: 'Terms of Service', href: '#' },
-      { label: 'Privacy Policy', href: '#' },
-    ],
-  },
+const quickLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'Services', href: '/services' },
+  { label: 'Technologies', href: '/technologies' },
+  { label: 'Case Studies', href: '/case-studies' },
+  { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
 ];
 
-const socialLinks = [
-  { icon: Mail, href: 'mailto:contact@narixsolutions.com', label: 'Email' },
-  { icon: Linkedin, href: 'https://linkedin.com/company/narixsolutions', label: 'LinkedIn' },
-  { icon: Twitter, href: 'https://twitter.com/narixsolutions', label: 'Twitter' },
-  { icon: Github, href: 'https://github.com/narixsolutions', label: 'GitHub' },
+const serviceLinks = [
+  { label: 'Business Websites', href: '/services/web-development' },
+  { label: 'SaaS Applications', href: '/services/custom-web-applications' },
+  { label: 'E-Commerce Development', href: '/services/ecommerce' },
+  { label: 'Custom Web Apps', href: '/services/custom-web-applications' },
+  { label: 'UI/UX Design', href: '/services' },
+  { label: 'SEO & Marketing', href: '/services/seo-marketing' },
 ];
 
 function hideFooterTopCta(pathname: string | null) {
   if (!pathname) return false;
-  if (pathname === '/technologies') return true;
+  if (pathname === '/') return true;
+  if (pathname.startsWith('/technologies')) return true;
   if (pathname === '/services' || pathname.startsWith('/services/')) return true;
   if (pathname === '/case-studies' || pathname.startsWith('/case-studies/')) return true;
+  if (pathname === '/contact') return true;
   return false;
 }
 
@@ -67,7 +46,7 @@ export function Footer() {
         <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl"></div>
       </div>
 
-      {/* Top CTA Section - Premium (hidden on services, case studies, technologies) */}
+      {/* Top CTA — hidden on home, contact, technologies (incl. detail), services, case studies */}
       {showTopCta && (
         <div className="relative z-10 border-b border-border/50 bg-card/70 backdrop-blur-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
@@ -93,110 +72,123 @@ export function Footer() {
       )}
 
       {/* Main Footer Content - Premium */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-16 mb-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8 md:pt-20 md:pb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 mb-12">
           {/* Brand & Contact Info */}
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:col-span-2 space-y-8">
-            <Link href="/" className="inline-flex items-center gap-3">
-              <div className="w-14 h-14 bg-gradient-to-br from-accent to-emerald-800 rounded-xl flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-2xl">N</span>
-              </div>
-              <span className="font-bold text-2xl text-foreground">NarixSolutions</span>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:col-span-5 space-y-7">
+            <Link href="/" className="inline-flex items-center gap-2.5">
+              <Image
+                src="/images/narix-logo-trim.png"
+                alt="NarixSolutions logo"
+                width={523}
+                height={403}
+                className="h-12 w-auto object-contain"
+              />
+              <span className="font-bold text-2xl leading-none tracking-tight text-foreground">NarixSolutions</span>
             </Link>
-            
-            <div className="space-y-4">
-              <p className="text-foreground/70 leading-relaxed font-light max-w-sm">
-                Premium digital transformation solutions for global enterprises. We deliver innovative technology and strategic design that drives real business impact.
-              </p>
-            </div>
 
-            {/* Contact Info - Enhanced */}
-            <div className="space-y-4 pt-4">
-              <p className="text-sm font-semibold text-foreground/60 uppercase tracking-wide">Contact Us</p>
-              <div className="space-y-4">
-                <div className="flex items-center gap-4 group">
-                  <div className="p-3 bg-accent/15 rounded-lg group-hover:bg-accent/25 transition-colors">
-                    <Mail size={20} className="text-accent" />
-                  </div>
-                  <a href="mailto:contact@narixsolutions.com" className="text-foreground/70 hover:text-accent transition-colors font-light">
-                    contact@narixsolutions.com
-                  </a>
-                </div>
-                <div className="flex items-center gap-4 group">
-                  <div className="p-3 bg-accent/15 rounded-lg group-hover:bg-accent/25 transition-colors">
-                    <Phone size={20} className="text-accent" />
-                  </div>
-                  <span className="text-foreground/70 font-light">+1 (555) 123-4567</span>
-                </div>
-                <div className="flex items-start gap-4 group">
-                  <div className="p-3 bg-accent/15 rounded-lg group-hover:bg-accent/25 transition-colors mt-1">
-                    <MapPin size={20} className="text-accent" />
-                  </div>
-                  <span className="text-foreground/70 font-light">San Francisco, CA, USA</span>
-                </div>
-              </div>
+            <p className="text-foreground/70 leading-relaxed font-light max-w-md">
+              NarixSolutions builds scalable websites, SaaS platforms, and modern digital products focused on performance, usability, and long-term business growth.
+            </p>
+
+            <div className="pt-2">
+              <p className="text-xs uppercase tracking-[0.18em] text-foreground/45 mb-4">Contact</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+              <a
+                href="mailto:anishrawat53@gmail.com"
+                className="group flex items-center gap-3 rounded-lg border border-border/70 bg-card/55 px-3.5 py-3 text-sm text-foreground/75 hover:text-accent hover:border-accent/35 hover:bg-accent/10 transition-all duration-300"
+              >
+                <span className="p-2 rounded-md border border-border/70 bg-card/80 group-hover:border-accent/40 group-hover:bg-accent/10 transition-all duration-300">
+                  <Mail size={15} className="text-accent" />
+                </span>
+                <span>filmmail62@gmail.com</span>
+              </a>
+              <a
+                href="tel:+919893471888"
+                className="group flex items-center gap-3 rounded-lg border border-border/70 bg-card/55 px-3.5 py-3 text-sm text-foreground/75 hover:text-accent hover:border-accent/35 hover:bg-accent/10 transition-all duration-300"
+              >
+                <span className="p-2 rounded-md border border-border/70 bg-card/80 group-hover:border-accent/40 group-hover:bg-accent/10 transition-all duration-300">
+                  <Phone size={15} className="text-accent" />
+                </span>
+                <span>+91 9893471888</span>
+              </a>
+              <a
+                href="https://wa.me/919893471888"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-3 rounded-lg border border-border/70 bg-card/55 px-3.5 py-3 text-sm text-foreground/75 hover:text-accent hover:border-accent/35 hover:bg-accent/10 transition-all duration-300"
+              >
+                <span className="p-2 rounded-md border border-border/70 bg-card/80 group-hover:border-accent/40 group-hover:bg-accent/10 transition-all duration-300">
+                  <MessageCircle size={15} className="text-accent" />
+                </span>
+                <span>WhatsApp Chat</span>
+              </a>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Indore%2C%20Madhya%20Pradesh%2C%20India"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-3 rounded-lg border border-border/70 bg-card/55 px-3.5 py-3 text-sm text-foreground/75 hover:text-accent hover:border-accent/35 hover:bg-accent/10 transition-all duration-300 sm:col-span-2"
+              >
+                <span className="p-2 rounded-md border border-border/70 bg-card/80 group-hover:border-accent/40 group-hover:bg-accent/10 transition-all duration-300">
+                  <MapPin size={15} className="text-accent" />
+                </span>
+                <span>Indore, Madhya Pradesh, India</span>
+              </a>
+            </div>
             </div>
           </motion.div>
 
-          {/* Footer Sections - Enhanced */}
-          {footerSections.map((section, index) => (
-            <motion.div
-              key={section.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="space-y-6"
-            >
-              <h3 className="font-bold text-foreground text-lg tracking-tight">{section.title}</h3>
-              <ul className="space-y-3.5">
-                {section.links.map((link) => (
-                  <li key={link.href}>
-                    <Link href={link.href} className="text-foreground/70 hover:text-accent transition-colors text-sm font-light hover:translate-x-1 inline-block">
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.05 }}
+            viewport={{ once: true }}
+            className="lg:col-span-3"
+          >
+            <h3 className="font-semibold text-foreground text-base mb-5">Quick Links</h3>
+            <ul className="space-y-3">
+              {quickLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="inline-flex text-sm text-foreground/65 hover:text-accent transition-colors duration-300 hover:translate-x-0.5">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            viewport={{ once: true }}
+            className="lg:col-span-4"
+          >
+            <h3 className="font-semibold text-foreground text-base mb-5">Services</h3>
+            <ul className="space-y-3">
+              {serviceLinks.map((link) => (
+                <li key={`${link.label}-${link.href}`}>
+                  <Link href={link.href} className="inline-flex text-sm text-foreground/65 hover:text-accent transition-colors duration-300 hover:translate-x-0.5">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
         </div>
 
-        {/* Divider - Enhanced */}
-        <div className="border-t border-border/50 my-20"></div>
-
-        {/* Bottom Footer - Enhanced */}
-        <div className="space-y-6">
-          {/* Social Links */}
+        <div className="border-t border-border/50 pt-6 md:pt-7">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="flex items-center justify-center gap-4 py-6"
+            className="flex flex-col gap-2 text-center md:text-left md:flex-row md:items-center md:justify-between"
           >
-            {socialLinks.map((social) => (
-              <a
-                key={social.label}
-                href={social.href}
-                target={social.label !== 'Email' ? '_blank' : undefined}
-                rel={social.label !== 'Email' ? 'noopener noreferrer' : undefined}
-                aria-label={social.label}
-                className="group p-3 rounded-lg border border-border text-foreground/60 hover:text-accent hover:border-accent/50 bg-secondary/50 hover:bg-accent/10 transition-all duration-300 hover:scale-110"
-              >
-                <social.icon size={20} />
-              </a>
-            ))}
-          </motion.div>
-
-          {/* Copyright */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center pt-6 border-t border-border/50"
-          >
-            <p className="text-foreground/60 text-sm font-light">
-              © 2025 NarixSolutions. All rights reserved. | Designed & Developed with care in San Francisco
+            <p className="text-xs sm:text-sm text-foreground/60 font-light">
+              © 2025 NarixSolutions. Built for scalable digital experiences.
+            </p>
+            <p className="text-xs sm:text-sm text-foreground/45 font-light">
+              Made with Next.js & TypeScript
             </p>
           </motion.div>
         </div>

@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -41,6 +42,20 @@ export function Header() {
     }
   }, [isDark]);
 
+  const scrollToContactForm = () => {
+    document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  const handleGetConsultationClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+  ) => {
+    if (pathname === '/contact') {
+      e.preventDefault();
+      scrollToContactForm();
+      if (mobileMenuOpen) toggleMobileMenu();
+    }
+  };
+
   const navItems = [
     { label: 'Home', href: '/' },
     { label: 'Services', href: '/services' },
@@ -61,11 +76,16 @@ export function Header() {
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-11 h-11 bg-gradient-to-br from-accent to-emerald-700 rounded-lg flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:shadow-accent/30 transition-all duration-300 transform group-hover:scale-105">
-            <span className="text-white font-bold text-xl">N</span>
-          </div>
-          <span className="hidden sm:block font-bold text-lg bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">NarixSolutions</span>
+        <Link href="/" className="flex items-center gap-2.5 group">
+          <Image
+            src="/images/narix-logo-trim.png"
+            alt="NarixSolutions logo"
+            width={523}
+            height={403}
+            className="h-11 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            priority
+          />
+          <span className="hidden sm:block font-bold text-lg leading-none tracking-tight text-foreground/90">NarixSolutions</span>
         </Link>
 
         {/* Desktop Menu */}
@@ -103,7 +123,8 @@ export function Header() {
             </button>
           )}
           <Link
-            href="/contact"
+            href="/contact#contact-form"
+            onClick={handleGetConsultationClick}
             className="bg-gradient-to-r from-accent to-emerald-800 text-accent-foreground px-6 py-2.5 rounded-lg text-sm font-semibold hover:shadow-lg hover:shadow-accent/40 transition-all duration-300 hover:-translate-y-0.5"
           >
             Get Consultation
@@ -154,9 +175,12 @@ export function Header() {
               </button>
             )}
             <Link
-              href="/contact"
+              href="/contact#contact-form"
               className="block bg-gradient-to-r from-accent to-emerald-800 text-accent-foreground px-4 py-2.5 rounded-lg text-center font-semibold hover:shadow-lg hover:shadow-accent/40 transition-all duration-300 mt-4"
-              onClick={() => toggleMobileMenu()}
+              onClick={(e) => {
+                handleGetConsultationClick(e);
+                if (pathname !== '/contact') toggleMobileMenu();
+              }}
             >
               Get Consultation
             </Link>

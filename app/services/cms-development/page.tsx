@@ -4,7 +4,8 @@ import { ArrowRight, CheckCircle, Database, Zap, Shield, TrendingUp } from 'luci
 
 export const metadata: Metadata = {
   title: 'CMS Development Services - NarixSolutions',
-  description: 'Expert WordPress, custom CMS, and headless CMS development for enterprise content management.',
+  description:
+    'WordPress and custom CMS development that helps businesses manage content easily, publish faster, and grow online with confidence.',
 };
 
 export default function CMSDevelopmentPage() {
@@ -23,11 +24,17 @@ export default function CMSDevelopmentPage() {
           </div>
 
           <h1 className="text-6xl md:text-7xl font-bold text-foreground mb-6 text-balance">
-            Powerful <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">CMS Development</span>
+            CMS Development for{' '}
+            <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+              Growing Businesses
+            </span>
           </h1>
 
-          <p className="text-xl text-foreground/70 mb-8 max-w-2xl">
-            WordPress, custom CMS, and headless solutions designed for modern content management with scalability, security, and SEO in mind.
+          <p className="text-xl text-foreground/70 mb-4 max-w-2xl">
+            We build WordPress and custom content management systems that make it easy for your team to update pages, blogs, and products — without waiting on developers for every small change.
+          </p>
+          <p className="text-lg text-foreground/60 mb-8 max-w-2xl">
+            Our CMS solutions are practical, SEO-friendly, and designed around how your business actually publishes content day to day.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
@@ -35,14 +42,14 @@ export default function CMSDevelopmentPage() {
               href="/contact"
               className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg hover:shadow-emerald-500/30 transition-all duration-300 hover:-translate-y-1"
             >
-              Get Your CMS Solution
+              Discuss Your Project
               <ArrowRight size={20} />
             </Link>
             <Link
               href="/case-studies"
               className="inline-flex items-center justify-center gap-2 border-2 border-emerald-500/30 text-foreground px-8 py-4 rounded-lg font-semibold hover:border-emerald-500/60 hover:bg-emerald-500/5 transition-all duration-300"
             >
-              View Case Studies
+              View Related Work
             </Link>
           </div>
         </div>
@@ -52,9 +59,9 @@ export default function CMSDevelopmentPage() {
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-secondary/50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-foreground mb-6">Why CMS Development Matters</h2>
+            <h2 className="text-5xl font-bold text-foreground mb-6">Why a Good CMS Matters</h2>
             <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
-              A powerful CMS is the foundation of digital content strategy. It empowers teams to publish, manage, and optimize content without technical dependencies.
+              Your website should work for your business — not slow it down. A well-built CMS saves time, keeps content fresh, and helps you stay visible online.
             </p>
           </div>
 
@@ -62,18 +69,18 @@ export default function CMSDevelopmentPage() {
             {[
               {
                 icon: Database,
-                title: 'Content Control',
-                description: 'Manage all your content from an intuitive admin panel without requiring developer assistance.',
+                title: 'Easy Content Control',
+                description: 'Update pages, images, and blog posts from a simple admin panel your team can learn quickly.',
               },
               {
                 icon: TrendingUp,
-                title: 'SEO Optimization',
-                description: 'Built-in SEO features, metadata management, and structured data for better search rankings.',
+                title: 'Built for SEO',
+                description: 'Clean page structure, metadata controls, and fast loading to support better search visibility.',
               },
               {
                 icon: Shield,
-                title: 'Security First',
-                description: 'Enterprise-grade security with role-based access, content versioning, and audit trails.',
+                title: 'Secure & Reliable',
+                description: 'Role-based access, regular updates, and backups so your site stays protected and online.',
               },
             ].map((item, idx) => {
               const IconComponent = item.icon;
@@ -93,9 +100,9 @@ export default function CMSDevelopmentPage() {
       <section className="py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-foreground mb-6">Our CMS Solutions</h2>
+            <h2 className="text-5xl font-bold text-foreground mb-6">What We Deliver</h2>
             <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
-              We offer multiple CMS platforms tailored to your specific needs and scalability requirements.
+              From WordPress business sites to custom admin platforms — we match the right CMS approach to your team and budget.
             </p>
           </div>
 
@@ -103,49 +110,53 @@ export default function CMSDevelopmentPage() {
             {[
               {
                 title: 'WordPress Development',
-                description: 'Leverage the world\'s most popular CMS platform with custom themes, plugins, and optimization.',
+                description:
+                  'Professional WordPress websites with custom themes, essential plugins, and an admin experience your team can manage confidently.',
                 features: [
-                  'Custom theme development',
-                  'Plugin integration and customization',
-                  'WooCommerce e-commerce integration',
-                  'Performance optimization',
-                  'Security hardening',
-                  'Backup and recovery systems',
+                  'Custom theme design and development',
+                  'Plugin setup and configuration',
+                  'WooCommerce store integration',
+                  'Speed and performance optimization',
+                  'Security hardening and updates',
+                  'Backup and recovery setup',
                 ],
               },
               {
                 title: 'Headless CMS Solutions',
-                description: 'Decouple content from presentation for maximum flexibility across multiple channels.',
+                description:
+                  'Modern setups that separate content from design — ideal when you need a fast frontend and flexible content delivery.',
                 features: [
                   'Next.js or React frontend',
                   'Content API architecture',
-                  'Multi-channel publishing',
+                  'Multi-page and multi-channel publishing',
                   'Real-time content updates',
-                  'GraphQL API support',
-                  'Advanced workflow automation',
+                  'Structured content models',
+                  'Integration with marketing tools',
                 ],
               },
               {
                 title: 'Custom CMS Development',
-                description: 'Built-from-scratch CMS tailored to your unique business processes and requirements.',
+                description:
+                  'When off-the-shelf tools do not fit, we build admin systems tailored to your workflows, data, and growth plans.',
                 features: [
-                  'Custom admin interface',
+                  'Custom admin dashboard',
                   'Specialized content workflows',
-                  'Unique data models',
-                  'Integration with legacy systems',
-                  'Custom reporting dashboards',
-                  'Scalable architecture',
+                  'Unique data and page structures',
+                  'Integration with existing tools',
+                  'Reporting and content analytics',
+                  'Scalable architecture for growth',
                 ],
               },
               {
                 title: 'CMS Migration & Upgrades',
-                description: 'Safely migrate from legacy systems or upgrade to modern CMS platforms.',
+                description:
+                  'Move from an outdated platform to a modern CMS without losing content, SEO value, or business continuity.',
                 features: [
-                  'Data migration strategy',
-                  'Zero-downtime migration',
-                  'Content preservation',
-                  'SEO preservation',
-                  'User training and documentation',
+                  'Content migration planning',
+                  'Minimal-downtime migration approach',
+                  'Content and media preservation',
+                  'SEO URL and metadata preservation',
+                  'Team training and documentation',
                   'Post-migration support',
                 ],
               },
@@ -171,18 +182,18 @@ export default function CMSDevelopmentPage() {
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-secondary/50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-foreground mb-6">Our Development Process</h2>
+            <h2 className="text-5xl font-bold text-foreground mb-6">How We Work</h2>
             <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
-              A proven methodology ensuring your CMS is delivered on time, within budget, and exceeds expectations.
+              A clear, collaborative process so you know what to expect from discovery through launch and support.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { step: '1', title: 'Discovery', desc: 'Understanding your content strategy, workflows, and technical requirements' },
-              { step: '2', title: 'Design', desc: 'Creating intuitive admin interfaces and content architecture' },
-              { step: '3', title: 'Development', desc: 'Building robust, scalable CMS with security and performance' },
-              { step: '4', title: 'Launch & Support', desc: 'Deployment, training, and ongoing maintenance' },
+              { step: '1', title: 'Discovery', desc: 'We learn your content needs, publishing workflow, and business goals.' },
+              { step: '2', title: 'Design', desc: 'We plan page structure and admin areas that are easy for your team to use.' },
+              { step: '3', title: 'Development', desc: 'We build your CMS with reliable performance, security, and clean structure.' },
+              { step: '4', title: 'Launch & Support', desc: 'We go live, train your team, and provide ongoing help when you need it.' },
             ].map((item, idx) => (
               <div key={idx} className="relative">
                 <div className="bg-card border border-border rounded-xl p-6">
@@ -205,12 +216,12 @@ export default function CMSDevelopmentPage() {
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold text-foreground mb-6">Technologies We Use</h2>
             <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
-              Built with modern, reliable technologies for performance, security, and scalability.
+              Trusted, modern tools chosen for reliability, performance, and long-term maintainability.
             </p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {['WordPress', 'Next.js', 'React', 'Node.js', 'PostgreSQL', 'MongoDB', 'Elasticsearch', 'AWS', 'Strapi', 'Contentful', 'Sanity', 'GraphQL'].map((tech) => (
+            {['WordPress', 'Next.js', 'React', 'Node.js', 'PostgreSQL', 'MongoDB', 'Strapi', 'Contentful', 'Sanity', 'WooCommerce', 'Tailwind CSS', 'Vercel'].map((tech) => (
               <div key={tech} className="bg-card border border-border rounded-lg p-4 text-center hover:border-emerald-500/50 transition-all">
                 <span className="font-semibold text-foreground">{tech}</span>
               </div>
@@ -225,15 +236,15 @@ export default function CMSDevelopmentPage() {
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold text-foreground mb-6">CMS Pricing</h2>
             <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
-              Transparent pricing for different CMS solutions and project scopes.
+              Transparent starting ranges for common CMS projects. We provide a detailed quote after understanding your scope.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { name: 'WordPress CMS', price: '$4,500 - $8,000', desc: 'Custom WordPress site with plugins and theme customization' },
-              { name: 'Headless CMS', price: '$7,000 - $15,000', desc: 'Modern headless CMS with multi-channel support' },
-              { name: 'Custom CMS', price: '$10,000 - $25,000+', desc: 'Fully custom built CMS for enterprise needs' },
+              { name: 'WordPress Website', price: '$800 - $3,000', desc: 'Business WordPress site with theme customization and essential plugins' },
+              { name: 'Business CMS', price: '$3,000 - $7,000', desc: 'Custom layouts, advanced content types, and integration setup' },
+              { name: 'Custom CMS Platform', price: '$7,000 - $15,000+', desc: 'Tailored CMS built around your workflows and growth requirements' },
             ].map((option, idx) => (
               <div key={idx} className="bg-card border border-border rounded-xl p-8 hover:border-emerald-500/50 transition-all">
                 <h3 className="text-2xl font-bold text-foreground mb-2">{option.name}</h3>
@@ -249,22 +260,34 @@ export default function CMSDevelopmentPage() {
               </div>
             ))}
           </div>
+          <p className="text-center text-sm text-foreground/60 mt-8 max-w-2xl mx-auto">
+            Final pricing depends on content complexity, integrations, and design scope.
+          </p>
         </div>
       </section>
 
       {/* CTA */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-800">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-5xl font-bold text-white mb-6">Ready for a Modern CMS?</h2>
+          <h2 className="text-5xl font-bold text-white mb-6">Let&apos;s Build Something Reliable Together</h2>
           <p className="text-xl text-white/90 mb-8">
-            Let&apos;s discuss your content management needs and build the perfect solution.
+            Tell us about your business goals and we&apos;ll help you choose the right CMS solution for your project.
           </p>
-          <Link
-            href="/contact"
-            className="inline-block bg-white text-foreground px-8 py-4 rounded-lg font-semibold hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-          >
-            Start Your CMS Project
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 bg-white text-foreground px-8 py-4 rounded-lg font-semibold hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+            >
+              Start Your Project
+              <ArrowRight size={20} />
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-all duration-300"
+            >
+              Schedule Consultation
+            </Link>
+          </div>
         </div>
       </section>
     </main>
