@@ -5,6 +5,15 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Mail, Phone, MessageCircle, MapPin, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import {
+  CONTACT_EMAIL,
+  CONTACT_LOCATION,
+  CONTACT_PHONE_DISPLAY,
+  CONTACT_PHONE_TEL,
+  mailtoHref,
+  mapsHref,
+  whatsappHref,
+} from '@/lib/contact';
 
 const quickLinks = [
   { label: 'Home', href: '/' },
@@ -95,25 +104,25 @@ export function Footer() {
               <p className="text-xs uppercase tracking-[0.18em] text-foreground/45 mb-4">Contact</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               <a
-                href="mailto:anishrawat53@gmail.com"
+                href={mailtoHref}
                 className="group flex items-center gap-3 rounded-lg border border-border/70 bg-card/55 px-3.5 py-3 text-sm text-foreground/75 hover:text-accent hover:border-accent/35 hover:bg-accent/10 transition-all duration-300"
               >
                 <span className="p-2 rounded-md border border-border/70 bg-card/80 group-hover:border-accent/40 group-hover:bg-accent/10 transition-all duration-300">
                   <Mail size={15} className="text-accent" />
                 </span>
-                <span>filmmail62@gmail.com</span>
+                <span>{CONTACT_EMAIL}</span>
               </a>
               <a
-                href="tel:+919893471888"
+                href={`tel:${CONTACT_PHONE_TEL}`}
                 className="group flex items-center gap-3 rounded-lg border border-border/70 bg-card/55 px-3.5 py-3 text-sm text-foreground/75 hover:text-accent hover:border-accent/35 hover:bg-accent/10 transition-all duration-300"
               >
                 <span className="p-2 rounded-md border border-border/70 bg-card/80 group-hover:border-accent/40 group-hover:bg-accent/10 transition-all duration-300">
                   <Phone size={15} className="text-accent" />
                 </span>
-                <span>+91 9893471888</span>
+                <span>{CONTACT_PHONE_DISPLAY}</span>
               </a>
               <a
-                href="https://wa.me/919893471888"
+                href={whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-3 rounded-lg border border-border/70 bg-card/55 px-3.5 py-3 text-sm text-foreground/75 hover:text-accent hover:border-accent/35 hover:bg-accent/10 transition-all duration-300"
@@ -124,7 +133,7 @@ export function Footer() {
                 <span>WhatsApp Chat</span>
               </a>
               <a
-                href="https://www.google.com/maps/search/?api=1&query=Indore%2C%20Madhya%20Pradesh%2C%20India"
+                href={mapsHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-3 rounded-lg border border-border/70 bg-card/55 px-3.5 py-3 text-sm text-foreground/75 hover:text-accent hover:border-accent/35 hover:bg-accent/10 transition-all duration-300 sm:col-span-2"
@@ -132,7 +141,7 @@ export function Footer() {
                 <span className="p-2 rounded-md border border-border/70 bg-card/80 group-hover:border-accent/40 group-hover:bg-accent/10 transition-all duration-300">
                   <MapPin size={15} className="text-accent" />
                 </span>
-                <span>Indore, Madhya Pradesh, India</span>
+                <span>{CONTACT_LOCATION}</span>
               </a>
             </div>
             </div>
@@ -182,13 +191,10 @@ export function Footer() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="flex flex-col gap-2 text-center md:text-left md:flex-row md:items-center md:justify-between"
+            className="flex justify-center text-center"
           >
             <p className="text-xs sm:text-sm text-foreground/60 font-light">
               © 2025 NarixSolutions. Built for scalable digital experiences.
-            </p>
-            <p className="text-xs sm:text-sm text-foreground/45 font-light">
-              Made with Next.js & TypeScript
             </p>
           </motion.div>
         </div>
