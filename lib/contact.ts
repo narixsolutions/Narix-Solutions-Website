@@ -1,7 +1,7 @@
 export const CONTACT_EMAIL = 'anishrawat53@gmail.com';
 export const CONTACT_PHONE_DISPLAY = '+91 9893471888';
 export const CONTACT_PHONE_TEL = '+919893471888';
-export const CONTACT_LOCATION = 'Indore, Madhya Pradesh, India';
+export const CONTACT_LOCATION = 'Chandigarh, India';
 
 export const MAILTO_SUBJECT = 'Project Inquiry from NarixSolutions Website';
 export const MAILTO_BODY =

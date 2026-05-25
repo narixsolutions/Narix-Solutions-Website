@@ -62,26 +62,26 @@ export default function AboutPage() {
   }[] = [
     {
       title: 'Cross-Functional Product Teams',
-      focus: 'End-to-end delivery',
-      bio: 'Small, focused squads that own discovery, build, and launch — so decisions move fast and accountability stays clear.',
+      focus: 'Aligned delivery ownership',
+      bio: 'Lean, multidisciplinary teams that move from discovery to launch with shared accountability, faster decisions, and a clear focus on business outcomes.',
       visual: 'product',
     },
     {
       title: 'Frontend Engineering',
-      focus: 'Interfaces & experience',
-      bio: 'React and Next.js applications with strong UX, performance budgets, and maintainable component systems.',
+      focus: 'Interfaces built for growth',
+      bio: 'We craft polished digital experiences across content-led websites, commerce journeys, and custom product interfaces with strong usability, performance, and long-term maintainability.',
       visual: 'frontend',
     },
     {
       title: 'Backend & Infrastructure',
-      focus: 'APIs, data & cloud',
-      bio: 'Node.js services, PostgreSQL, Redis, and AWS deployments built for security, observability, and scale.',
+      focus: 'Reliable systems at scale',
+      bio: 'Robust backend foundations with thoughtfully structured data, resilient integrations, and scalable architectures designed for security, observability, and sustained growth.',
       visual: 'backend',
     },
     {
       title: 'Design & Product Strategy',
-      focus: 'UX & product direction',
-      bio: 'Wireframes, design systems, and product planning that align stakeholders before development begins.',
+      focus: 'Clarity before execution',
+      bio: 'Experience strategy, interface direction, and product planning that bring teams into alignment early and turn ideas into a more confident roadmap.',
       visual: 'design',
     },
   ];
@@ -119,10 +119,10 @@ export default function AboutPage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/50">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, index) => {
+            {stats.map((stat) => {
               const IconComponent = stat.icon;
               return (
-                <div key={index} className="text-center">
+                <div key={stat.label} className="text-center">
                   <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-600 to-teal-600 text-white flex items-center justify-center mx-auto mb-4">
                     <IconComponent size={32} />
                   </div>
@@ -164,8 +164,8 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-foreground mb-12 text-center">Core Values</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {values.map((value, index) => (
-              <div key={index} className="p-8 bg-card rounded-xl border border-border hover:border-accent transition-all duration-300">
+            {values.map((value) => (
+              <div key={value.title} className="p-8 bg-card rounded-xl border border-border hover:border-accent transition-all duration-300">
                 <h3 className="text-2xl font-bold text-foreground mb-4">{value.title}</h3>
                 <p className="text-foreground/70 leading-relaxed">{value.description}</p>
               </div>
@@ -179,8 +179,13 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-foreground mb-12">How We Work</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {deliveryTeams.map((team) => (
-              <div key={team.visual} className="p-8 bg-card rounded-xl border border-border hover:border-accent transition-all duration-300">
+            {deliveryTeams.map((team, index) => (
+              <div
+                key={team.visual}
+                className={`p-8 bg-card rounded-xl border border-border hover:border-accent transition-all duration-300 ${
+                  index === deliveryTeams.length - 1 ? 'md:col-start-2' : ''
+                }`}
+              >
                 <DeliveryTeamVisual variant={team.visual} />
                 <h3 className="text-xl font-bold text-foreground mb-2">{team.title}</h3>
                 <p className="text-accent font-semibold mb-3">{team.focus}</p>
@@ -196,8 +201,8 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-foreground mb-12">Why businesses work with us</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {whyWorkWithUs.map((item, index) => (
-              <div key={index} className="p-8 bg-card rounded-xl border border-border">
+            {whyWorkWithUs.map((item) => (
+              <div key={item.title} className="p-8 bg-card rounded-xl border border-border">
                 <Award className="w-12 h-12 text-accent mx-auto mb-4" />
                 <p className="font-bold text-foreground text-lg mb-3">{item.title}</p>
                 <p className="text-foreground/70 leading-relaxed">{item.description}</p>

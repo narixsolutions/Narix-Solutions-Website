@@ -41,6 +41,8 @@ type FormData = {
   message: string;
 };
 
+type FormSubmitEvent = Parameters<NonNullable<React.ComponentProps<'form'>['onSubmit']>>[0];
+
 const initialFormData: FormData = {
   name: '',
   email: '',
@@ -123,7 +125,7 @@ export default function ContactPage() {
 
   useEffect(() => {
     const scrollToForm = () => {
-      if (window.location.hash === '#contact-form') {
+      if (globalThis.location.hash === '#contact-form') {
         document.getElementById('contact-form')?.scrollIntoView({
           behavior: 'smooth',
           block: 'start',
@@ -131,8 +133,8 @@ export default function ContactPage() {
       }
     };
     scrollToForm();
-    window.addEventListener('hashchange', scrollToForm);
-    return () => window.removeEventListener('hashchange', scrollToForm);
+    globalThis.addEventListener('hashchange', scrollToForm);
+    return () => globalThis.removeEventListener('hashchange', scrollToForm);
   }, []);
 
   const handleChange = (
@@ -143,7 +145,7 @@ export default function ContactPage() {
     setFieldErrors((prev) => ({ ...prev, [name]: undefined }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormSubmitEvent) => {
     e.preventDefault();
     setFieldErrors({});
 
@@ -157,7 +159,7 @@ export default function ContactPage() {
         }
       }
       setFieldErrors(errors);
-      toast.error(parsed.error.errors[0]?.message ?? 'Please check the form and try again.');
+      toast.error(parsed.error.errors[0]?.message ?? 'Please check the highlighted fields.');
       return;
     }
 
@@ -176,11 +178,13 @@ export default function ContactPage() {
         throw new Error(result.error ?? 'Failed to send message');
       }
 
-      toast.success("Thank you! We've received your inquiry and will respond within one business day.");
+      toast.success("Message sent. We'll get back to you soon.");
       setFormData(initialFormData);
     } catch (err) {
       const message =
-        err instanceof Error ? err.message : 'Something went wrong. Please try again.';
+        err instanceof Error && err.message === 'Please complete the captcha challenge.'
+          ? err.message
+          : "Couldn't send your message. Please try again.";
       toast.error(message);
     } finally {
       setIsSubmitting(false);

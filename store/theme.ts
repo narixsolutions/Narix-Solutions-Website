@@ -10,7 +10,7 @@ interface ThemeStore {
 export const useTheme = create<ThemeStore>()(
   persist(
     (set) => ({
-      isDark: false,
+      isDark: true,
       toggleTheme: () => set((state) => ({ isDark: !state.isDark })),
       setTheme: (isDark: boolean) => set({ isDark }),
     }),
@@ -19,7 +19,7 @@ export const useTheme = create<ThemeStore>()(
       onRehydrateStorage: () => (state) => {
         // Apply theme on hydration
         if (typeof document !== 'undefined') {
-          const isDark = state?.isDark || false;
+          const isDark = state?.isDark ?? true;
           if (isDark) {
             document.documentElement.classList.add('dark');
           } else {
