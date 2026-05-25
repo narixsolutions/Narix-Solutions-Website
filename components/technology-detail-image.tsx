@@ -29,7 +29,7 @@ export function TechnologyDetailImage({
   sizes = '(max-width: 1024px) 100vw, 50vw',
   rounded = '2xl',
   maxHeight = 300,
-}: TechnologyDetailImageProps) {
+}: Readonly<TechnologyDetailImageProps>) {
   const [failed, setFailed] = useState(false);
   const [ratio, setRatio] = useState(DEFAULT_RATIO);
   const [loaded, setLoaded] = useState(false);

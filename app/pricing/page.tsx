@@ -78,9 +78,9 @@ export default function PricingPage() {
       {/* Pricing Plans */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-          {plans.map((plan, index) => (
+          {plans.map((plan) => (
             <div
-              key={index}
+              key={plan.name}
               className={`rounded-2xl p-8 border transition-all duration-300 ${
                 plan.highlighted
                   ? 'border-emerald-500 bg-gradient-to-br from-emerald-500/8 to-teal-500/8 ring-2 ring-emerald-500/20 relative'
@@ -115,8 +115,8 @@ export default function PricingPage() {
               </Link>
 
               <ul className="space-y-4">
-                {plan.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start gap-3">
+                {plan.features.map((feature) => (
+                  <li key={feature} className="flex items-start gap-3">
                     <CheckCircle size={20} className="text-emerald-600 flex-shrink-0 mt-0.5" />
                     <span className="text-foreground/80">{feature}</span>
                   </li>
@@ -139,8 +139,8 @@ export default function PricingPage() {
               { title: 'Performance Audit', price: '$1,500 one-time' },
               { title: 'Security Audit', price: '$2,000 one-time' },
               { title: 'Content Migration', price: 'Custom' },
-            ].map((addon, index) => (
-              <div key={index} className="flex items-center justify-between p-6 bg-card rounded-lg border border-border">
+            ].map((addon) => (
+              <div key={addon.title} className="flex items-center justify-between p-6 bg-card rounded-lg border border-border">
                 <h3 className="font-semibold text-foreground">{addon.title}</h3>
                 <span className="text-emerald-600 font-bold">{addon.price}</span>
               </div>
@@ -171,8 +171,8 @@ export default function PricingPage() {
                 q: 'What payment options do you accept?',
                 a: 'We accept credit cards, wire transfers, and bank payments. Payment terms can be negotiated for enterprise clients.',
               },
-            ].map((item, index) => (
-              <div key={index}>
+            ].map((item) => (
+              <div key={item.q}>
                 <h3 className="text-lg font-bold text-foreground mb-2">{item.q}</h3>
                 <p className="text-foreground/70">{item.a}</p>
               </div>

@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowLeft, CheckCircle } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import { notFound } from 'next/navigation';
 
 const projectDetails: Record<string, any> = {
@@ -52,7 +52,7 @@ export function generateStaticParams() {
   return Object.keys(projectDetails).map((slug) => ({ slug }));
 }
 
-export default function ProjectDetailPage({ params }: { params: { slug: string } }) {
+export default function ProjectDetailPage({ params }: Readonly<{ params: { slug: string } }>) {
   const project = projectDetails[params.slug];
 
   if (!project) {
@@ -94,8 +94,8 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-foreground mb-12">Results</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {project.metrics.map((metric: any, index: number) => (
-              <div key={index} className="text-center">
+            {project.metrics.map((metric: any) => (
+              <div key={metric.label} className="text-center">
                 <div className="text-4xl font-bold text-transparent bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text mb-2">
                   {metric.value}
                 </div>

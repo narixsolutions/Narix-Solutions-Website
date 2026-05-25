@@ -1,33 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import {
-  ArrowRight,
-  CheckCircle,
-  Database,
-  Dumbbell,
-  Globe,
-  Megaphone,
-  Palette,
-  ShoppingCart,
-  Smartphone,
-  Zap,
-} from 'lucide-react';
+import { ArrowRight, CheckCircle } from 'lucide-react';
 
 import { CASE_STUDIES } from '@/data/case-studies';
-import { ExpertWhatsAppSection } from '@/components/sections/ExpertWhatsApp';
+import { HOME_BENEFITS, HOME_SERVICE_CARDS, HOME_TECH_TILES } from '../data/home';
 
 const HERO_IMG = '/images/hero.png';
-
-const techTiles = [
-  'Next.js',
-  'React',
-  'TypeScript',
-  'Node.js',
-  'Tailwind CSS',
-  'MongoDB',
-  'PostgreSQL',
-  'Redis',
-];
 
 const homeStudySnippets = CASE_STUDIES.slice(0, 3);
 
@@ -82,9 +60,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* WhatsApp concierge — standalone CTA */}
-      {/* <ExpertWhatsAppSection /> */}
-
       {/* Tech Stack Section */}
       <section className="py-12 px-6 lg:px-8 bg-card/50 border-y border-border">
         <div className="max-w-7xl mx-auto">
@@ -97,7 +72,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-            {techTiles.map((name) => (
+            {HOME_TECH_TILES.map((name) => (
               <div
                 key={name}
                 className="flex flex-col items-center gap-3 p-4 rounded-xl bg-background border border-border hover:border-accent/40 transition-colors"
@@ -129,56 +104,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {[
-              {
-                Icon: Globe,
-                title: 'Custom Website Development',
-                description: 'Responsive business websites designed for performance, branding, and lead generation.',
-                href: '/services/web-development',
-              },
-              {
-                Icon: ShoppingCart,
-                title: 'E-Commerce Development',
-                description: 'Modern online stores with secure payments, product management, and optimized shopping experiences.',
-                href: '/services/ecommerce',
-              },
-              {
-                Icon: Database,
-                title: 'CMS Development',
-                description: 'Flexible CMS platforms for businesses that need easy content management and scalability.',
-                href: '/services/cms-development',
-              },
-              {
-                Icon: Zap,
-                title: 'SEO & Performance Optimization',
-                description: 'Technical SEO, speed optimization, and structure improvements to increase visibility and conversions.',
-                href: '/services/seo-marketing',
-              },
-              {
-                Icon: Smartphone,
-                title: 'Mobile App Development',
-                description: 'Cross-platform mobile applications designed for smooth user experiences and scalable growth.',
-                href: '/services/mobile-app-development',
-              },
-              {
-                Icon: Megaphone,
-                title: 'Digital Marketing',
-                description: 'Growth-focused digital campaigns, social media marketing, and customer acquisition strategies.',
-                href: '/services/seo-marketing',
-              },
-              {
-                Icon: Dumbbell,
-                title: 'Gym & Fitness Websites',
-                description: 'Professional fitness websites with memberships, schedules, trainer profiles, and lead capture.',
-                href: '/services/web-development',
-              },
-              {
-                Icon: Palette,
-                title: 'UI/UX Design',
-                description: 'Modern user experiences and interface systems focused on usability and engagement.',
-                href: '/services',
-              },
-            ].map((service) => {
+            {HOME_SERVICE_CARDS.map((service) => {
               const Icon = service.Icon;
               return (
                 <Link key={service.title} href={service.href}>
@@ -247,38 +173,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              {
-                stat: 'Clear',
-                label: 'Transparent Communication',
-                desc: 'Regular updates and honest timelines throughout your project',
-              },
-              {
-                stat: 'Modern',
-                label: 'Modern Scalable Development',
-                desc: 'Current frameworks and architecture built to grow with your business',
-              },
-              {
-                stat: 'SEO+',
-                label: 'SEO & Performance Focused',
-                desc: 'Technical SEO and speed optimization built into every delivery',
-              },
-              {
-                stat: '24/7',
-                label: 'Long-Term Technical Support',
-                desc: 'Maintenance and technical assistance after launch when you need it',
-              },
-              {
-                stat: 'ROI',
-                label: 'Business-Centered Solutions',
-                desc: 'Development aligned with your goals, audience, and growth priorities',
-              },
-              {
-                stat: 'On-Time',
-                label: 'Reliable Project Delivery',
-                desc: 'Structured milestones and dependable handoffs from kickoff to launch',
-              },
-            ].map((item) => (
+            {HOME_BENEFITS.map((item) => (
               <div key={item.label} className="text-center p-5 rounded-xl bg-card border border-border hover:border-accent/35 transition-colors">
                 <div className="text-3xl font-bold text-accent mb-2">{item.stat}</div>
                 <h3 className="font-semibold text-sm mb-1">{item.label}</h3>

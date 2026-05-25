@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
-import { Metadata } from 'next';
 
 export default function FAQPage() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -61,7 +60,7 @@ export default function FAQPage() {
         <div className="max-w-4xl mx-auto">
           <div className="space-y-4">
             {faqs.map((faq, index) => (
-              <div key={index} className="bg-card rounded-xl border border-border overflow-hidden">
+              <div key={faq.question} className="bg-card rounded-xl border border-border overflow-hidden">
                 <button
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
                   className="w-full px-8 py-6 flex items-center justify-between hover:bg-secondary/50 transition-colors"

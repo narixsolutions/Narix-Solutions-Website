@@ -56,8 +56,8 @@ export function Hero() {
               { number: '500+', label: 'Projects Delivered' },
               { number: '150+', label: 'Team Members' },
               { number: '50+', label: 'Countries' },
-            ].map((stat, index) => (
-              <div key={index} className="group">
+            ].map((stat) => (
+              <div key={stat.label} className="group">
                 <div className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-accent to-teal-600 bg-clip-text text-transparent group-hover:from-accent group-hover:to-emerald-700 transition-all">
                   {stat.number}
                 </div>

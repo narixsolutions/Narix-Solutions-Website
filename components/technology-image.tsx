@@ -22,7 +22,7 @@ export function TechnologyImage({
   objectPosition,
   fit = 'cover',
   className,
-}: TechnologyImageProps) {
+}: Readonly<TechnologyImageProps>) {
   const [failed, setFailed] = useState(false);
 
   if (!src || failed) {
@@ -45,9 +45,13 @@ export function TechnologyImage({
       fill
       priority={priority}
       sizes={sizes}
-      className={`h-full w-full ${
-        fit === 'cover' ? 'object-cover object-center' : 'object-contain object-center'
-      }${className ? ` ${className}` : ''}`}
+      className={[
+        'h-full w-full',
+        fit === 'cover' ? 'object-cover object-center' : 'object-contain object-center',
+        className,
+      ]
+        .filter(Boolean)
+        .join(' ')}
       style={{ objectPosition: objectPosition ?? 'center' }}
       onError={() => setFailed(true)}
     />

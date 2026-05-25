@@ -67,8 +67,8 @@ export function ServiceModal() {
               <div className="mb-8">
                 <h3 className="text-xl font-bold text-foreground mb-4">What&apos;s Included</h3>
                 <ul className="space-y-3">
-                  {service.features.map((feature, index) => (
-                    <li key={index} className="flex items-start gap-3">
+                  {service.features.map((feature) => (
+                    <li key={feature} className="flex items-start gap-3">
                       <div className="w-5 h-5 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <Check size={16} className="text-accent" />
                       </div>

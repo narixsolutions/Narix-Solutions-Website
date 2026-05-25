@@ -56,8 +56,8 @@ export function ProjectModal() {
 
               {/* Stats Grid */}
               <div className="grid grid-cols-2 gap-4 mb-8">
-                {project.stats.map((stat, index) => (
-                  <div key={index} className="bg-background border border-border rounded-lg p-4">
+                {project.stats.map((stat) => (
+                  <div key={stat.label} className="bg-background border border-border rounded-lg p-4">
                     <p className="text-sm text-foreground/70 mb-1">{stat.label}</p>
                     <p className="text-2xl font-bold text-accent">{stat.value}</p>
                   </div>
@@ -71,8 +71,8 @@ export function ProjectModal() {
                   Technologies Used
                 </h3>
                 <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech, index) => (
-                    <span key={index} className="px-3 py-1 bg-accent/10 text-accent text-sm font-medium rounded-full">
+                  {project.technologies.map((tech) => (
+                    <span key={tech} className="px-3 py-1 bg-accent/10 text-accent text-sm font-medium rounded-full">
                       {tech}
                     </span>
                   ))}
