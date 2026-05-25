@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "test:smtp": "node scripts/test-smtp.mjs"
+    "test:smtp": "node src/scripts/test-smtp.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
