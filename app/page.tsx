@@ -83,7 +83,7 @@ export default function Home() {
       </section>
 
       {/* WhatsApp concierge — standalone CTA */}
-      <ExpertWhatsAppSection />
+      {/* <ExpertWhatsAppSection /> */}
 
       {/* Tech Stack Section */}
       <section className="py-12 px-6 lg:px-8 bg-card/50 border-y border-border">
