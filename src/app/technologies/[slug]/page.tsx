@@ -56,7 +56,6 @@ export default async function TechnologyDetailPage({ params }: { params: Promise
             <span className="rounded-full border border-accent/30 bg-accent/10 px-4 py-1 text-xs font-semibold text-accent">
               {tech.category}
             </span>
-            <span className="text-sm text-foreground/50">Updated practice since {tech.year}</span>
           </div>
 
           <h1 className="text-4xl md:text-5xl font-bold text-foreground text-balance mb-4">{tech.name}</h1>
