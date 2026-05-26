@@ -50,6 +50,11 @@ export const viewport: Viewport = {
   ],
 }
 
+// Runs before first paint to avoid flash of wrong theme.
+// Reads the Zustand persist key ('theme-storage') from localStorage and
+// removes the 'dark' class if the stored preference is light mode.
+const themeInitScript = `(function(){try{var s=localStorage.getItem('theme-storage');var dark=s?JSON.parse(s).state.isDark:true;if(!dark)document.documentElement.classList.remove('dark');}catch(e){}})();`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -57,6 +62,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark bg-background" suppressHydrationWarning>
+      {/* eslint-disable-next-line @next/next/no-sync-scripts */}
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body className="font-sans antialiased">
         <Providers>
           {children}
