@@ -94,7 +94,7 @@ export function ContactFormSection({
                   aria-invalid={Boolean(fieldErrors.phone)}
                   aria-describedby={fieldErrors.phone ? 'phone-error' : undefined}
                   className="w-full px-4 py-3 rounded-lg bg-card border border-border text-foreground placeholder-foreground/50 focus:outline-none focus:border-accent transition-colors duration-200"
-                  placeholder="+91 98934 71888"
+                  placeholder="+91 XX XXXX XXXX"
                 />
                 {fieldErrors.phone && (
                   <p id="phone-error" className="text-red-500 text-sm mt-1" role="alert">
