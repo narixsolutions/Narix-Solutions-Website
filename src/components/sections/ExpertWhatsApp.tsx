@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { MessageCircle } from 'lucide-react';
 
 import { getWhatsAppHref } from '@/lib/whatsapp';
+import { siteConfig } from '@/config/site';
 
 /** Consultation strip: WhatsApp only (no scheduling/booking widgets). Swap photo or copy freely. */
 export function ExpertWhatsAppSection() {
@@ -15,7 +16,7 @@ export function ExpertWhatsAppSection() {
           <div className="relative min-h-[280px] md:min-h-[320px] bg-muted">
             <Image
               src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=1200&q=80"
-              alt="NarixSolutions team member"
+              alt={`${siteConfig.name} team member`}
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 55vw"

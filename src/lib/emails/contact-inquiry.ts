@@ -1,3 +1,5 @@
+import { siteConfig } from '@/config/site';
+
 export type ContactInquiryEmailData = {
   name: string;
   email: string;
@@ -52,7 +54,7 @@ export function buildContactInquiryEmailHtml(data: ContactInquiryEmailData): str
           <tr>
             <td style="background:linear-gradient(135deg,#059669,#0d9488);padding:28px 32px;">
               <h1 style="margin:0;font-size:22px;font-weight:700;color:#ffffff;">New Project Inquiry</h1>
-              <p style="margin:8px 0 0;font-size:14px;color:rgba(255,255,255,0.9);">NarixSolutions Website Contact Form</p>
+              <p style="margin:8px 0 0;font-size:14px;color:rgba(255,255,255,0.9);">${siteConfig.name} Website Contact Form</p>
             </td>
           </tr>
           <tr>

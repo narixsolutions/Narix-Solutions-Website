@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   if (!project) return { title: 'Project Not Found' };
   
   return {
-    title: `${project.title} - NarixSolutions`,
+    title: project.title,
     description: project.overview,
   };
 }

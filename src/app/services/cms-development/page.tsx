@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { ArrowRight, CheckCircle, Database, Zap, Shield, TrendingUp } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'CMS Development Services - NarixSolutions',
+  title: 'CMS Development Services',
   description:
     'WordPress and custom CMS development that helps businesses manage content easily, publish faster, and grow online with confidence.',
 };

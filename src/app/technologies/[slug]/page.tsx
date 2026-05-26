@@ -9,10 +9,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const tech = getTechnology(slug);
   if (!tech) {
-    return { title: 'Technology — NarixSolutions' };
+    return { title: 'Technology' };
   }
   return {
-    title: `${tech.name} capabilities — NarixSolutions`,
+    title: `${tech.name} capabilities`,
     description: tech.introduction.slice(0, 155),
   };
 }

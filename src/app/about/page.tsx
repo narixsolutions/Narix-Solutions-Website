@@ -3,9 +3,9 @@ import { Award, Users, Target, Zap } from 'lucide-react';
 import { DeliveryTeamVisual, type DeliveryTeamVisualVariant } from '@/components/delivery-team-visual';
 
 export const metadata: Metadata = {
-  title: 'About Us - NarixSolutions',
+  title: 'About Us',
   description:
-    'NarixSolutions is a digital product agency building custom web applications, SaaS platforms, and scalable systems for growing businesses.',
+    'Digital product agency building custom web applications, SaaS platforms, and scalable systems for growing businesses.',
 };
 
 export default function AboutPage() {

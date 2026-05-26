@@ -6,7 +6,7 @@ import { TechnologyImage } from '@/components/technology-image';
 import { getTechnologiesByCategory } from '@/data/technologies';
 
 export const metadata: Metadata = {
-  title: 'Technologies - NarixSolutions',
+  title: 'Technologies',
   description:
     'Production-grade engineering stack across frontend, backend, cloud, and platform tooling — with implementation playbooks for scalable product delivery.',
 };

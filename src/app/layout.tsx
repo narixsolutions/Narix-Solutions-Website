@@ -2,15 +2,18 @@ import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { Providers } from '@/components/Providers'
+import { siteConfig } from '@/config/site'
 import './globals.css'
 
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'NarixSolutions - Premium Digital Agency',
-  description: 'Premium digital solutions for global brands. Web development, design, SEO, and digital transformation services.',
-  generator: 'v0.app',
+  title: {
+    default: `${siteConfig.name} - ${siteConfig.tagline}`,
+    template: `%s - ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
   keywords: 'digital agency, web development, design, SEO, digital marketing',
   icons: {
     icon: [
@@ -30,9 +33,10 @@ export const metadata: Metadata = {
     apple: '/images/narix-logo-trim.png',
   },
   openGraph: {
-    title: 'NarixSolutions - Premium Digital Agency',
-    description: 'Premium digital solutions for global brands',
+    title: `${siteConfig.name} - ${siteConfig.tagline}`,
+    description: siteConfig.description,
     type: 'website',
+    url: siteConfig.url,
   },
 }
 

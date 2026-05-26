@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { ArrowRight, TrendingUp } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Our Projects - NarixSolutions',
+  title: 'Our Projects',
   description: 'Case studies and portfolio of successful projects we have delivered.',
 };
 

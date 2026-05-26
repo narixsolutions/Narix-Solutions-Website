@@ -10,10 +10,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const service = getServicePage(slug);
   if (!service) {
-    return { title: 'Service — NarixSolutions' };
+    return { title: 'Service' };
   }
   return {
-    title: `${service.title} — NarixSolutions`,
+    title: service.title,
     description: service.description,
   };
 }

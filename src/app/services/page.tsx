@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Our Services - NarixSolutions',
+  title: 'Our Services',
   description:
     'Business websites, e-commerce, CMS, mobile apps, SEO, and custom web applications for startups and growing brands.',
 };

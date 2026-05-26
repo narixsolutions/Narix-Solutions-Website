@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { z } from 'zod';
+import { siteConfig } from '@/config/site';
 import { SERVICE_OPTIONS } from '@/lib/contact';
 import {
   buildContactInquiryEmailHtml,
@@ -27,7 +28,7 @@ const contactFormSchema = z.object({
 });
 
 function getRecipientEmail(): string {
-  return process.env.CONTACT_EMAIL_TO?.trim() || 'anishrawat53@gmail.com';
+  return process.env.CONTACT_EMAIL_TO?.trim() || siteConfig.email;
 }
 
 export async function POST(request: Request) {

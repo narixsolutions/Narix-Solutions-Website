@@ -9,10 +9,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const study = getCaseStudy(slug);
   if (!study) {
-    return { title: 'Case study — NarixSolutions' };
+    return { title: 'Case study' };
   }
   return {
-    title: `${study.title} — Case Study — NarixSolutions`,
+    title: `${study.title} — Case Study`,
     description: study.description,
   };
 }

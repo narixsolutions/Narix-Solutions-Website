@@ -4,9 +4,10 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
 import { CASE_STUDIES } from '@/data/case-studies';
+import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
-  title: 'Case Studies - NarixSolutions',
+  title: 'Case Studies',
   description: 'Real-world success stories and projects showcasing how we ship resilient digital products.',
 };
 
@@ -95,7 +96,7 @@ export default function CaseStudiesPage() {
             href="/contact"
             className="inline-flex items-center gap-2 rounded-xl bg-accent text-accent-foreground px-8 py-3 font-semibold shadow-md hover:opacity-95 transition-opacity"
           >
-            Speak with NarixSolutions
+            Speak with {siteConfig.name}
             <ArrowRight size={18} />
           </Link>
         </div>
