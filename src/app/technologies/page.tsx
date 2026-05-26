@@ -16,11 +16,11 @@ export default function TechnologiesPage() {
 
   return (
     <main className="min-h-screen bg-background">
-      <section className="pt-32 pb-14 px-4 sm:px-6 lg:px-8 border-b border-border/60 bg-card/30">
+      <section className="pt-28 sm:pt-32 lg:pt-36 pb-14 px-4 sm:px-6 lg:px-8 border-b border-border/60 bg-card/30">
         <div className="max-w-6xl mx-auto text-center space-y-4">
           <p className="text-sm font-semibold text-accent uppercase tracking-widest">Engineering stack</p>
-          <h1 className="text-4xl md:text-6xl font-bold text-foreground text-balance">Technologies</h1>
-          <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold text-foreground text-balance">Technologies</h1>
+          <p className="text-base sm:text-lg text-foreground/70 max-w-2xl mx-auto">
             Production-ready ecosystems engineered for scalability, security, and long-term maintainability. Select a capability to review our delivery focus, architecture standards, and enterprise implementation approach.
           </p>
         </div>
@@ -30,7 +30,7 @@ export default function TechnologiesPage() {
         {groups.map(({ category, items }) => (
           <div key={category} className="max-w-7xl mx-auto">
             <h2 className="text-3xl font-bold text-foreground mb-10">{category}</h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-5 xl:gap-6">
               {items.map((item) => (
                 <Link key={item.slug} href={`/technologies/${item.slug}`} className="group block rounded-2xl border border-border bg-card overflow-hidden hover:border-accent/35 hover:shadow-md transition-all shadow-sm">
                   <div className="relative h-28 sm:h-32 shrink-0 overflow-hidden border-b border-border bg-gradient-to-br from-muted via-muted/70 to-muted/40">

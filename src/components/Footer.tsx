@@ -58,19 +58,19 @@ export function Footer() {
       {/* Top CTA — hidden on home, contact, technologies (incl. detail), services, case studies */}
       {showTopCta && (
         <div className="relative z-10 border-b border-border/50 bg-card/70 backdrop-blur-sm">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-18 xl:py-20">
+            <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.25fr)_auto] gap-8 xl:gap-12 items-center">
               <div className="space-y-4">
-                <h3 className="text-4xl md:text-5xl font-bold text-foreground leading-tight">
+                <h3 className="text-3xl sm:text-4xl lg:text-[2.75rem] xl:text-5xl font-bold text-foreground leading-tight">
                   Ready to Start Your Project?
                 </h3>
-                <p className="text-lg text-foreground/70 font-light leading-relaxed">
+                <p className="text-base sm:text-lg text-foreground/70 font-light leading-relaxed max-w-2xl">
                   Get a free consultation and discover how we can transform your business through innovative digital solutions.
                 </p>
               </div>
               <Link
                 href="/contact"
-                className="group inline-flex items-center justify-center gap-3 bg-accent text-accent-foreground px-10 py-5 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-lg"
+                className="group inline-flex items-center justify-center gap-3 bg-accent text-accent-foreground px-8 xl:px-10 py-4 xl:py-5 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-base xl:text-lg w-full sm:w-auto"
               >
                 <span>Get Started Today</span>
                 <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" />
@@ -82,9 +82,9 @@ export function Footer() {
 
       {/* Main Footer Content - Premium */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8 md:pt-20 md:pb-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-10 xl:gap-12 mb-12">
           {/* Brand & Contact Info */}
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:col-span-5 space-y-7">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="md:col-span-12 lg:col-span-6 xl:col-span-5 space-y-7">
             <Link href="/" className="inline-flex items-center gap-2.5">
               <Image
                 src="/images/narix-logo-trim.png"
@@ -100,32 +100,32 @@ export function Footer() {
               NarixSolutions builds scalable websites, SaaS platforms, and modern digital products focused on performance, usability, and long-term business growth.
             </p>
 
-            <div className="pt-2">
+            <div className="pt-2 max-w-xl">
               <p className="text-xs uppercase tracking-[0.18em] text-foreground/45 mb-4">Contact</p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+              <div className="grid grid-cols-1 gap-3 sm:gap-4">
               <a
                 href={mailtoHref}
-                className="group flex items-center gap-3 rounded-lg border border-border/70 bg-card/55 px-3.5 py-3 text-sm text-foreground/75 hover:text-accent hover:border-accent/35 hover:bg-accent/10 transition-all duration-300"
+                className="group min-w-0 flex items-center gap-3 rounded-lg border border-border/70 bg-card/55 px-3.5 py-3 text-sm text-foreground/75 hover:text-accent hover:border-accent/35 hover:bg-accent/10 transition-all duration-300"
               >
                 <span className="p-2 rounded-md border border-border/70 bg-card/80 group-hover:border-accent/40 group-hover:bg-accent/10 transition-all duration-300">
                   <Mail size={15} className="text-accent" />
                 </span>
-                <span>{CONTACT_EMAIL}</span>
+                <span className="min-w-0 break-all">{CONTACT_EMAIL}</span>
               </a>
               <a
                 href={`tel:${CONTACT_PHONE_TEL}`}
-                className="group flex items-center gap-3 rounded-lg border border-border/70 bg-card/55 px-3.5 py-3 text-sm text-foreground/75 hover:text-accent hover:border-accent/35 hover:bg-accent/10 transition-all duration-300"
+                className="group min-w-0 flex items-center gap-3 rounded-lg border border-border/70 bg-card/55 px-3.5 py-3 text-sm text-foreground/75 hover:text-accent hover:border-accent/35 hover:bg-accent/10 transition-all duration-300"
               >
                 <span className="p-2 rounded-md border border-border/70 bg-card/80 group-hover:border-accent/40 group-hover:bg-accent/10 transition-all duration-300">
                   <Phone size={15} className="text-accent" />
                 </span>
-                <span>{CONTACT_PHONE_DISPLAY}</span>
+                <span className="min-w-0 break-words">{CONTACT_PHONE_DISPLAY}</span>
               </a>
               <a
                 href={whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-3 rounded-lg border border-border/70 bg-card/55 px-3.5 py-3 text-sm text-foreground/75 hover:text-accent hover:border-accent/35 hover:bg-accent/10 transition-all duration-300"
+                className="group min-w-0 flex items-center gap-3 rounded-lg border border-border/70 bg-card/55 px-3.5 py-3 text-sm text-foreground/75 hover:text-accent hover:border-accent/35 hover:bg-accent/10 transition-all duration-300"
               >
                 <span className="p-2 rounded-md border border-border/70 bg-card/80 group-hover:border-accent/40 group-hover:bg-accent/10 transition-all duration-300">
                   <MessageCircle size={15} className="text-accent" />
@@ -136,12 +136,12 @@ export function Footer() {
                 href={mapsHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-3 rounded-lg border border-border/70 bg-card/55 px-3.5 py-3 text-sm text-foreground/75 hover:text-accent hover:border-accent/35 hover:bg-accent/10 transition-all duration-300 sm:col-span-2"
+                className="group min-w-0 flex items-center gap-3 rounded-lg border border-border/70 bg-card/55 px-3.5 py-3 text-sm text-foreground/75 hover:text-accent hover:border-accent/35 hover:bg-accent/10 transition-all duration-300"
               >
                 <span className="p-2 rounded-md border border-border/70 bg-card/80 group-hover:border-accent/40 group-hover:bg-accent/10 transition-all duration-300">
                   <MapPin size={15} className="text-accent" />
                 </span>
-                <span>{CONTACT_LOCATION}</span>
+                <span className="min-w-0 break-words">{CONTACT_LOCATION}</span>
               </a>
             </div>
             </div>
@@ -152,7 +152,7 @@ export function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.05 }}
             viewport={{ once: true }}
-            className="lg:col-span-3"
+            className="md:col-span-6 lg:col-span-3 xl:col-span-3"
           >
             <h3 className="font-semibold text-foreground text-base mb-5">Quick Links</h3>
             <ul className="space-y-3">
@@ -171,7 +171,7 @@ export function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
             viewport={{ once: true }}
-            className="lg:col-span-4"
+            className="md:col-span-6 lg:col-span-3 xl:col-span-4"
           >
             <h3 className="font-semibold text-foreground text-base mb-5">Services</h3>
             <ul className="space-y-3">

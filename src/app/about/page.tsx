@@ -104,12 +104,12 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+      <section className="pt-28 sm:pt-32 lg:pt-36 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-6xl md:text-7xl font-bold text-foreground mb-6 text-balance">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold text-foreground mb-6 text-balance">
             Digital products that <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">scale</span>
           </h1>
-          <p className="text-xl text-foreground/70">
+          <p className="text-base sm:text-lg xl:text-xl text-foreground/70">
             NarixSolutions partners with startups and growing businesses to design and build custom web applications, SaaS platforms, and eCommerce products — with the engineering discipline to support them long after launch.
           </p>
         </div>
@@ -118,7 +118,7 @@ export default function AboutPage() {
       {/* Stats Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/50">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 xl:gap-8">
             {stats.map((stat) => {
               const IconComponent = stat.icon;
               return (
@@ -137,7 +137,7 @@ export default function AboutPage() {
 
       {/* Mission & Vision */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 xl:grid-cols-2 gap-10 xl:gap-12">
           <div>
             <h2 className="text-4xl font-bold text-foreground mb-6">Our Mission</h2>
             <p className="text-lg text-foreground/70 leading-relaxed mb-4">
@@ -162,11 +162,11 @@ export default function AboutPage() {
       {/* Core Values */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-foreground mb-12 text-center">Core Values</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-10 sm:mb-12 text-center">Core Values</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 xl:gap-8">
             {values.map((value) => (
-              <div key={value.title} className="p-8 bg-card rounded-xl border border-border hover:border-accent transition-all duration-300">
-                <h3 className="text-2xl font-bold text-foreground mb-4">{value.title}</h3>
+              <div key={value.title} className="p-6 xl:p-8 bg-card rounded-xl border border-border hover:border-accent transition-all duration-300">
+                <h3 className="text-xl xl:text-2xl font-bold text-foreground mb-4">{value.title}</h3>
                 <p className="text-foreground/70 leading-relaxed">{value.description}</p>
               </div>
             ))}
@@ -176,17 +176,15 @@ export default function AboutPage() {
 
       {/* Team Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-foreground mb-12">How We Work</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {deliveryTeams.map((team, index) => (
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-10 sm:mb-12 text-center">How We Work</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 xl:gap-8">
+            {deliveryTeams.map((team) => (
               <div
                 key={team.visual}
-                className={`p-8 bg-card rounded-xl border border-border hover:border-accent transition-all duration-300 ${
-                  index === deliveryTeams.length - 1 ? 'md:col-start-2' : ''
-                }`}
+                className="h-full p-6 xl:p-8 bg-card rounded-xl border border-border hover:border-accent transition-all duration-300 text-left"
               >
-                <DeliveryTeamVisual variant={team.visual} />
+                <DeliveryTeamVisual variant={team.visual} className="mx-0 mb-5" />
                 <h3 className="text-xl font-bold text-foreground mb-2">{team.title}</h3>
                 <p className="text-accent font-semibold mb-3">{team.focus}</p>
                 <p className="text-foreground/70">{team.bio}</p>
@@ -198,12 +196,12 @@ export default function AboutPage() {
 
       {/* Why Work With Us */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/50">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-foreground mb-12">Why businesses work with us</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-10 sm:mb-12 text-center">Why businesses work with us</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 xl:gap-8">
             {whyWorkWithUs.map((item) => (
-              <div key={item.title} className="p-8 bg-card rounded-xl border border-border">
-                <Award className="w-12 h-12 text-accent mx-auto mb-4" />
+              <div key={item.title} className="h-full p-6 xl:p-8 bg-card rounded-xl border border-border text-left">
+                <Award className="w-12 h-12 text-accent mb-4" />
                 <p className="font-bold text-foreground text-lg mb-3">{item.title}</p>
                 <p className="text-foreground/70 leading-relaxed">{item.description}</p>
               </div>

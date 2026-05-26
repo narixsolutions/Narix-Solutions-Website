@@ -92,13 +92,13 @@ export default function ProjectsPage() {
   return (
     <main className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <section className="pt-28 sm:pt-32 lg:pt-36 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h1 className="text-6xl md:text-7xl font-bold text-foreground mb-6 text-balance">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold text-foreground mb-6 text-balance">
               Our <span className="bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-700 bg-clip-text text-transparent">Case Studies</span>
             </h1>
-            <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg xl:text-xl text-foreground/70 max-w-2xl mx-auto">
               Proven success stories of businesses transformed through our digital solutions
             </p>
           </div>
@@ -107,7 +107,7 @@ export default function ProjectsPage() {
 
       {/* Projects Grid */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 xl:gap-8">
           {projects.map((project) => (
             <Link key={project.id} href={`/projects/${project.id}`}>
               <div className="group relative h-full bg-card border border-border rounded-2xl overflow-hidden hover:border-accent transition-all duration-500 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
@@ -120,12 +120,12 @@ export default function ProjectsPage() {
                 </div>
 
                 {/* Content */}
-                <div className="p-8">
+                <div className="p-6 xl:p-8">
                   <div className="inline-block px-3 py-1 rounded-full bg-secondary text-sm font-medium text-foreground/70 mb-4">
                     {project.category}
                   </div>
 
-                  <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-accent transition-colors line-clamp-2">
+                  <h3 className="text-xl xl:text-2xl font-bold text-foreground mb-3 group-hover:text-accent transition-colors line-clamp-2">
                     {project.title}
                   </h3>
 
@@ -172,7 +172,7 @@ export default function ProjectsPage() {
       {/* CTA Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-700">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
             Let&apos;s Create Your Success Story
           </h2>
           <p className="text-lg text-white/90 mb-8">

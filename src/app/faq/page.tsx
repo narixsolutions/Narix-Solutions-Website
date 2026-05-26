@@ -44,12 +44,12 @@ export default function FAQPage() {
   return (
     <main className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+      <section className="pt-28 sm:pt-32 lg:pt-36 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-6xl md:text-7xl font-bold text-foreground mb-6 text-balance">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold text-foreground mb-6 text-balance">
             Frequently Asked <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Questions</span>
           </h1>
-          <p className="text-xl text-foreground/70">
+          <p className="text-base sm:text-lg xl:text-xl text-foreground/70">
             Find answers to common questions about our services and process
           </p>
         </div>
@@ -63,9 +63,9 @@ export default function FAQPage() {
               <div key={faq.question} className="bg-card rounded-xl border border-border overflow-hidden">
                 <button
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                  className="w-full px-8 py-6 flex items-center justify-between hover:bg-secondary/50 transition-colors"
+                  className="w-full px-5 sm:px-8 py-5 sm:py-6 flex items-center justify-between gap-4 hover:bg-secondary/50 transition-colors"
                 >
-                  <h3 className="text-lg font-bold text-foreground text-left">{faq.question}</h3>
+                  <h3 className="text-base sm:text-lg font-bold text-foreground text-left">{faq.question}</h3>
                   <ChevronDown
                     size={24}
                     className={`text-accent flex-shrink-0 transition-transform ${
@@ -75,7 +75,7 @@ export default function FAQPage() {
                 </button>
 
                 {openIndex === index && (
-                  <div className="px-8 py-6 bg-secondary/50 border-t border-border">
+                  <div className="px-5 sm:px-8 py-5 sm:py-6 bg-secondary/50 border-t border-border">
                     <p className="text-foreground/70 leading-relaxed">{faq.answer}</p>
                   </div>
                 )}
@@ -88,8 +88,8 @@ export default function FAQPage() {
       {/* Still Have Questions */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/50">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-foreground mb-4">Still have questions?</h2>
-          <p className="text-lg text-foreground/70 mb-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">Still have questions?</h2>
+          <p className="text-base sm:text-lg text-foreground/70 mb-8">
             Can&apos;t find the answer you&apos;re looking for? Our team is here to help.
           </p>
           <a

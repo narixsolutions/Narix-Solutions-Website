@@ -27,12 +27,12 @@ export function ContactFormSection({
   whyChooseUs,
 }: ContactFormSectionProps) {
   return (
-    <section id="contact-form" className="py-20 px-4 sm:px-6 lg:px-8 scroll-mt-24">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+    <section id="contact-form" className="py-16 sm:py-20 xl:py-24 px-4 sm:px-6 lg:px-8 scroll-mt-24">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 xl:grid-cols-2 gap-10 xl:gap-12">
         <div>
-          <h2 className="text-3xl font-bold text-foreground mb-8">Send us a Message</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-8">Send us a Message</h2>
           <form onSubmit={handleSubmit} className="space-y-6" noValidate>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
                   Name
@@ -79,7 +79,7 @@ export function ContactFormSection({
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
               <div>
                 <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
                   Phone
@@ -183,7 +183,7 @@ export function ContactFormSection({
         </div>
 
         <div>
-          <h2 className="text-3xl font-bold text-foreground mb-8">Why Choose Us</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-8">Why Choose Us</h2>
           <div className="space-y-6">
             {whyChooseUs.map((item) => (
               <div

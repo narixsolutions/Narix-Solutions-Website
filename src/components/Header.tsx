@@ -74,9 +74,9 @@ export function Header() {
           : 'bg-transparent'
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between gap-3 xl:gap-6">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5 group">
+        <Link href="/" className="flex min-w-0 items-center gap-2.5 group">
           <Image
             src="/images/narix-logo-trim.png"
             alt="NarixSolutions logo"
@@ -85,18 +85,18 @@ export function Header() {
             className="h-11 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             priority
           />
-          <span className="hidden sm:block font-bold text-lg leading-none tracking-tight text-foreground/90">NarixSolutions</span>
+          <span className="hidden sm:block truncate font-bold text-base lg:text-lg leading-none tracking-tight text-foreground/90">NarixSolutions</span>
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-1">
+        <div className="hidden xl:flex items-center gap-0.5 xl:gap-1">
           {navItems.map((item) => {
             const active = isActive(item.href);
             return (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg ${
+                className={`relative px-2.5 xl:px-4 py-2 text-[13px] xl:text-sm font-medium transition-all duration-300 rounded-lg whitespace-nowrap ${
                   active
                     ? 'text-accent bg-accent/10'
                     : 'text-foreground/70 hover:text-foreground hover:bg-foreground/5'
@@ -112,20 +112,20 @@ export function Header() {
         </div>
 
         {/* Theme Toggle & CTA */}
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden xl:flex items-center gap-2 xl:gap-3 shrink-0">
           {isMounted && (
             <button
               onClick={toggleTheme}
-              className="p-2.5 rounded-lg bg-secondary hover:bg-muted transition-colors text-foreground"
+              className="p-2 xl:p-2.5 rounded-lg bg-secondary hover:bg-muted transition-colors text-foreground"
               aria-label="Toggle theme"
             >
-              {isDark ? <Sun size={20} /> : <Moon size={20} />}
+              {isDark ? <Sun size={18} /> : <Moon size={18} />}
             </button>
           )}
           <Link
             href="/contact#contact-form"
             onClick={handleGetConsultationClick}
-            className="bg-gradient-to-r from-accent to-emerald-800 text-accent-foreground px-6 py-2.5 rounded-lg text-sm font-semibold hover:shadow-lg hover:shadow-accent/40 transition-all duration-300 hover:-translate-y-0.5"
+            className="bg-gradient-to-r from-accent to-emerald-800 text-accent-foreground px-4 xl:px-6 py-2.5 rounded-lg text-[13px] xl:text-sm font-semibold whitespace-nowrap hover:shadow-lg hover:shadow-accent/40 transition-all duration-300 hover:-translate-y-0.5"
           >
             Get Consultation
           </Link>
@@ -134,7 +134,7 @@ export function Header() {
         {/* Mobile Menu Button */}
         <button
           onClick={toggleMobileMenu}
-          className="md:hidden p-2 text-foreground hover:text-accent transition-colors"
+          className="xl:hidden p-2 text-foreground hover:text-accent transition-colors"
           aria-label="Toggle menu"
         >
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -143,7 +143,7 @@ export function Header() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-background/95 backdrop-blur-lg border-b border-border/50 animate-in fade-in slide-in-from-top-2 duration-300">
+        <div className="xl:hidden bg-background/95 backdrop-blur-lg border-b border-border/50 animate-in fade-in slide-in-from-top-2 duration-300">
           <div className="px-4 py-4 space-y-2">
             {navItems.map((item) => {
               const active = isActive(item.href);
