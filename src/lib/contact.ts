@@ -1,15 +1,15 @@
-export const CONTACT_EMAIL = 'anishrawat53@gmail.com';
-export const CONTACT_PHONE_DISPLAY = '+91 9893471888';
-export const CONTACT_PHONE_TEL = '+919893471888';
-export const CONTACT_LOCATION = 'Chandigarh, India';
+import { siteConfig } from '@/config/site';
+import { getWhatsAppHref } from '@/lib/whatsapp';
 
-export const MAILTO_SUBJECT = 'Project Inquiry from NarixSolutions Website';
-export const MAILTO_BODY =
-  'Hi NarixSolutions Team,%0D%0A%0D%0AI would like to discuss a project with you.';
+export const CONTACT_EMAIL = siteConfig.email;
+export const CONTACT_PHONE_DISPLAY = siteConfig.phoneDisplay;
+export const CONTACT_PHONE_TEL = siteConfig.phoneTel;
+export const CONTACT_LOCATION = siteConfig.location;
+
+export const MAILTO_SUBJECT = `Project Inquiry from ${siteConfig.name} Website`;
+export const MAILTO_BODY = `Hi ${siteConfig.name} Team,%0D%0A%0D%0AI would like to discuss a project with you.`;
 
 export const mailtoHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(MAILTO_SUBJECT)}&body=${MAILTO_BODY}`;
-
-import { getWhatsAppHref } from '@/lib/whatsapp';
 
 export const whatsappHref = getWhatsAppHref();
 

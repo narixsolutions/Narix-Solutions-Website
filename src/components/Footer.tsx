@@ -14,6 +14,7 @@ import {
   mapsHref,
   whatsappHref,
 } from '@/lib/contact';
+import { siteConfig } from '@/config/site';
 
 const quickLinks = [
   { label: 'Home', href: '/' },
@@ -88,16 +89,16 @@ export function Footer() {
             <Link href="/" className="inline-flex items-center gap-2.5">
               <Image
                 src="/images/narix-logo-trim.png"
-                alt="NarixSolutions logo"
+                alt={`${siteConfig.name} logo`}
                 width={523}
                 height={403}
                 className="h-12 w-auto object-contain"
               />
-              <span className="font-bold text-2xl leading-none tracking-tight text-foreground">NarixSolutions</span>
+              <span className="font-bold text-2xl leading-none tracking-tight text-foreground">{siteConfig.name}</span>
             </Link>
 
             <p className="text-foreground/70 leading-relaxed font-light max-w-md">
-              NarixSolutions builds scalable websites, SaaS platforms, and modern digital products focused on performance, usability, and long-term business growth.
+              {siteConfig.name} builds scalable websites, SaaS platforms, and modern digital products focused on performance, usability, and long-term business growth.
             </p>
 
             <div className="pt-2 max-w-xl">
@@ -194,7 +195,7 @@ export function Footer() {
             className="flex justify-center text-center"
           >
             <p className="text-xs sm:text-sm text-foreground/60 font-light">
-              © 2025 NarixSolutions. Built for scalable digital experiences.
+              © {new Date().getFullYear()} {siteConfig.name}. Built for scalable digital experiences.
             </p>
           </motion.div>
         </div>

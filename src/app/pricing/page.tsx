@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { CheckCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Pricing - NarixSolutions',
+  title: 'Pricing',
   description: 'Flexible pricing plans for all sizes of projects and businesses.',
 };
 

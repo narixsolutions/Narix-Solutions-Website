@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 import { Menu, X, Moon, Sun } from 'lucide-react';
 import { useUI } from '@/store/ui';
 import { useTheme } from '@/store/theme';
+import { siteConfig } from '@/config/site';
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -79,13 +80,13 @@ export function Header() {
         <Link href="/" className="flex min-w-0 items-center gap-2.5 group">
           <Image
             src="/images/narix-logo-trim.png"
-            alt="NarixSolutions logo"
+            alt={`${siteConfig.name} logo`}
             width={523}
             height={403}
             className="h-11 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             priority
           />
-          <span className="hidden sm:block truncate font-bold text-base lg:text-lg leading-none tracking-tight text-foreground/90">NarixSolutions</span>
+          <span className="hidden sm:block truncate font-bold text-base lg:text-lg leading-none tracking-tight text-foreground/90">{siteConfig.name}</span>
         </Link>
 
         {/* Desktop Menu */}
