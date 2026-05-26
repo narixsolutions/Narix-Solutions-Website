@@ -64,12 +64,12 @@ export default function PricingPage() {
   return (
     <main className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+      <section className="pt-28 sm:pt-32 lg:pt-36 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-6xl md:text-7xl font-bold text-foreground mb-6 text-balance">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold text-foreground mb-6 text-balance">
             Simple, Transparent <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Pricing</span>
           </h1>
-          <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg xl:text-xl text-foreground/70 max-w-2xl mx-auto">
             Flexible plans that scale with your business. From startups to enterprises, we have a plan for you.
           </p>
         </div>
@@ -77,18 +77,18 @@ export default function PricingPage() {
 
       {/* Pricing Plans */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 xl:gap-8">
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`rounded-2xl p-8 border transition-all duration-300 ${
+              className={`rounded-2xl p-6 xl:p-8 border transition-all duration-300 ${
                 plan.highlighted
                   ? 'border-emerald-500 bg-gradient-to-br from-emerald-500/8 to-teal-500/8 ring-2 ring-emerald-500/20 relative'
                   : 'border-border bg-card hover:border-emerald-500/50'
               }`}
             >
               {plan.highlighted && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-sm font-semibold rounded-full">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-sm font-semibold rounded-full whitespace-nowrap">
                   Most Popular
                 </div>
               )}
@@ -130,8 +130,8 @@ export default function PricingPage() {
       {/* Add-ons */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/50">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold text-foreground mb-12 text-center">Optional Add-ons</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-10 sm:mb-12 text-center">Optional Add-ons</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 xl:gap-8">
             {[
               { title: 'Hosting & Deployment', price: '$500/month' },
               { title: 'Maintenance & Support', price: '$1,000/month' },
@@ -140,9 +140,9 @@ export default function PricingPage() {
               { title: 'Security Audit', price: '$2,000 one-time' },
               { title: 'Content Migration', price: 'Custom' },
             ].map((addon) => (
-              <div key={addon.title} className="flex items-center justify-between p-6 bg-card rounded-lg border border-border">
+              <div key={addon.title} className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-6 bg-card rounded-lg border border-border">
                 <h3 className="font-semibold text-foreground">{addon.title}</h3>
-                <span className="text-emerald-600 font-bold">{addon.price}</span>
+                <span className="text-emerald-600 font-bold sm:text-right">{addon.price}</span>
               </div>
             ))}
           </div>
@@ -152,7 +152,7 @@ export default function PricingPage() {
       {/* FAQ */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold text-foreground mb-12 text-center">Pricing FAQ</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-10 sm:mb-12 text-center">Pricing FAQ</h2>
           <div className="space-y-8">
             {[
               {
@@ -184,7 +184,7 @@ export default function PricingPage() {
       {/* CTA */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-emerald-600 to-teal-600">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
             Ready to Get Started?
           </h2>
           <p className="text-lg text-white/90 mb-8">

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function CaseStudiesPage() {
   return (
     <main className="min-h-screen bg-background">
-      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden border-b border-border/60 bg-card/30">
+      <section className="pt-28 sm:pt-32 lg:pt-36 pb-14 sm:pb-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden border-b border-border/60 bg-card/30">
         <div className="absolute inset-0 -z-10 pointer-events-none">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-accent/10 rounded-full blur-3xl" />
           <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-accent/5 rounded-full blur-3xl" />
@@ -21,8 +21,8 @@ export default function CaseStudiesPage() {
 
         <div className="max-w-6xl mx-auto text-center">
           <p className="text-sm font-semibold text-accent uppercase tracking-widest mb-3">Proof of work</p>
-          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-5 text-balance">Case studies</h1>
-          <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold text-foreground mb-5 text-balance">Case studies</h1>
+          <p className="text-base sm:text-lg text-foreground/70 max-w-2xl mx-auto">
             Narratives, architectures, and outcomes from recent programs. Imagery uses curated placeholders — drop in your
             screenshots when assets are ready.
           </p>
@@ -30,7 +30,7 @@ export default function CaseStudiesPage() {
       </section>
 
       <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+        <div className="max-w-7xl mx-auto grid gap-6 xl:gap-10 md:grid-cols-2 xl:grid-cols-3">
           {CASE_STUDIES.map((study) => (
             <Link key={study.slug} href={`/case-studies/${study.slug}`} className="group block h-full">
               <article className="h-full flex flex-col rounded-2xl border border-border bg-card overflow-hidden shadow-sm hover:border-accent/40 hover:shadow-md transition-all">

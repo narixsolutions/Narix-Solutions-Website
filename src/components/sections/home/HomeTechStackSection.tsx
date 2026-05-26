@@ -5,17 +5,17 @@ import { HOME_TECH_TILES } from '@/data/home';
 
 export function HomeTechStackSection() {
   return (
-    <section className="py-12 px-6 lg:px-8 bg-card/50 border-y border-border">
+    <section className="py-12 px-4 sm:px-6 lg:px-8 bg-card/50 border-y border-border">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-8">
           <p className="text-sm font-semibold text-accent uppercase tracking-widest mb-2">Technologies We Use</p>
-          <h2 className="text-3xl font-bold">Modern Technologies for Scalable Products</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold">Modern Technologies for Scalable Products</h2>
           <p className="text-sm text-muted-foreground mt-2 max-w-xl mx-auto">
             We use reliable modern frameworks and tools to build secure, fast, scalable, and maintainable digital products.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
           {HOME_TECH_TILES.map((name) => (
             <div
               key={name}
