@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ArrowLeft, ArrowRight, Building2, CheckCircle, Layers } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Building2, CheckCircle } from 'lucide-react';
 
 import { DEFAULT_SERVICE_CTA, getAllServicePageSlugs, getServicePage } from '@/data/service-pages';
 
@@ -102,12 +102,14 @@ export default async function ServiceDetailPage({ params }: Readonly<{ params: P
       {/* Gallery — replace URLs in data/service-pages.ts */}
       <section className="py-10 px-4 sm:px-6 lg:px-8 border-b border-border/60">
         <div className="max-w-6xl mx-auto">
+          {/*
           <div className="flex items-center gap-2 text-sm font-semibold text-foreground/60 mb-4">
             <Layers className="size-4 text-accent" />
             Project highlights
           </div>
+          */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {service.gallery.map((src, i) => (
+            {service.gallery.map((src) => (
               <div key={src} className="relative aspect-[4/3] rounded-xl overflow-hidden border border-border bg-muted/30">
                 <Image
                   src={src}
@@ -116,9 +118,6 @@ export default async function ServiceDetailPage({ params }: Readonly<{ params: P
                   className="object-cover"
                   sizes="(max-width: 640px) 100vw, 33vw"
                 />
-                <span className="absolute bottom-3 left-3 rounded-md bg-background/90 border border-border px-2 py-0.5 text-xs font-medium text-foreground/70">
-                  Reference {i + 1}
-                </span>
               </div>
             ))}
           </div>
