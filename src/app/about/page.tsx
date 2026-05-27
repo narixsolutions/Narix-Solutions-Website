@@ -10,10 +10,11 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   const stats = [
-    { label: 'Products Delivered', value: '45+', icon: Target },
-    { label: 'Long-Term Clients', value: '18+', icon: Users },
-    { label: 'Years in Production', value: '7+', icon: Award },
-    { label: 'Industries Served', value: '9+', icon: Zap },
+    { label: 'Products Delivered', value: '30+', icon: Target },
+    { label: 'Long-Term Clients', value: '10+', icon: Users },
+    { label: 'Years in Production', value: '3+', icon: Award },
+    { label: 'Industries Served', value: '5+', icon: Zap },
+    { label: 'Team Members', value: '15+', icon: Users },
   ];
 
   const values = [
@@ -118,7 +119,7 @@ export default function AboutPage() {
       {/* Stats Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/50">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 xl:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 xl:gap-8">
             {stats.map((stat) => {
               const IconComponent = stat.icon;
               return (
