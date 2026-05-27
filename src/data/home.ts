@@ -1,11 +1,11 @@
 import type { LucideIcon } from 'lucide-react';
 import {
-  Database,
+  Cog,
   Globe,
-  Megaphone,
-  Palette,
+  Layout,
   ShoppingCart,
-  Zap,
+  TrendingUp,
+  Wrench,
 } from 'lucide-react';
 
 export const HOME_TECH_TILES = [
@@ -29,39 +29,39 @@ export type HomeServiceCard = {
 export const HOME_SERVICE_CARDS: readonly HomeServiceCard[] = [
   {
     Icon: Globe,
-    title: 'Custom Website Development',
-    description: 'Responsive business websites designed for performance, branding, and lead generation.',
+    title: 'Business Website Development',
+    description: 'Professional websites designed to establish your online presence, generate leads, and build customer trust.',
     href: '/services/web-development',
   },
   {
     Icon: ShoppingCart,
     title: 'E-Commerce Development',
-    description: 'Modern online stores with secure payments, product management, and optimized shopping experiences.',
+    description: 'Custom online stores with secure payments, product management, inventory systems, and optimised shopping experiences.',
     href: '/services/ecommerce',
   },
   {
-    Icon: Database,
+    Icon: Layout,
     title: 'CMS Development',
-    description: 'Flexible CMS platforms for businesses that need easy content management and scalability.',
+    description: 'Flexible CMS solutions that allow businesses to manage content, blogs, products, and pages with ease.',
     href: '/services/cms-development',
   },
   {
-    Icon: Zap,
-    title: 'SEO & Performance Optimization',
-    description: 'Technical SEO, speed optimization, and structure improvements to increase visibility and conversions.',
+    Icon: TrendingUp,
+    title: 'SEO & Digital Marketing',
+    description: 'Data-driven SEO and marketing strategies that help businesses increase visibility, traffic, and customer acquisition.',
     href: '/services/seo-marketing',
   },
   {
-    Icon: Megaphone,
-    title: 'Digital Marketing',
-    description: 'Growth-focused digital campaigns, social media marketing, and customer acquisition strategies.',
-    href: '/services/seo-marketing',
+    Icon: Cog,
+    title: 'Custom Web Applications',
+    description: 'Tailored web applications built to automate workflows, improve efficiency, and support business operations.',
+    href: '/services/custom-web-applications',
   },
   {
-    Icon: Palette,
-    title: 'UI/UX Design',
-    description: 'Modern user experiences and interface systems focused on usability and engagement.',
-    href: '/services',
+    Icon: Wrench,
+    title: 'Website Maintenance & Support',
+    description: 'Reliable maintenance services to keep your website secure, updated, optimised, and running smoothly.',
+    href: '/services/website-maintenance',
   },
 ] as const;
 
