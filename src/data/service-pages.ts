@@ -53,8 +53,8 @@ export type ServicePageContent = {
 export const SERVICE_PAGES: ServicePageContent[] = [
   {
     slug: 'web-development',
-    eyebrow: 'WEB DEVELOPMENT',
-    title: 'Custom Web Development',
+    eyebrow: 'BUSINESS WEBSITES',
+    title: 'Business Website Development',
     description:
       'We build fast, professional business websites that establish credibility, generate leads, and support your growth online.',
     heroLead:
@@ -106,9 +106,9 @@ export const SERVICE_PAGES: ServicePageContent[] = [
     pricing: {
       title: 'Project Pricing',
       tiers: [
-        { name: 'Starter Website', price: '$800 - $2,500', description: 'Essential business site with core pages and contact setup' },
-        { name: 'Business Website', price: '$2,500 - $6,000', description: 'Multi-page site with custom design, forms, and SEO basics' },
-        { name: 'Advanced Website', price: '$6,000+', description: 'Custom features, integrations, and scalable architecture' },
+        { name: 'Starter Website', price: 'Starting from $199', description: 'Essential business site with core pages and contact setup' },
+        { name: 'Business Website', price: 'Starting from $499', description: 'Multi-page site with custom design, forms, and SEO basics' },
+        { name: 'Advanced Website', price: 'Starting from $1,499', description: 'Custom features, integrations, and scalable architecture' },
       ],
       note: 'Final pricing depends on page count, design complexity, and integrations.',
     },
@@ -116,7 +116,7 @@ export const SERVICE_PAGES: ServicePageContent[] = [
   {
     slug: 'custom-web-applications',
     eyebrow: 'CUSTOM SOLUTIONS',
-    title: 'Custom Web Applications for Business Operations',
+    title: 'Custom Web Applications',
     description:
       'We build scalable web applications tailored to your business workflows, operations, and customer experiences. From internal dashboards to client-facing platforms, our solutions are designed for performance, usability, and long-term growth.',
     heroLead:
@@ -166,9 +166,9 @@ export const SERVICE_PAGES: ServicePageContent[] = [
     pricing: {
       title: 'Project Pricing',
       tiers: [
-        { name: 'Starter', price: '$2,000 - $5,000', description: 'Focused app with core features and admin essentials' },
-        { name: 'Growth', price: '$5,000 - $12,000', description: 'Multi-module application with integrations and user roles' },
-        { name: 'Enterprise', price: '$12,000+', description: 'Complex platforms with advanced workflows and reporting' },
+        { name: 'Starter', price: 'Starting from $499', description: 'Focused app with core features and admin essentials' },
+        { name: 'Growth', price: 'Starting from $1,499', description: 'Multi-module application with integrations and user roles' },
+        { name: 'Enterprise', price: 'Starting from $2,999', description: 'Complex platforms with advanced workflows and reporting' },
       ],
       note: 'Final pricing depends on features, integrations, and project complexity.',
     },
@@ -226,9 +226,9 @@ export const SERVICE_PAGES: ServicePageContent[] = [
     pricing: {
       title: 'Service Plans',
       tiers: [
-        { name: 'Basic Support', price: '$200 - $500 / month', description: 'Essential updates, backups, and monthly health checks' },
-        { name: 'Business Support', price: '$500 - $1,500 / month', description: 'Priority support, security monitoring, and performance tuning' },
-        { name: 'Advanced Support', price: '$1,500+ / month', description: 'Dedicated support for larger sites with complex integrations' },
+        { name: 'Basic Support', price: 'Starting from $99/month', description: 'Essential updates, backups, and monthly health checks' },
+        { name: 'Business Support', price: 'Starting from $299/month', description: 'Priority support, security monitoring, and performance tuning' },
+        { name: 'Advanced Support', price: 'Starting from $599/month', description: 'Dedicated support for larger sites with complex integrations' },
       ],
       note: 'Pricing depends on website size, traffic, integrations, and support requirements.',
     },
@@ -288,9 +288,9 @@ export const SERVICE_PAGES: ServicePageContent[] = [
     pricing: {
       title: 'Project Pricing',
       tiers: [
-        { name: 'Starter Store', price: '$1,500 - $4,000', description: 'Essential store setup with products, payments, and core pages' },
-        { name: 'Growth Store', price: '$4,000 - $10,000', description: 'Custom design, advanced product options, and marketing integrations' },
-        { name: 'Advanced E-Commerce', price: '$10,000+', description: 'Complex catalogs, custom workflows, and multi-channel selling' },
+        { name: 'Starter Store', price: 'Starting from $199', description: 'Essential store setup with products, payments, and core pages' },
+        { name: 'Growth Store', price: 'Starting from $499', description: 'Custom design, advanced product options, and marketing integrations' },
+        { name: 'Advanced E-Commerce', price: 'Starting from $1,999', description: 'Complex catalogs, custom workflows, and multi-channel selling' },
       ],
       note: 'Final pricing depends on product count, integrations, and custom features.',
     },
@@ -348,9 +348,9 @@ export const SERVICE_PAGES: ServicePageContent[] = [
     pricing: {
       title: 'CMS Pricing',
       tiers: [
-        { name: 'WordPress Website', price: '$800 - $3,000', description: 'Business WordPress site with theme customization and core plugins' },
-        { name: 'Business CMS', price: '$3,000 - $7,000', description: 'Custom layouts, advanced content types, and integration setup' },
-        { name: 'Custom CMS Platform', price: '$7,000 - $15,000+', description: 'Tailored CMS built around your workflows and growth plans' },
+        { name: 'WordPress Website', price: 'Starting from $149', description: 'Business WordPress site with theme customization and core plugins' },
+        { name: 'Business CMS', price: 'Starting from $399', description: 'Custom layouts, advanced content types, and integration setup' },
+        { name: 'Custom CMS Platform', price: 'Starting from $999', description: 'Tailored CMS built around your workflows and growth plans' },
       ],
       note: 'Final pricing depends on content complexity, integrations, and design scope.',
     },
@@ -408,9 +408,9 @@ export const SERVICE_PAGES: ServicePageContent[] = [
     pricing: {
       title: 'Monthly Packages',
       tiers: [
-        { name: 'Starter SEO', price: '$500 - $1,200 / month', description: 'Core SEO fixes and on-page optimization for smaller sites' },
-        { name: 'Growth SEO', price: '$1,200 - $2,500 / month', description: 'Ongoing SEO, content support, and competitor tracking' },
-        { name: 'Advanced Marketing', price: '$2,500+ / month', description: 'Broader SEO and marketing support for competitive markets' },
+        { name: 'Starter SEO', price: 'Starting from $99/month', description: 'Core SEO fixes and on-page optimization for smaller sites' },
+        { name: 'Growth SEO', price: 'Starting from $299/month', description: 'Ongoing SEO, content support, and competitor tracking' },
+        { name: 'Advanced Marketing', price: 'Starting from $499/month', description: 'Broader SEO and marketing support for competitive markets' },
       ],
       note: 'Pricing depends on site size, competition, and scope of work.',
     },
