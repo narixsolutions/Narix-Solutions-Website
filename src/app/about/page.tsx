@@ -13,7 +13,7 @@ export default function AboutPage() {
     { label: 'Products Delivered', value: '30+', icon: Target },
     { label: 'Long-Term Clients', value: '10+', icon: Users },
     { label: 'Years in Production', value: '3+', icon: Award },
-    { label: 'Industries Served', value: '5+', icon: Zap },
+    { label: 'Industries Served', value: '7+', icon: Zap },
     { label: 'Team Members', value: '15+', icon: Users },
   ];
 
