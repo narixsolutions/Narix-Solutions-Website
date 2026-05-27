@@ -174,65 +174,6 @@ export const SERVICE_PAGES: ServicePageContent[] = [
     },
   },
   {
-    slug: 'mobile-app-development',
-    eyebrow: 'MOBILE SOLUTIONS',
-    title: 'Mobile Applications Designed for Real Users',
-    description:
-      'We develop fast, scalable, and user-friendly mobile applications for startups, businesses, and growing brands across Android and iOS platforms.',
-    heroLead:
-      'From customer-facing apps to internal business tools, we build mobile experiences focused on usability, performance, and long-term scalability.',
-    heroImage:
-      'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1600&q=80',
-    gallery: [
-      'https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=80',
-    ],
-    featureTags: ['Android & iOS', 'API Integration', 'Modern UI/UX'],
-    primaryCta: 'Discuss Your Project',
-    secondaryCta: 'View Related Work',
-    features: [
-      'Cross-platform mobile apps',
-      'Admin panel integration',
-      'Real-time notifications',
-      'Secure authentication',
-      'Payment integration',
-      'App store deployment',
-    ],
-    process: [
-      {
-        step: 'Discovery',
-        description: 'We define app goals, target users, core features, and success metrics for your launch.',
-      },
-      {
-        step: 'UI/UX Design',
-        description: 'We design intuitive screens and flows that make your app easy to use from day one.',
-      },
-      {
-        step: 'App Development',
-        description: 'We build and integrate your app with secure backends, APIs, and business logic.',
-      },
-      {
-        step: 'Testing & QA',
-        description: 'We test on real devices, fix bugs, and validate performance before release.',
-      },
-      {
-        step: 'Launch & Support',
-        description: 'We help with store submission, launch monitoring, and post-launch improvements.',
-      },
-    ],
-    technologies: ['React Native', 'Firebase', 'Node.js', 'MongoDB', 'REST APIs', 'Push Notifications'],
-    industries: ['Healthcare', 'Fitness', 'Food Delivery', 'Education', 'E-Commerce', 'Service Businesses'],
-    pricing: {
-      title: 'Project Pricing',
-      tiers: [
-        { name: 'Basic App', price: '$2,500 - $5,000', description: 'Core features with clean UI and essential backend' },
-        { name: 'Business App', price: '$5,000 - $12,000', description: 'Advanced features, admin panel, and third-party integrations' },
-        { name: 'Advanced Platform', price: '$12,000+', description: 'Full-scale app with complex workflows and scalability' },
-      ],
-    },
-  },
-  {
     slug: 'website-maintenance',
     eyebrow: 'MAINTENANCE & SUPPORT',
     title: 'Reliable Website Maintenance & Technical Support',

@@ -74,22 +74,6 @@ export const services: Service[] = [
     color: 'bg-pink-500',
   },
   {
-    id: 'mobile-apps',
-    title: 'Mobile Development',
-    description: 'Native and cross-platform mobile applications that deliver exceptional user experiences.',
-    price: 'Starting at $8,000',
-    features: [
-      'iOS development',
-      'Android development',
-      'Cross-platform solutions',
-      'App store optimization',
-      'Push notifications',
-      'Analytics integration',
-    ],
-    icon: 'smartphone',
-    color: 'bg-orange-500',
-  },
-  {
     id: 'e-commerce',
     title: 'E-Commerce Solutions',
     description: 'Complete online stores with payment processing, inventory management, and conversion optimization.',

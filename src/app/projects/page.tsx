@@ -36,19 +36,6 @@ export default function ProjectsPage() {
       image: 'bg-gradient-to-br from-teal-600 to-emerald-800',
     },
     {
-      id: 'mobile-app',
-      title: 'Mobile App for Healthcare',
-      description: 'HIPAA-compliant mobile application for patient management',
-      category: 'Healthcare',
-      results: {
-        adoption: '15K',
-        rating: '4.8★',
-        retention: '85%',
-      },
-      technologies: ['React Native', 'Node.js', 'PostgreSQL', 'AWS'],
-      image: 'bg-gradient-to-br from-green-500 to-teal-500',
-    },
-    {
       id: 'dashboard-analytics',
       title: 'Real-Time Analytics Dashboard',
       description: 'Custom analytics dashboard processing millions of events daily',

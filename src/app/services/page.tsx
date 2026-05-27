@@ -3,11 +3,9 @@ import Link from 'next/link';
 import {
   ArrowRight,
   Cog,
-  Dumbbell,
   Globe,
   Layout,
   ShoppingCart,
-  Smartphone,
   TrendingUp,
   Wrench,
 } from 'lucide-react';
@@ -15,7 +13,7 @@ import {
 export const metadata: Metadata = {
   title: 'Our Services',
   description:
-    'Business websites, e-commerce, CMS, mobile apps, SEO, and custom web applications for startups and growing brands.',
+    'Business websites, e-commerce, CMS, SEO, and custom web applications for startups and growing brands.',
 };
 
 export default function ServicesPage() {
@@ -46,24 +44,6 @@ export default function ServicesPage() {
         'Flexible CMS solutions that allow businesses to manage content, blogs, products, and pages with ease.',
       benefits: ['Easy Content Management', 'Scalable Architecture', 'SEO Optimized'],
       gradient: 'from-cyan-600 to-emerald-700',
-    },
-    {
-      id: 'web-development',
-      icon: Dumbbell,
-      title: 'Gym & Fitness Websites',
-      description:
-        'Modern fitness websites for gyms, trainers, and wellness brands with memberships, schedules, and lead capture systems.',
-      benefits: ['Membership Systems', 'Trainer Profiles', 'Booking Integration'],
-      gradient: 'from-teal-500 to-emerald-700',
-    },
-    {
-      id: 'mobile-app-development',
-      icon: Smartphone,
-      title: 'Mobile App Development',
-      description:
-        'Cross-platform mobile applications focused on performance, usability, and long-term scalability.',
-      benefits: ['Android & iOS', 'Modern UI/UX', 'API Integration'],
-      gradient: 'from-green-500 to-teal-500',
     },
     {
       id: 'seo-marketing',
@@ -110,7 +90,7 @@ export default function ServicesPage() {
               Custom Digital Solutions for <span className="bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent">Modern Businesses</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl xl:text-2xl text-foreground/70 max-w-3xl mx-auto font-light leading-relaxed">
-              We help startups, brands, and growing businesses build high-performance websites, scalable platforms, mobile apps, and digital experiences designed for real business growth.
+              We help startups, brands, and growing businesses build high-performance websites, scalable platforms, and digital experiences designed for real business growth.
             </p>
             <p className="text-base md:text-lg text-foreground/60 max-w-2xl mx-auto font-light leading-relaxed">
               From business websites to e-commerce platforms and custom CMS solutions — we turn ideas into reliable digital products.
@@ -131,7 +111,7 @@ export default function ServicesPage() {
             {services.map((service) => {
               const IconComponent = service.icon;
               return (
-                <Link key={service.title} href={service.href ?? `/services/${service.id}`}>
+                <Link key={service.title} href={`/services/${service.id}`}>
                   <div className="group relative h-full bg-card border border-border rounded-2xl p-6 xl:p-8 hover:border-accent/40 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer overflow-hidden">
                     {/* Gradient overlay on hover */}
                     <div className={`absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-300 bg-gradient-to-br ${service.gradient}`}></div>

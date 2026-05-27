@@ -23,7 +23,7 @@ export function HomeHeroSection() {
             </h1>
 
             <p className="text-base sm:text-lg xl:text-xl text-muted-foreground leading-relaxed max-w-lg xl:max-w-xl">
-              We design and develop high-performance websites, e-commerce platforms, CMS solutions, mobile apps, and digital experiences that help businesses scale online with confidence.
+              We design and develop high-performance websites, e-commerce platforms, CMS solutions, and digital experiences that help businesses scale online with confidence.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 pt-2">

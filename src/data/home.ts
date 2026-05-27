@@ -1,12 +1,10 @@
 import type { LucideIcon } from 'lucide-react';
 import {
   Database,
-  Dumbbell,
   Globe,
   Megaphone,
   Palette,
   ShoppingCart,
-  Smartphone,
   Zap,
 } from 'lucide-react';
 
@@ -54,22 +52,10 @@ export const HOME_SERVICE_CARDS: readonly HomeServiceCard[] = [
     href: '/services/seo-marketing',
   },
   {
-    Icon: Smartphone,
-    title: 'Mobile App Development',
-    description: 'Cross-platform mobile applications designed for smooth user experiences and scalable growth.',
-    href: '/services/mobile-app-development',
-  },
-  {
     Icon: Megaphone,
     title: 'Digital Marketing',
     description: 'Growth-focused digital campaigns, social media marketing, and customer acquisition strategies.',
     href: '/services/seo-marketing',
-  },
-  {
-    Icon: Dumbbell,
-    title: 'Gym & Fitness Websites',
-    description: 'Professional fitness websites with memberships, schedules, trainer profiles, and lead capture.',
-    href: '/services/web-development',
   },
   {
     Icon: Palette,

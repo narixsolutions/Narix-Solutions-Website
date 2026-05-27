@@ -59,21 +59,6 @@ export const projects: Project[] = [
     technologies: ['React', 'TypeScript', 'Firebase', 'D3.js', 'WebRTC'],
   },
   {
-    id: 'mobile-fitness',
-    title: 'Fitness Mobile App',
-    category: 'Mobile Development',
-    description: 'Personal fitness app with AI-powered workout recommendations, nutrition tracking, and social features.',
-    shortDescription: 'AI-powered fitness companion',
-    image: '/projects/fitness.jpg',
-    stats: [
-      { label: 'App Rating', value: '4.8/5' },
-      { label: 'Downloads', value: '500K+' },
-      { label: 'Daily Active Users', value: '125K' },
-      { label: 'Workout Completion', value: '87%' },
-    ],
-    technologies: ['React Native', 'Firebase', 'TensorFlow', 'Stripe', 'Google Maps'],
-  },
-  {
     id: 'corporate-site',
     title: 'Fortune 500 Corporate Website',
     category: 'UI/UX Design',
