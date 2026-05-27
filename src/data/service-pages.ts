@@ -343,7 +343,7 @@ export const SERVICE_PAGES: ServicePageContent[] = [
         description: 'Updates, improvements, and help when you need new sections or features.',
       },
     ],
-    technologies: ['WordPress', 'Next.js', 'React', 'Node.js', 'Sanity', 'Contentful'],
+    technologies: ['WordPress', 'Sanity', 'Contentful', 'Strapi', 'WooCommerce', 'Shopify', 'Webflow'],
     industries: ['Professional Services', 'Publishing', 'E-Commerce', 'Education', 'Healthcare', 'Startups'],
     pricing: {
       title: 'CMS Pricing',

@@ -79,7 +79,7 @@ export default function ProjectsPage() {
   return (
     <main className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="pt-28 sm:pt-32 lg:pt-36 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <section className="pt-16 sm:pt-20 lg:pt-24 pb-8 sm:pb-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold text-foreground mb-6 text-balance">

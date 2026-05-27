@@ -27,7 +27,7 @@ export default async function TechnologyDetailPage({ params }: { params: Promise
 
   if (!tech) {
     return (
-      <main className="min-h-screen bg-background pt-32 px-4 sm:px-6 lg:px-8">
+      <main className="min-h-screen bg-background pt-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto text-center space-y-4">
           <h1 className="text-3xl font-bold">Technology not listed</h1>
           <p className="text-foreground/70">Check the technologies index — we rotate this catalog frequently.</p>
@@ -42,7 +42,7 @@ export default async function TechnologyDetailPage({ params }: { params: Promise
 
   return (
     <main className="min-h-screen bg-background">
-      <section className="pt-28 pb-14 px-4 sm:px-6 lg:px-8 border-b border-border/60 bg-card/30">
+      <section className="pt-16 pb-6 px-4 sm:px-6 lg:px-8 border-b border-border/60 bg-card/30">
         <div className="max-w-6xl mx-auto">
           <Link
             href="/technologies"

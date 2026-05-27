@@ -16,7 +16,7 @@ export default function TechnologiesPage() {
 
   return (
     <main className="min-h-screen bg-background">
-      <section className="pt-28 sm:pt-32 lg:pt-36 pb-14 px-4 sm:px-6 lg:px-8 border-b border-border/60 bg-card/30">
+      <section className="pt-16 sm:pt-20 lg:pt-24 pb-8 px-4 sm:px-6 lg:px-8 border-b border-border/60 bg-card/30">
         <div className="max-w-6xl mx-auto text-center space-y-4">
           <p className="text-sm font-semibold text-accent uppercase tracking-widest">Engineering stack</p>
           <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold text-foreground text-balance">Technologies</h1>

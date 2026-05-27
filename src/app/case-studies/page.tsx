@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function CaseStudiesPage() {
   return (
     <main className="min-h-screen bg-background">
-      <section className="pt-28 sm:pt-32 lg:pt-36 pb-14 sm:pb-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden border-b border-border/60 bg-card/30">
+      <section className="pt-16 sm:pt-20 lg:pt-24 pb-8 sm:pb-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden border-b border-border/60 bg-card/30">
         <div className="absolute inset-0 -z-10 pointer-events-none">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-accent/10 rounded-full blur-3xl" />
           <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-accent/5 rounded-full blur-3xl" />

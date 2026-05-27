@@ -62,7 +62,7 @@ export default function ProjectDetailPage({ params }: Readonly<{ params: { slug:
   return (
     <main className="min-h-screen bg-background">
       {/* Breadcrumb */}
-      <section className="pt-24 pb-12 px-4 sm:px-6 lg:px-8 border-b border-border">
+      <section className="pt-16 pb-6 px-4 sm:px-6 lg:px-8 border-b border-border">
         <div className="max-w-4xl mx-auto">
           <Link
             href="/projects"
