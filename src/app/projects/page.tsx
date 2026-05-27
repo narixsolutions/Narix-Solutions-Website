@@ -36,19 +36,6 @@ export default function ProjectsPage() {
       image: 'bg-gradient-to-br from-teal-600 to-emerald-800',
     },
     {
-      id: 'mobile-app',
-      title: 'Mobile App for Healthcare',
-      description: 'HIPAA-compliant mobile application for patient management',
-      category: 'Healthcare',
-      results: {
-        adoption: '15K',
-        rating: '4.8★',
-        retention: '85%',
-      },
-      technologies: ['React Native', 'Node.js', 'PostgreSQL', 'AWS'],
-      image: 'bg-gradient-to-br from-green-500 to-teal-500',
-    },
-    {
       id: 'dashboard-analytics',
       title: 'Real-Time Analytics Dashboard',
       description: 'Custom analytics dashboard processing millions of events daily',
@@ -92,7 +79,7 @@ export default function ProjectsPage() {
   return (
     <main className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="pt-28 sm:pt-32 lg:pt-36 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <section className="pt-16 sm:pt-20 lg:pt-24 pb-8 sm:pb-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold text-foreground mb-6 text-balance">

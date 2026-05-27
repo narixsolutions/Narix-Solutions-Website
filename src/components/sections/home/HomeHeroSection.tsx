@@ -12,7 +12,7 @@ const HERO_BULLETS = [
 
 export function HomeHeroSection() {
   return (
-    <section className="pt-24 sm:pt-28 lg:pt-32 xl:pt-36 pb-14 sm:pb-16 lg:pb-20 px-4 sm:px-6 lg:px-8 border-b border-border">
+    <section className="pt-16 sm:pt-20 lg:pt-24 pb-8 sm:pb-10 lg:pb-14 px-4 sm:px-6 lg:px-8 border-b border-border">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 xl:gap-16 2xl:gap-20 items-center">
           <div className="space-y-5">
@@ -23,7 +23,7 @@ export function HomeHeroSection() {
             </h1>
 
             <p className="text-base sm:text-lg xl:text-xl text-muted-foreground leading-relaxed max-w-lg xl:max-w-xl">
-              We design and develop high-performance websites, e-commerce platforms, CMS solutions, mobile apps, and digital experiences that help businesses scale online with confidence.
+              We design and develop high-performance websites, e-commerce platforms, CMS solutions, and digital experiences that help businesses scale online with confidence.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 pt-2">

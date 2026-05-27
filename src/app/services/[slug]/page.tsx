@@ -36,7 +36,7 @@ export default async function ServiceDetailPage({ params }: Readonly<{ params: P
 
   return (
     <main className="min-h-screen bg-background">
-      <section className="pt-24 pb-10 px-4 sm:px-6 lg:px-8 border-b border-border bg-card/40">
+      <section className="pt-16 pb-6 px-4 sm:px-6 lg:px-8 border-b border-border bg-card/40">
         <div className="max-w-6xl mx-auto">
           <Link
             href="/services"

@@ -27,7 +27,7 @@ export default async function CaseStudyPage({ params }: Readonly<{ params: Promi
 
   if (!study) {
     return (
-      <main className="min-h-screen bg-background pt-32 px-4 sm:px-6 lg:px-8">
+      <main className="min-h-screen bg-background pt-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-4xl font-bold text-foreground mb-4">Case study not found</h1>
           <p className="text-foreground/70 mb-8">The project you&apos;re looking for isn&apos;t in our catalog yet.</p>
@@ -42,7 +42,7 @@ export default async function CaseStudyPage({ params }: Readonly<{ params: Promi
 
   return (
     <main className="min-h-screen bg-background">
-      <section className="pt-28 pb-12 px-4 sm:px-6 lg:px-8 border-b border-border/60 bg-card/40">
+      <section className="pt-16 pb-6 px-4 sm:px-6 lg:px-8 border-b border-border/60 bg-card/40">
         <div className="max-w-6xl mx-auto">
           <div className="mb-10 flex flex-wrap items-center gap-4 sm:gap-5">
             <Link

@@ -10,10 +10,11 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   const stats = [
-    { label: 'Products Delivered', value: '45+', icon: Target },
-    { label: 'Long-Term Clients', value: '18+', icon: Users },
-    { label: 'Years in Production', value: '7+', icon: Award },
-    { label: 'Industries Served', value: '9+', icon: Zap },
+    { label: 'Products Delivered', value: '30+', icon: Target },
+    { label: 'Long-Term Clients', value: '10+', icon: Users },
+    { label: 'Years in Production', value: '3+', icon: Award },
+    { label: 'Industries Served', value: '7+', icon: Zap },
+    { label: 'Team Members', value: '15+', icon: Users },
   ];
 
   const values = [
@@ -104,7 +105,7 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="pt-28 sm:pt-32 lg:pt-36 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-8">
+      <section className="pt-16 sm:pt-20 lg:pt-24 pb-8 sm:pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold text-foreground mb-6 text-balance">
             Digital products that <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">scale</span>
@@ -118,7 +119,7 @@ export default function AboutPage() {
       {/* Stats Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/50">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 xl:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 xl:gap-8">
             {stats.map((stat) => {
               const IconComponent = stat.icon;
               return (
