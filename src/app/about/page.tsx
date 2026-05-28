@@ -172,8 +172,8 @@ export default function AboutPage() {
           </FadeInView>
           <AnimateStagger className="grid grid-cols-1 lg:grid-cols-2 gap-6 xl:gap-8">
             {values.map((value) => (
-              <AnimateItem key={value.title}>
-                <div className="p-6 xl:p-8 bg-card rounded-xl border border-border hover:border-accent transition-all duration-300">
+              <AnimateItem key={value.title} className="h-full">
+                <div className="h-full p-6 xl:p-8 bg-card rounded-xl border border-border hover:border-accent transition-all duration-300">
                   <h3 className="text-xl xl:text-2xl font-bold text-foreground mb-4">{value.title}</h3>
                   <p className="text-foreground/70 leading-relaxed">{value.description}</p>
                 </div>
@@ -191,7 +191,7 @@ export default function AboutPage() {
           </FadeInView>
           <AnimateStagger className="grid grid-cols-1 md:grid-cols-2 gap-6 xl:gap-8">
             {deliveryTeams.map((team) => (
-              <AnimateItem key={team.visual}>
+              <AnimateItem key={team.visual} className="h-full">
                 <div className="h-full p-6 xl:p-8 bg-card rounded-xl border border-border hover:border-accent transition-all duration-300 text-left">
                   <DeliveryTeamVisual variant={team.visual} className="mx-0 mb-5" />
                   <h3 className="text-xl font-bold text-foreground mb-2">{team.title}</h3>
@@ -212,7 +212,7 @@ export default function AboutPage() {
           </FadeInView>
           <AnimateStagger className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 xl:gap-8">
             {whyWorkWithUs.map((item) => (
-              <AnimateItem key={item.title}>
+              <AnimateItem key={item.title} className="h-full">
                 <div className="h-full p-6 xl:p-8 bg-card rounded-xl border border-border text-left">
                   <Award className="w-12 h-12 text-accent mb-4" />
                   <p className="font-bold text-foreground text-lg mb-3">{item.title}</p>

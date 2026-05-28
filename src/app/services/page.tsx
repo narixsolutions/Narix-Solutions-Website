@@ -116,7 +116,7 @@ export default function ServicesPage() {
             {services.map((service) => {
               const IconComponent = service.icon;
               return (
-                <AnimateItem key={service.title}>
+                <AnimateItem key={service.title} className="h-full">
                   <Link href={`/services/${service.id}`} className="block h-full">
                     <div className="group relative h-full bg-card border border-border rounded-2xl p-6 xl:p-8 hover:border-accent/40 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer overflow-hidden">
                       <div className={`absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-300 bg-gradient-to-br ${service.gradient}`}></div>

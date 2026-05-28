@@ -36,7 +36,7 @@ export default function CaseStudiesPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <AnimateStagger className="max-w-7xl mx-auto grid gap-6 xl:gap-10 md:grid-cols-2 xl:grid-cols-3">
           {CASE_STUDIES.map((study) => (
-            <AnimateItem key={study.slug}>
+            <AnimateItem key={study.slug} className="h-full">
               <Link href={`/case-studies/${study.slug}`} className="group block h-full">
                 <article className="h-full flex flex-col rounded-2xl border border-border bg-card overflow-hidden shadow-sm hover:border-accent/40 hover:shadow-md transition-all">
                   <div className="relative aspect-[16/11] bg-muted">

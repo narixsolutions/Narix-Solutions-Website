@@ -32,7 +32,7 @@ export function HomeServicesSection() {
           {HOME_SERVICE_CARDS.map((service) => {
             const Icon = service.Icon;
             return (
-              <motion.div key={service.title} variants={staggerItem}>
+              <motion.div key={service.title} variants={staggerItem} className="h-full">
                 <Link href={service.href} className="block h-full">
                   <div className="h-full p-5 rounded-xl bg-card border border-border hover:border-accent/40 transition-all hover:bg-card/90 shadow-sm">
                     <div className="p-2.5 w-fit rounded-lg bg-accent/10 mb-3">
