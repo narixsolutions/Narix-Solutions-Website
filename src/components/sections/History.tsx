@@ -1,6 +1,8 @@
 'use client';
 
-import { containerVariants, itemVariants } from '@/lib/animations';
+import { motion } from 'framer-motion';
+
+import { containerVariants, itemVariants, fadeUp, viewportOnce } from '@/lib/animations';
 
 const milestones = [
   {
@@ -39,50 +41,46 @@ export function History() {
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
-        {/* Section Header */}
-        <div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOnce}
+          variants={fadeUp}
           className="text-center mb-16"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 border border-accent/20 rounded-full mb-4">
             <span className="w-2 h-2 bg-accent rounded-full"></span>
             <span className="text-sm text-foreground/70 font-medium">Timeline</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 text-balance">
-            Our Journey
-          </h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 text-balance">Our Journey</h2>
           <p className="text-lg text-foreground/60">
             From a startup vision to a global digital agency, our story is one of growth, innovation, and unwavering commitment to excellence.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Timeline */}
-        <div
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOnce}
           variants={containerVariants}
-          viewport={{ once: true }}
           className="space-y-6"
         >
-          {milestones.map((milestone, index) => (
-            <div
+          {milestones.map((milestone) => (
+            <motion.div
               key={milestone.year}
               variants={itemVariants}
               className="flex gap-6 items-start md:items-center"
             >
-              {/* Year */}
               <div className="flex-shrink-0 w-24 md:w-32">
                 <div className="text-3xl font-bold text-accent">{milestone.year}</div>
               </div>
-
-              {/* Content */}
               <div className="flex-1 bg-card border border-border rounded-lg p-6 hover:border-accent transition-colors">
                 <h3 className="text-xl font-bold text-foreground mb-2">{milestone.title}</h3>
                 <p className="text-foreground/60">{milestone.description}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

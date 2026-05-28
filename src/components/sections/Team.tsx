@@ -1,6 +1,8 @@
 'use client';
 
-import { containerVariants, itemVariants } from '@/lib/animations';
+import { motion } from 'framer-motion';
+
+import { containerVariants, itemVariants, fadeUp, viewportOnce } from '@/lib/animations';
 
 const teamMembers = [
   {
@@ -33,58 +35,54 @@ export function Team() {
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-card/50">
       <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOnce}
+          variants={fadeUp}
           className="text-center mb-16"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 border border-accent/20 rounded-full mb-4">
             <span className="w-2 h-2 bg-accent rounded-full"></span>
             <span className="text-sm text-foreground/70 font-medium">Our Team</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 text-balance">
-            Meet Our Leadership
-          </h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 text-balance">Meet Our Leadership</h2>
           <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
             A diverse team of visionary leaders and experts dedicated to excellence and innovation.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Team Grid */}
-        <div
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOnce}
           variants={containerVariants}
-          viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
         >
           {teamMembers.map((member) => (
-            <div
+            <motion.div
               key={member.name}
               variants={itemVariants}
               className="bg-background border border-border rounded-xl p-6 text-center hover:border-accent transition-colors group"
             >
-              {/* Avatar Placeholder */}
               <div className="w-24 h-24 bg-accent/10 rounded-full mx-auto mb-4 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
                 <span className="text-2xl font-bold text-accent">{member.name.charAt(0)}</span>
               </div>
-
-              {/* Info */}
               <h3 className="text-lg font-bold text-foreground mb-1">{member.name}</h3>
               <p className="text-sm text-accent font-semibold mb-2">{member.role}</p>
               <p className="text-sm text-foreground/60 mb-3">{member.bio}</p>
               <div className="pt-3 border-t border-border">
                 <p className="text-xs text-accent font-medium">{member.specialty}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        {/* Team Stats */}
-        <div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOnce}
+          variants={fadeUp}
           className="grid grid-cols-3 gap-6 mt-16 pt-8 border-t border-border"
         >
           {[
@@ -97,7 +95,7 @@ export function Team() {
               <div className="text-sm text-foreground/60">{stat.label}</div>
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,7 +1,9 @@
 'use client';
 
-import { containerVariants, itemVariants } from '@/lib/animations';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
+
+import { containerVariants, itemVariants, fadeUp, viewportOnce } from '@/lib/animations';
 
 const impacts = [
   {
@@ -30,11 +32,11 @@ export function Impact() {
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOnce}
+          variants={fadeUp}
           className="text-center mb-16"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 border border-accent/20 rounded-full mb-4">
@@ -47,16 +49,17 @@ export function Impact() {
           <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
             Our success is measured by the success of our clients and the positive impact we create.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Impact Grid */}
-        <div
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOnce}
           variants={containerVariants}
-          viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
         >
           {impacts.map((impact) => (
-            <div
+            <motion.div
               key={impact.metric}
               variants={itemVariants}
               className="bg-card border border-border rounded-xl p-8 text-center hover:border-accent hover:shadow-lg hover:shadow-accent/10 transition-all"
@@ -64,15 +67,15 @@ export function Impact() {
               <div className="text-4xl font-bold text-accent mb-2">{impact.metric}</div>
               <h3 className="text-lg font-semibold text-foreground mb-2">{impact.label}</h3>
               <p className="text-sm text-foreground/60">{impact.description}</p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        {/* CTA */}
-        <div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOnce}
+          variants={fadeUp}
           className="text-center pt-8 border-t border-border"
         >
           <p className="text-foreground/60 mb-4">Ready to be part of our success story?</p>
@@ -82,7 +85,7 @@ export function Impact() {
           >
             Let&apos;s Talk
           </Link>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
