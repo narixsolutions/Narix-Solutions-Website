@@ -22,7 +22,7 @@ export function generateStaticParams() {
   return getTechnologySlugs().map((slug) => ({ slug }));
 }
 
-export default async function TechnologyDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function TechnologyDetailPage({ params }: Readonly<{ params: Promise<{ slug: string }> }>) {
   const { slug } = await params;
   const tech = getTechnology(slug);
 
@@ -118,7 +118,7 @@ export default async function TechnologyDetailPage({ params }: { params: Promise
 
               <AnimateStagger className="grid md:grid-cols-2 gap-6">
                 {tech.capabilities.map((cap) => (
-                  <AnimateItem key={cap.title}>
+                  <AnimateItem key={cap.title} className="h-full">
                     <article className="rounded-2xl border border-border bg-card p-6 space-y-4 shadow-sm h-full">
                       <div className="flex items-center gap-2 text-foreground font-semibold">
                         <Cpu className="size-5 text-accent" />

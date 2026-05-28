@@ -37,7 +37,7 @@ export default function TechnologiesPage() {
             </FadeInView>
             <AnimateStagger className="grid sm:grid-cols-2 xl:grid-cols-3 gap-5 xl:gap-6">
               {items.map((item) => (
-                <AnimateItem key={item.slug}>
+                <AnimateItem key={item.slug} className="h-full">
                   <Link
                     href={`/technologies/${item.slug}`}
                     className="group block h-full rounded-2xl border border-border bg-card overflow-hidden hover:border-accent/35 hover:shadow-md transition-all shadow-sm"

@@ -89,12 +89,12 @@ export default async function CaseStudyPage({ params }: Readonly<{ params: Promi
           {(study.clientWebsite || study.location || study.projectType) && (
             <AnimateStagger className="mt-8 grid sm:grid-cols-3 gap-3">
               {study.clientWebsite && (
-                <AnimateItem>
+                <AnimateItem className="h-full">
                   <a
                     href={study.clientWebsite}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block rounded-xl border border-border bg-background/80 p-4 hover:border-accent/30 transition-colors"
+                    className="block h-full rounded-xl border border-border bg-background/80 p-4 hover:border-accent/30 transition-colors"
                   >
                     <p className="text-xs uppercase tracking-wide text-foreground/50 mb-1">Client website</p>
                     <p className="text-sm font-semibold text-foreground break-all">{study.clientWebsite}</p>
@@ -102,16 +102,16 @@ export default async function CaseStudyPage({ params }: Readonly<{ params: Promi
                 </AnimateItem>
               )}
               {study.location && (
-                <AnimateItem>
-                  <div className="rounded-xl border border-border bg-background/80 p-4">
+                <AnimateItem className="h-full">
+                  <div className="h-full rounded-xl border border-border bg-background/80 p-4">
                     <p className="text-xs uppercase tracking-wide text-foreground/50 mb-1">Location</p>
                     <p className="text-sm font-semibold text-foreground">{study.location}</p>
                   </div>
                 </AnimateItem>
               )}
               {study.projectType && (
-                <AnimateItem>
-                  <div className="rounded-xl border border-border bg-background/80 p-4">
+                <AnimateItem className="h-full">
+                  <div className="h-full rounded-xl border border-border bg-background/80 p-4">
                     <p className="text-xs uppercase tracking-wide text-foreground/50 mb-1">Project type</p>
                     <p className="text-sm font-semibold text-foreground">{study.projectType}</p>
                   </div>
@@ -134,8 +134,8 @@ export default async function CaseStudyPage({ params }: Readonly<{ params: Promi
             </div>
             <AnimateStagger className="grid grid-cols-2 gap-3">
               {study.metrics.slice(0, 4).map((metric) => (
-                <AnimateItem key={metric.label}>
-                  <div className="rounded-xl border border-border bg-background/80 backdrop-blur-sm p-4 shadow-sm">
+                <AnimateItem key={metric.label} className="h-full">
+                  <div className="h-full rounded-xl border border-border bg-background/80 backdrop-blur-sm p-4 shadow-sm">
                     <p className="text-xs uppercase tracking-wide text-foreground/50 mb-2">{metric.label}</p>
                     <p className="text-base md:text-lg font-semibold text-accent leading-snug">{metric.value}</p>
                   </div>
@@ -250,8 +250,8 @@ export default async function CaseStudyPage({ params }: Readonly<{ params: Promi
               </div>
               <AnimateStagger className="grid sm:grid-cols-2 gap-4">
                 {study.metrics.map((metric) => (
-                  <AnimateItem key={metric.label}>
-                    <div className="rounded-xl border border-border bg-card px-6 py-5 shadow-sm hover:border-accent/30 transition-colors">
+                  <AnimateItem key={metric.label} className="h-full">
+                    <div className="h-full rounded-xl border border-border bg-card px-6 py-5 shadow-sm hover:border-accent/30 transition-colors">
                       <p className="text-sm text-foreground/60 mb-2">{metric.label}</p>
                       <p className="text-3xl font-bold text-foreground">{metric.value}</p>
                     </div>
