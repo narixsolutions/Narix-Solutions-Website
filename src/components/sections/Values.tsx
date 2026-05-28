@@ -1,7 +1,9 @@
 'use client';
 
-import { containerVariants, itemVariants } from '@/lib/animations';
+import { motion } from 'framer-motion';
 import { Heart, Zap, Target, Users } from 'lucide-react';
+
+import { containerVariants, itemVariants, fadeUp, viewportOnce } from '@/lib/animations';
 
 const values = [
   {
@@ -30,35 +32,34 @@ export function Values() {
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-card/50">
       <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOnce}
+          variants={fadeUp}
           className="text-center mb-16"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 border border-accent/20 rounded-full mb-4">
             <span className="w-2 h-2 bg-accent rounded-full"></span>
             <span className="text-sm text-foreground/70 font-medium">Core Values</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 text-balance">
-            What We Stand For
-          </h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 text-balance">What We Stand For</h2>
           <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
             Our values guide every decision and shape our culture as we grow.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Values Grid */}
-        <div
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOnce}
           variants={containerVariants}
-          viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
         >
           {values.map((value) => {
             const Icon = value.icon;
             return (
-              <div
+              <motion.div
                 key={value.title}
                 variants={itemVariants}
                 className="bg-background border border-border rounded-xl p-6 text-center hover:border-accent hover:shadow-lg hover:shadow-accent/10 transition-all group"
@@ -68,10 +69,10 @@ export function Values() {
                 </div>
                 <h3 className="text-lg font-bold text-foreground mb-2">{value.title}</h3>
                 <p className="text-foreground/60 text-sm">{value.description}</p>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
